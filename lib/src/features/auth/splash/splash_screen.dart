@@ -1,5 +1,4 @@
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
-import 'package:client_zipcare/src/features/auth/splash/component/indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,7 +10,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  final PageController controller = PageController();
+  final PageController controller = PageController(initialPage: 0);
 
   int pageCount = 4;
 
@@ -109,9 +108,50 @@ class _SplashScreenState extends State<SplashScreen> {
                           ),
                         ),
                         const SizedBox(height: 80),
-                        Indicator(
-                          controller: controller,
-                        ),
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: SizedBox(
+                            height: 50,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                ListView.builder(
+                                    shrinkWrap: true,
+                                    itemCount: 4,
+                                    scrollDirection: Axis.horizontal,
+                                    itemBuilder: (context, index) {
+                                      return InkWell(
+                                        onTap: () {
+                                          controller.animateToPage(
+                                            index,
+                                            duration: const Duration(microseconds: 300),
+                                            curve: Curves.easeIn,
+                                          );
+                                        },
+                                        child: SizedBox(
+                                          height: 20,
+                                          width: 20,
+                                          child: Center(
+                                            child: AnimatedContainer(
+                                              width: 10,
+                                              height: 10,
+                                              decoration: BoxDecoration(
+                                                color: currentPage == index ? colorPrimarySwatch : colorGreySwatch,
+                                                borderRadius: const BorderRadius.all(
+                                                  Radius.circular(20),
+                                                ),
+                                              ),
+                                              duration: const Duration(milliseconds: 00),
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    })
+                              ],
+                            ),
+                          ),
+                        )
                       ],
                     ),
                   ),
