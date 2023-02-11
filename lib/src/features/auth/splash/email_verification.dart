@@ -1,21 +1,20 @@
 import 'dart:async';
 
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
-import 'package:client_zipcare/src/features/auth/splash/email_verification.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/otp_field_style.dart';
 import 'package:otp_text_field/style.dart';
 
-class PhoneVerificationScreen extends StatefulWidget {
-  const PhoneVerificationScreen({Key? key}) : super(key: key);
+class EmailVerificationScreen extends StatefulWidget {
+  const EmailVerificationScreen({Key? key}) : super(key: key);
 
   @override
-  State<PhoneVerificationScreen> createState() => _PhoneVerificationScreenState();
+  State<EmailVerificationScreen> createState() => _EmailVerificationScreenState();
 }
 
-class _PhoneVerificationScreenState extends State<PhoneVerificationScreen> {
+class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
   Timer? countdownTimer;
   Duration myDuration = const Duration(days: 5);
 
@@ -79,7 +78,7 @@ class _PhoneVerificationScreenState extends State<PhoneVerificationScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 70),
               alignment: Alignment.center,
               child: Text(
-                'Phone Verification',
+                'Email Verification',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.lexend(
                   color: blackColor,
@@ -94,7 +93,7 @@ class _PhoneVerificationScreenState extends State<PhoneVerificationScreen> {
               width: 250,
               alignment: Alignment.center,
               child: Image.asset(
-                'assets/images/intro/phone.png',
+                'assets/images/intro/email.png',
                 width: 250.0,
                 height: 250.0,
               ),

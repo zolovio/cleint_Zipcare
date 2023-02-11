@@ -1,4 +1,5 @@
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/features/auth/splash/phone_verification.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -164,7 +165,12 @@ class _SplashScreenState extends State<SplashScreen> {
                   bottom: 30,
                   left: MediaQuery.of(context).size.width * 0.32,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const PhoneVerificationScreen(),
+                      ),
+                    ),
                     style: ElevatedButton.styleFrom(
                       elevation: 5,
                       backgroundColor: whiteColor,
