@@ -1,12 +1,11 @@
 // ignore_for_file: camel_case_types, must_be_immutable
 
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/features/auth/onboard/onboard_controller.dart';
 import 'package:client_zipcare/src/features/auth/registration/ui/phone_verify/phone_verification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-final currentPageProvider = StateProvider((ref) => 0);
 
 class OnBoardScreen extends ConsumerWidget {
   OnBoardScreen({Key? key}) : super(key: key);
@@ -38,14 +37,15 @@ class OnBoardScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    int currentPage = ref.watch(currentPageProvider);
+    final onboardCon = ref.watch(onBoardProvider);
+
     return Scaffold(
       body: Consumer(builder: (context, ref, _) {
         return Stack(
           children: [
             PageView.builder(
               controller: controller,
-              onPageChanged: (index) => ref.read(currentPageProvider.notifier).state = index,
+              onPageChanged: (index) => onboardCon.currentPageIndex(index),
               itemCount: pageCount,
               itemBuilder: (BuildContext context, int index) {
                 return Stack(
@@ -134,7 +134,7 @@ class OnBoardScreen extends ConsumerWidget {
                                                 width: 10,
                                                 height: 10,
                                                 decoration: BoxDecoration(
-                                                  color: currentPage == index ? colorPrimarySwatch : colorGreySwatch,
+                                                  color: onboardCon.currentPage == index ? colorPrimarySwatch : colorGreySwatch,
                                                   borderRadius: const BorderRadius.all(
                                                     Radius.circular(20),
                                                   ),
@@ -168,13 +168,11 @@ class OnBoardScreen extends ConsumerWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              (currentPage == pageCount - 1)
+              (onboardCon.currentPage == pageCount - 1)
                   ? ElevatedButton(
                       onPressed: () => Navigator.push(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => const PhoneVerificationScreen(),
-                        ),
+                        MaterialPageRoute(builder: (_) => const PhoneVerificationScreen()),
                       ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: whiteColor,
