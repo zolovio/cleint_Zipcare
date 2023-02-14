@@ -1,4 +1,4 @@
-import 'package:client_zipcare/src/features/auth/login/login_screen.dart';
+import 'package:client_zipcare/src/features/auth/login/login/login_screen.dart';
 import 'package:client_zipcare/src/features/auth/onboard/onboard_screen.dart';
 import 'package:client_zipcare/src/features/auth/registration/ui/email_verify/email_verification.dart';
 import 'package:client_zipcare/src/features/auth/registration/ui/phone_verify/phone_verification.dart';
