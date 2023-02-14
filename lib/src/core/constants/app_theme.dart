@@ -44,5 +44,7 @@ const Color lightGreyColor = Color(0xFF9C9C9C);
 const Color fieldBorderColor = Color(0xFF89919E);
 const Color hintColor = Color(0xFF788190);
 const Color underlineColor = Color(0xFF606060);
+const Color greyColor = Color(0xFFDEDEDE);
+const Color rememberMeColor = Color(0xFF52555B);
 
 final ThemeData themeData = ThemeData(primarySwatch: colorPrimarySwatch);
