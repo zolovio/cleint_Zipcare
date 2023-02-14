@@ -174,7 +174,6 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                 ),
               ),
               style: ElevatedButton.styleFrom(
-                elevation: 5,
                 backgroundColor: primaryColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12), // <-- Radius
