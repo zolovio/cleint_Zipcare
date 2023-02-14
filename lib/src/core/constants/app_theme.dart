@@ -37,7 +37,12 @@ const Color gradientShade = Color(0xFF9165F8);
 const Color purpleColor = Color(0xFF7269F8);
 const Color whiteColor = Color(0xFFFFFFFF);
 const Color blackColor = Color(0xFF000000);
+const Color deepBlackColor = Color(0xFF020202);
 const Color descGreyColor = Color(0xFF514F4F);
 const Color lightWhiteColor = Color(0xFFF8F8F8);
 const Color lightGreyColor = Color(0xFF9C9C9C);
 const Color fieldBorderColor = Color(0xFF89919E);
+const Color hintColor = Color(0xFF788190);
+const Color underlineColor = Color(0xFF606060);
+
+final ThemeData themeData = ThemeData(primarySwatch: colorPrimarySwatch);

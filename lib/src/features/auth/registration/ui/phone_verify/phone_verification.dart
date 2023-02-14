@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
-import 'package:client_zipcare/src/features/auth/splash/email_verification.dart';
+import 'package:client_zipcare/src/features/auth/registration/ui/email_verify/email_verification.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:otp_text_field/otp_field.dart';

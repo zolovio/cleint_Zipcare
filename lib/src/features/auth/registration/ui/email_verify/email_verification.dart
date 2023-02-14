@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/features/auth/registration/ui/signup/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:otp_text_field/otp_field.dart';
@@ -169,7 +170,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
               onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const EmailVerificationScreen(),
+                  builder: (context) => RegistrationScreen(),
                 ),
               ),
               style: ElevatedButton.styleFrom(
