@@ -12,3 +12,14 @@ const String emailVerifyText = 'Email Verification';
 const String phoneVerifyText = 'Phone Verification';
 const String resendCodeText = 'Resend code in ';
 const String enterOtpText = 'Enter your OTP code here';
+const String postAJobText = 'Post a Job';
+const String filterText = 'Filter';
+const String availableCarerText = '17 Carer Available';
+
+const String logo = "assets/images/logo.png";
+const String onboard1 = "assets/images/intro/onboard1.png";
+const String onboard2 = "assets/images/intro/onboard2.png";
+const String onboard3 = "assets/images/intro/onboard3.png";
+const String onboard4 = "assets/images/intro/onboard4.png";
+const String verifyPhone = "assets/images/intro/phone.png";
+const String verifyEmail = "assets/images/intro/email.png";

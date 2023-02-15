@@ -41,10 +41,15 @@ const Color deepBlackColor = Color(0xFF020202);
 const Color descGreyColor = Color(0xFF514F4F);
 const Color lightWhiteColor = Color(0xFFF8F8F8);
 const Color lightGreyColor = Color(0xFF9C9C9C);
+const Color darkGreyColor = Color(0xFF3A3A3A);
 const Color fieldBorderColor = Color(0xFF89919E);
 const Color hintColor = Color(0xFF788190);
+const Color hintLightColor = Color(0xFFCFCFCF);
 const Color underlineColor = Color(0xFF606060);
 const Color greyColor = Color(0xFFDEDEDE);
 const Color rememberMeColor = Color(0xFF52555B);
+const Color ratingColor = Color(0xFFFDB614);
+const Color shadowColor = Color(0xFFEAE8FF);
+const Color locationColor = Color(0xFFADB2B8);
 
-final ThemeData themeData = ThemeData(primarySwatch: colorPrimarySwatch);
+final ThemeData themeData = ThemeData(primarySwatch: colorPrimarySwatch, backgroundColor: lightWhiteColor);
