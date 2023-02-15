@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/auth/registration/ui/signup/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -79,7 +80,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 70),
               alignment: Alignment.center,
               child: Text(
-                'Email Verification',
+                emailVerifyText,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.lexend(
                   color: blackColor,
@@ -104,7 +105,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 70),
               alignment: Alignment.center,
               child: Text(
-                'Enter your OTP code here',
+                enterOtpText,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.lexend(
                   color: descGreyColor,
@@ -138,7 +139,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Resend code in ',
+                    resendCodeText,
                     textAlign: TextAlign.center,
                     style: GoogleFonts.lexend(
                       color: descGreyColor,
@@ -182,7 +183,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 5.0),
                 child: Text(
-                  "Verify Now",
+                  verifyNowText,
                   style: GoogleFonts.lexend(
                     fontWeight: FontWeight.w600,
                     fontSize: 18,

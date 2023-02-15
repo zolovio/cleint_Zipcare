@@ -1,4 +1,5 @@
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class ForgotPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomWidgets().getAppBar('Forgot Password'),
+      appBar: CustomWidgets().getAppBar(forgotPassText),
       body: ListView(
         padding: const EdgeInsets.all(25),
         children: [
@@ -88,7 +89,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 5.0),
                     child: Text(
-                      "Submit",
+                      submitText,
                       style: GoogleFonts.lexend(
                         fontWeight: FontWeight.w600,
                         fontSize: 18,

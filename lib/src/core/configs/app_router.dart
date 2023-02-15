@@ -1,3 +1,4 @@
+import 'package:client_zipcare/src/features/auth/login/forgot_password/forgot_password_screen.dart';
 import 'package:client_zipcare/src/features/auth/login/login/login_screen.dart';
 import 'package:client_zipcare/src/features/auth/onboard/onboard_screen.dart';
 import 'package:client_zipcare/src/features/auth/registration/ui/email_verify/email_verification.dart';
@@ -11,6 +12,7 @@ class AppRouter {
   static const String emailVerification = '/email';
   static const String signUpScreen = '/signup';
   static const String loginScreen = '/login';
+  static const String forgotPassScreen = '/forgot_pass';
 
   static Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -24,6 +26,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => RegistrationScreen());
       case loginScreen:
         return MaterialPageRoute(builder: (_) => LoginScreen());
+      case forgotPassScreen:
+        return MaterialPageRoute(builder: (_) => ForgotPasswordScreen());
       default:
         return null;
     }

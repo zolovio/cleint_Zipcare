@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/auth/login/login/login_screen.dart';
 import 'package:client_zipcare/src/features/auth/registration/ui/signup/registration_controller.dart';
 import 'package:client_zipcare/src/features/components/custom_widgets.dart';
@@ -23,7 +24,7 @@ class RegistrationScreen extends ConsumerWidget {
     final controller = ref.watch(registrationProvider);
 
     return Scaffold(
-      appBar: CustomWidgets().getAppBar('Sign Up'),
+      appBar: CustomWidgets().getAppBar(signUpText),
       body: ListView(
         padding: const EdgeInsets.all(25),
         children: [
@@ -471,7 +472,7 @@ class RegistrationScreen extends ConsumerWidget {
                         child: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 5.0),
                           child: Text(
-                            "Save & Next",
+                            saveNextText,
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w600,
                               fontSize: 18,
@@ -506,7 +507,7 @@ class RegistrationScreen extends ConsumerWidget {
                 // onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>TermsAndConditionScreen(),),),
                 onTap: () {},
                 child: Text(
-                  'Login',
+                  loginText,
                   style: GoogleFonts.lexend(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,

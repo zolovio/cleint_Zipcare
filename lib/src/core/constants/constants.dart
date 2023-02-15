@@ -1,1 +1,14 @@
 const String appName = 'Zipcare';
+const String skipText = 'Skip';
+const String getStartedText = 'Get Started!';
+const String verifyNowText = 'Verify Now';
+const String saveNextText = 'Save & Next';
+const String loginText = 'Login';
+const String signInText = 'Sign In';
+const String signUpText = 'Sign Up';
+const String forgotPassText = 'Forgot Password';
+const String submitText = 'Submit';
+const String emailVerifyText = 'Email Verification';
+const String phoneVerifyText = 'Phone Verification';
+const String resendCodeText = 'Resend code in ';
+const String enterOtpText = 'Enter your OTP code here';

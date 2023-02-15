@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types, must_be_immutable
 
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/auth/onboard/onboard_controller.dart';
 import 'package:client_zipcare/src/features/auth/registration/ui/phone_verify/phone_verification.dart';
 import 'package:flutter/material.dart';
@@ -183,7 +184,7 @@ class OnBoardScreen extends ConsumerWidget {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
                         child: Text(
-                          "Get Started!",
+                          getStartedText,
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w500,
                             fontSize: 18,
@@ -205,7 +206,7 @@ class OnBoardScreen extends ConsumerWidget {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
                         child: Text(
-                          "Skip",
+                          skipText,
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w500,
                             fontSize: 18,

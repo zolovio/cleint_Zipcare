@@ -1,4 +1,5 @@
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/auth/login/forgot_password/forgot_password_screen.dart';
 import 'package:client_zipcare/src/features/auth/login/login/login_controller.dart';
 import 'package:client_zipcare/src/features/components/custom_widgets.dart';
@@ -20,7 +21,7 @@ class LoginScreen extends ConsumerWidget {
     final loginCon = ref.watch(loginProvider);
 
     return Scaffold(
-      appBar: CustomWidgets().getAppBar('Sign In'),
+      appBar: CustomWidgets().getAppBar(signInText),
       body: ListView(
         padding: const EdgeInsets.all(25),
         children: [
@@ -95,7 +96,7 @@ class LoginScreen extends ConsumerWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Remember Me',
+                        'Remember me',
                         style: GoogleFonts.lexend(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
@@ -103,7 +104,7 @@ class LoginScreen extends ConsumerWidget {
                         ),
                       ),
                       Text(
-                        'Forgot Password?',
+                        '$forgotPassText?',
                         style: GoogleFonts.lexend(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
@@ -143,7 +144,7 @@ class LoginScreen extends ConsumerWidget {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 5.0),
                     child: Text(
-                      "Sign In",
+                      signInText,
                       style: GoogleFonts.lexend(
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
