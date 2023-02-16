@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:client_zipcare/main.dart';
+import 'package:client_zipcare/src/core/configs/app_router.dart';
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/auth/registration/ui/signup/registration_screen.dart';
+import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:otp_text_field/otp_field.dart';
@@ -56,16 +58,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
     final seconds = strDigits(myDuration.inSeconds.remainder(60));
 
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: true,
-        backgroundColor: lightWhiteColor,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.keyboard_backspace),
-          color: blackColor,
-          onPressed: () => Navigator.pop(context),
-        ),
-      ),
+      appBar: getSimpleAppBar(context),
       body: Container(
         height: MediaQuery.of(context).size.height / 1.2,
         decoration: const BoxDecoration(
@@ -168,12 +161,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: ElevatedButton(
-              onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => RegistrationScreen(),
-                ),
-              ),
+              onPressed: () => navigatorKey.currentState?.pushNamed(AppRouter.signUpScreen),
               style: ElevatedButton.styleFrom(
                 backgroundColor: primaryColor,
                 shape: RoundedRectangleBorder(

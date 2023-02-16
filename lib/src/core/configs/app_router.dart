@@ -4,6 +4,8 @@ import 'package:client_zipcare/src/features/auth/onboard/onboard_screen.dart';
 import 'package:client_zipcare/src/features/auth/registration/ui/email_verify/email_verification.dart';
 import 'package:client_zipcare/src/features/auth/registration/ui/phone_verify/phone_verification.dart';
 import 'package:client_zipcare/src/features/auth/registration/ui/signup/registration_screen.dart';
+import 'package:client_zipcare/src/features/home/home_page.dart';
+import 'package:client_zipcare/src/features/home/job_post/job_post_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
@@ -13,7 +15,9 @@ class AppRouter {
   static const String signUpScreen = '/signup';
   static const String loginScreen = '/login';
   static const String forgotPassScreen = '/forgot_pass';
+  static const String homeScreen = '/home';
   static const String messageScreen = '/message';
+  static const String jobPostScreen = '/create_job';
 
   static Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -29,8 +33,10 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => LoginScreen());
       case forgotPassScreen:
         return MaterialPageRoute(builder: (_) => ForgotPasswordScreen());
-      // case messageScreen:
-      //   return MaterialPageRoute(builder: (_) => const ChatWindow());
+      case homeScreen:
+        return MaterialPageRoute(builder: (_) => const HomePage());
+      case jobPostScreen:
+        return MaterialPageRoute(builder: (_) => JobPostScreen());
       default:
         return null;
     }

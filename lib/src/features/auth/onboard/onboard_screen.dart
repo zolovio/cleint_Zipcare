@@ -1,9 +1,10 @@
 // ignore_for_file: camel_case_types, must_be_immutable
 
+import 'package:client_zipcare/main.dart';
+import 'package:client_zipcare/src/core/configs/app_router.dart';
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/auth/onboard/onboard_controller.dart';
-import 'package:client_zipcare/src/features/auth/registration/ui/phone_verify/phone_verification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -171,10 +172,7 @@ class OnBoardScreen extends ConsumerWidget {
             children: [
               (onboardCon.currentPage == pageCount - 1)
                   ? ElevatedButton(
-                      onPressed: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const PhoneVerificationScreen()),
-                      ),
+                      onPressed: () => navigatorKey.currentState?.pushNamed(AppRouter.phoneVerification),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: whiteColor,
                         shape: RoundedRectangleBorder(

@@ -49,6 +49,7 @@ const Color underlineColor = Color(0xFF606060);
 const Color greyColor = Color(0xFFDEDEDE);
 const Color rememberMeColor = Color(0xFF52555B);
 const Color ratingColor = Color(0xFFFDB614);
+const Color greenColor = Color(0xFF30B700);
 const Color shadowColor = Color(0xFFEAE8FF);
 const Color locationColor = Color(0xFFADB2B8);
 

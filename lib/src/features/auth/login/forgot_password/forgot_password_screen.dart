@@ -1,7 +1,8 @@
+import 'package:client_zipcare/main.dart';
+import 'package:client_zipcare/src/core/configs/app_router.dart';
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/components/custom_widgets.dart';
-import 'package:client_zipcare/src/features/home/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
@@ -15,7 +16,7 @@ class ForgotPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomWidgets().getAppBar(forgotPassText, false, context),
+      appBar: getAppBar(forgotPassText, false, context),
       body: ListView(
         padding: const EdgeInsets.all(25),
         children: [
@@ -73,12 +74,7 @@ class ForgotPasswordScreen extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
               child: ElevatedButton(
-                onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const HomeScreen(),
-                  ),
-                ),
+                onPressed: () => navigatorKey.currentState?.pushNamed(AppRouter.homeScreen),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: primaryColor,
                   shape: RoundedRectangleBorder(

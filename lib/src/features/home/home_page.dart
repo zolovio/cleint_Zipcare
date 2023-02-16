@@ -17,8 +17,8 @@ class HomePage extends ConsumerWidget {
 
     return Scaffold(
       appBar: homeController.currentIndex == 0
-          ? CustomWidgets().homeAppBar(context)
-          : CustomWidgets().getAppBar(
+          ? homeAppBar(context)
+          : getAppBar(
               chatText,
               true,
               context,
