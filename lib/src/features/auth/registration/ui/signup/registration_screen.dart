@@ -24,7 +24,7 @@ class RegistrationScreen extends ConsumerWidget {
     final controller = ref.watch(registrationProvider);
 
     return Scaffold(
-      appBar: CustomWidgets().getAppBar(signUpText),
+      appBar: CustomWidgets().getAppBar(signUpText, false, context),
       body: ListView(
         padding: const EdgeInsets.all(25),
         children: [

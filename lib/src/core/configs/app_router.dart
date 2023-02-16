@@ -13,6 +13,7 @@ class AppRouter {
   static const String signUpScreen = '/signup';
   static const String loginScreen = '/login';
   static const String forgotPassScreen = '/forgot_pass';
+  static const String messageScreen = '/message';
 
   static Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -28,6 +29,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => LoginScreen());
       case forgotPassScreen:
         return MaterialPageRoute(builder: (_) => ForgotPasswordScreen());
+      // case messageScreen:
+      //   return MaterialPageRoute(builder: (_) => const ChatWindow());
       default:
         return null;
     }

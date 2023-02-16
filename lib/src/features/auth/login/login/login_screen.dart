@@ -21,7 +21,7 @@ class LoginScreen extends ConsumerWidget {
     final loginCon = ref.watch(loginProvider);
 
     return Scaffold(
-      appBar: CustomWidgets().getAppBar(signInText),
+      appBar: CustomWidgets().getAppBar(signInText, false, context),
       body: ListView(
         padding: const EdgeInsets.all(25),
         children: [
