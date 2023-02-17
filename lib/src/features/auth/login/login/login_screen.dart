@@ -45,7 +45,7 @@ class LoginScreen extends ConsumerWidget {
                       fontWeight: FontWeight.w400,
                     ),
                     border: const OutlineInputBorder(
-                      borderSide: BorderSide(width: 1, color: greyColor),
+                      borderSide: BorderSide(width: 1, color: hintLightColor),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                   ),
@@ -75,7 +75,7 @@ class LoginScreen extends ConsumerWidget {
                       child: Icon(loginCon.isHide ? Icons.visibility_off : Icons.visibility),
                     ),
                     border: const OutlineInputBorder(
-                      borderSide: BorderSide(width: 1, color: greyColor),
+                      borderSide: BorderSide(width: 1, color: hintLightColor),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                   ),

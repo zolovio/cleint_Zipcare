@@ -40,36 +40,36 @@ class HomePage extends ConsumerWidget {
           fontSize: 13,
           color: blackColor,
         ),
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
+            icon: Image.asset(home, width: 25),
             activeIcon: CircleAvatar(
               backgroundColor: shadowColor,
-              child: Icon(Icons.home_outlined),
+              child: Image.asset(home, width: 25),
             ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.cases_outlined),
+            icon: Image.asset(jobs, width: 25),
             activeIcon: CircleAvatar(
               backgroundColor: shadowColor,
-              child: Icon(Icons.cases_outlined),
+              child: Image.asset(jobs, width: 25),
             ),
             label: 'Jobs',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.chat_bubble_outline),
+            icon: Image.asset(chat, width: 40),
             activeIcon: CircleAvatar(
               backgroundColor: shadowColor,
-              child: Icon(Icons.chat_bubble_outline),
+              child: Image.asset(chat, width: 40),
             ),
             label: 'Chat',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
+            icon: Image.asset(account, width: 30),
             activeIcon: CircleAvatar(
               backgroundColor: shadowColor,
-              child: Icon(Icons.person_outline),
+              child: Image.asset(account, width: 30),
             ),
             label: 'Account',
           ),

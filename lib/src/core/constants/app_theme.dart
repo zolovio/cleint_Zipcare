@@ -25,10 +25,10 @@ const MaterialColor colorGreySwatch = MaterialColor(
     300: Color(0xFF9C9C9C),
     400: Color(0xFF9C9C9C),
     500: Color(0xFF9C9C9C),
-    600: Color(0xFF7968F8),
-    700: Color(0xFF7968F8),
-    800: Color(0xFF7968F8),
-    900: Color(0xFF7968F8),
+    600: Color(0xFF9C9C9C),
+    700: Color(0xFF9C9C9C),
+    800: Color(0xFF9C9C9C),
+    900: Color(0xFF9C9C9C),
   },
 );
 
@@ -46,11 +46,11 @@ const Color fieldBorderColor = Color(0xFF89919E);
 const Color hintColor = Color(0xFF788190);
 const Color hintLightColor = Color(0xFFCFCFCF);
 const Color underlineColor = Color(0xFF606060);
-const Color greyColor = Color(0xFFDEDEDE);
 const Color rememberMeColor = Color(0xFF52555B);
 const Color ratingColor = Color(0xFFFDB614);
 const Color greenColor = Color(0xFF30B700);
 const Color shadowColor = Color(0xFFEAE8FF);
 const Color locationColor = Color(0xFFADB2B8);
+const Color errorColor = Color(0xFFFF9090);
 
 final ThemeData themeData = ThemeData(primarySwatch: colorPrimarySwatch, backgroundColor: lightWhiteColor);

@@ -146,7 +146,7 @@ class ChatWindow extends ConsumerWidget {
                         decoration: InputDecoration(
                           hintText: "Send Message",
                           hintStyle: const TextStyle(
-                            color: greyColor,
+                            color: hintLightColor,
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
                           ),

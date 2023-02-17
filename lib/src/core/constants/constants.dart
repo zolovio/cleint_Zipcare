@@ -19,6 +19,9 @@ const String chatText = 'Chat';
 const String createJob = 'Create Job';
 const String jobPost = 'Job Post';
 const String careDetail = 'Detail of care';
+const String nextText = 'Next';
+const String addProfileText = 'Add new profile';
+const String saveText = 'Save';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";
@@ -28,6 +31,16 @@ const String onboard4 = "assets/images/intro/onboard4.png";
 const String verifyPhone = "assets/images/intro/phone.png";
 const String verifyEmail = "assets/images/intro/email.png";
 const String notification = "assets/images/notification.png";
+const String home = "assets/images/home.png";
+const String jobs = "assets/images/job.png";
+const String chat = "assets/images/chat.png";
+const String account = "assets/images/account.png";
 const String sendMsg = "assets/images/send_msg.png";
 const String chatSmiley = "assets/images/chat_smiley.png";
 const String attachment = "assets/images/attachment.png";
+const String next = "assets/images/next.png";
+const String add = "assets/images/add_icon.png";
+const String calender = "assets/images/calender.png";
+const String timeDropdown = "assets/images/time_dropdown.png";
+
+const double textFieldBorderRadius = 10;

@@ -106,7 +106,7 @@ PreferredSize homeAppBar(BuildContext context) {
                     child: const Icon(Icons.search, color: hintColor),
                   ),
                   border: const OutlineInputBorder(
-                    borderSide: BorderSide(width: 1, color: greyColor),
+                    borderSide: BorderSide(width: 1, color: hintLightColor),
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                 ),
@@ -155,7 +155,7 @@ PreferredSize homeAppBar(BuildContext context) {
   );
 }
 
-Widget getStepperWidget(String currentIndex, String totalIndices) {
+Widget getStepperWidget(String currentIndex, String totalIndices, bool showStepper) {
   return Column(
     children: [
       const SizedBox(height: 15),
@@ -167,27 +167,29 @@ Widget getStepperWidget(String currentIndex, String totalIndices) {
           color: blackColor,
         ),
       ),
-      const SizedBox(height: 8),
-      Wrap(
-        children: [
-          Text(
-            currentIndex,
-            style: GoogleFonts.lexend(
-              fontSize: 25,
-              fontWeight: FontWeight.w500,
-              color: primaryColor,
+      if (showStepper) ...[
+        const SizedBox(height: 8),
+        Wrap(
+          children: [
+            Text(
+              currentIndex,
+              style: GoogleFonts.lexend(
+                fontSize: 25,
+                fontWeight: FontWeight.w500,
+                color: primaryColor,
+              ),
             ),
-          ),
-          Text(
-            totalIndices,
-            style: GoogleFonts.lexend(
-              fontSize: 25,
-              fontWeight: FontWeight.w500,
-              color: blackColor,
+            Text(
+              totalIndices,
+              style: GoogleFonts.lexend(
+                fontSize: 25,
+                fontWeight: FontWeight.w500,
+                color: blackColor,
+              ),
             ),
-          ),
-        ],
-      ),
+          ],
+        ),
+      ],
     ],
   );
 }
