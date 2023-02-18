@@ -24,6 +24,7 @@ const String nextText = 'Next';
 const String addProfileText = 'Add new profile';
 const String saveText = 'Save';
 const String viewJobText = 'View Job';
+const String postText = 'Post';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";
@@ -48,5 +49,9 @@ const String search = "assets/images/search.png";
 const String downArrow = "assets/images/down_arrow.png";
 const String upload = "assets/images/upload.png";
 const String viewJob = "assets/images/view_job.png";
+const String jobDetailUser = "assets/images/job_detail_user.png";
+const String locationBlue = "assets/images/location_blue.png";
+const String calenderGreen = "assets/images/calender_green.png";
 
 const double textFieldBorderRadius = 10;
+const double circularBorder = 80;

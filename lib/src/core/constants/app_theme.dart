@@ -50,6 +50,7 @@ const Color rememberMeColor = Color(0xFF52555B);
 const Color ratingColor = Color(0xFFFDB614);
 const Color greenColor = Color(0xFF30B700);
 const Color shadowColor = Color(0xFFEAE8FF);
+const Color avatarColor = Color(0xFFE0DEFE);
 const Color locationColor = Color(0xFFADB2B8);
 const Color errorColor = Color(0xFFFF9090);
 

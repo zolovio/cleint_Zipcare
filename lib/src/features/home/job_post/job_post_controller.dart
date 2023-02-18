@@ -1,3 +1,4 @@
+import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
@@ -10,7 +11,14 @@ class JobPostController extends ChangeNotifier {
 
   int currentIndex = 1;
   int totalIndices = 5;
+
+  String dateFormat = "18-feb-2023";
+  String timeFormat = "4:00";
   String hoursFormat = "AM";
+  String noOfHours = "4hrs";
+
+  String userName = "John Watson";
+  String jobId = "Job Id: #126565";
 
   bool isSelfEmployed = true;
   bool isRequireUrgently = true;
@@ -29,6 +37,11 @@ class JobPostController extends ChangeNotifier {
   bool multiPick = false;
   FileType pickingType = FileType.custom;
   String? fileName = "Upload Document";
+
+  List healthConditionsSelected = [];
+  List serviceRequiredSelected = [];
+  List thingEnjoySelected = [];
+  List languageSpeakSelected = [];
 
   List<String> yesNo = ["Yes", "No"];
   List<String> profile = ["Existing Profile", "New Profile"];
@@ -126,10 +139,14 @@ class JobPostController extends ChangeNotifier {
 
   List<String> listFundingType = ["Fund type 1", "Fund type 2", "Fund type 3", "Fund type 4", "Fund type 5"];
 
+  List<List<String>> profileUserDetails = [
+    [jobDetailUser, "53 year", ""],
+    [locationBlue, "W2P, London", ""],
+    [calenderGreen, "22-07-2022", "4:00pm"],
+  ];
+
   void updatePageStepper(int index) {
     currentIndex = index;
-
-    print(currentIndex);
     notifyListeners();
   }
 
@@ -169,8 +186,23 @@ class JobPostController extends ChangeNotifier {
 
   void onJobTypeChange() {}
 
+  void onDateFormatChange(String format) {
+    dateFormat = format;
+    notifyListeners();
+  }
+
+  void onTimeChange(String format) {
+    timeFormat = format;
+    notifyListeners();
+  }
+
   void onHourFormatChange(String format) {
     hoursFormat = format;
+    notifyListeners();
+  }
+
+  void onHoursNoChange(String num) {
+    noOfHours = num;
     notifyListeners();
   }
 
@@ -200,6 +232,30 @@ class JobPostController extends ChangeNotifier {
 
     fileName = _paths != null ? _paths!.map((e) => e.name).toString() : '...';
 
+    notifyListeners();
+  }
+
+  void onHealthConditionCheck(List selectedVal) {
+    healthConditionsSelected.clear();
+    healthConditionsSelected = selectedVal;
+    notifyListeners();
+  }
+
+  void onServiceRequireCheck(List selectedVal) {
+    serviceRequiredSelected.clear();
+    serviceRequiredSelected = selectedVal;
+    notifyListeners();
+  }
+
+  void onThingsEnjoyCheck(List selectedVal) {
+    thingEnjoySelected.clear();
+    thingEnjoySelected = selectedVal;
+    notifyListeners();
+  }
+
+  void onLanguageSpeakCheck(List selectedVal) {
+    languageSpeakSelected.clear();
+    languageSpeakSelected = selectedVal;
     notifyListeners();
   }
 }
