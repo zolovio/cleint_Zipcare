@@ -194,17 +194,35 @@ Widget getStepperWidget(String currentIndex, String totalIndices, bool showStepp
   );
 }
 
-Widget getQuestionsWidget(String ques, bool isDetail, String detail) {
+Widget getQuestionsWidget(String ques, bool isDetail, String detail, bool isIcon) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      Text(
-        ques,
-        style: GoogleFonts.lexend(
-          fontSize: 15,
-          fontWeight: FontWeight.w500,
-          color: darkGreyColor,
-        ),
+      Row(
+        mainAxisAlignment: isIcon ? MainAxisAlignment.spaceBetween : MainAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Text(
+              ques,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: GoogleFonts.lexend(
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                color: darkGreyColor,
+              ),
+            ),
+          ),
+          if (isIcon) ...[
+            InkWell(
+              onTap: () {},
+              child: Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: Image.asset(search),
+              ),
+            ),
+          ],
+        ],
       ),
       if (isDetail) ...[
         const SizedBox(height: 10),
@@ -216,7 +234,7 @@ Widget getQuestionsWidget(String ques, bool isDetail, String detail) {
             color: underlineColor,
           ),
         ),
-      ]
+      ],
     ],
   );
 }

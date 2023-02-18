@@ -39,7 +39,7 @@ class AddNewProfile extends ConsumerWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     const SizedBox(height: 15),
-                    getQuestionsWidget("Person needing care name and other details", false, ""),
+                    getQuestionsWidget("Person needing care name and other details", false, "", false),
                     const SizedBox(height: 20),
                     FormBuilderTextField(
                       autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -163,7 +163,7 @@ class AddNewProfile extends ConsumerWidget {
                       textInputAction: TextInputAction.next,
                     ),
                     const SizedBox(height: 15),
-                    getQuestionsWidget("Preference of carer gender:", false, ""),
+                    getQuestionsWidget("Preference of carer gender:", false, "", false),
                     FormBuilderRadioGroup<String>(
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       initialValue: newProfileController.gender[0],

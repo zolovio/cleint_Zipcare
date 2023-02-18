@@ -18,10 +18,12 @@ const String availableCarerText = '17 Carer Available';
 const String chatText = 'Chat';
 const String createJob = 'Create Job';
 const String jobPost = 'Job Post';
+const String jobDetail = 'Job Detail';
 const String careDetail = 'Detail of care';
 const String nextText = 'Next';
 const String addProfileText = 'Add new profile';
 const String saveText = 'Save';
+const String viewJobText = 'View Job';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";
@@ -42,5 +44,9 @@ const String next = "assets/images/next.png";
 const String add = "assets/images/add_icon.png";
 const String calender = "assets/images/calender.png";
 const String timeDropdown = "assets/images/time_dropdown.png";
+const String search = "assets/images/search.png";
+const String downArrow = "assets/images/down_arrow.png";
+const String upload = "assets/images/upload.png";
+const String viewJob = "assets/images/view_job.png";
 
 const double textFieldBorderRadius = 10;
