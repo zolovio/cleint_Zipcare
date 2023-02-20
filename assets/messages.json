@@ -1,0 +1,52 @@
+[
+   {
+    "author": {
+      "firstName": "Matthew",
+      "id": "e52552f4-835d-4dbe-ba77-b076e659774d",
+      "lastName": "White"
+    },
+    "createdAt": 1655624463000,
+    "id": "113bb2e8-f74e-42cd-aa30-4085a0f52c58",
+    "status": "seen",
+    "text": "I have approved the invoice. See you today afternoon.",
+    "type": "text"
+  },
+  {
+    "author": {
+      "firstName": "Janice",
+      "id": "82091008-a484-4a89-ae75-a22bf8d6f3ac",
+      "imageUrl": "https://i.pravatar.cc/300?u=e52552f4-835d-4dbe-ba77-b076e659774d",
+      "lastName": "King"
+    },
+    "createdAt": 1655624462000,
+    "id": "22212d42-1252-4641-9786-d6f83b2ce4a8",
+    "status": "seen",
+    "text": "Great. I have sent over the invoice too. Please send the approval, so that we can start.",
+    "type": "text"
+  },
+  {
+    "author": {
+      "firstName": "Janice",
+      "id": "e52552f4-835d-4dbe-ba77-b076e659774d",
+      "imageUrl": "https://i.pravatar.cc/300?u=e52552f4-835d-4dbe-ba77-b076e659774d",
+      "lastName": "King"
+    },
+    "createdAt": 1655624461000,
+    "id": "afc2269a-374b-4382-8864-b3b60d1e8cd7",
+    "status": "seen",
+    "text": "I received it and happy to accept.",
+    "type": "text"
+  },
+  {
+    "author": {
+      "firstName": "John",
+      "id": "82091008-a484-4a89-ae75-a22bf8d6f3ac",
+      "lastName": "Doe"
+    },
+    "createdAt": 1655624460000,
+    "id": "634b2f0b-2486-4bfe-b36d-1c7d6313c7b3",
+    "status": "seen",
+    "text": "Thank you for accepting my application. I have sent over the service agreement for approval",
+    "type": "text"
+  }
+]
