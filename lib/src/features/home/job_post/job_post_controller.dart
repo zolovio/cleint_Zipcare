@@ -11,6 +11,7 @@ class JobPostController extends ChangeNotifier {
 
   int currentIndex = 1;
   int totalIndices = 5;
+  int? maxLines = 2;
 
   String dateFormat = "18-feb-2023";
   String timeFormat = "4:00";
@@ -19,6 +20,10 @@ class JobPostController extends ChangeNotifier {
 
   String userName = "John Watson";
   String jobId = "Job Id: #126565";
+  String requirementsText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+      "Lorem Ipsum has been the industry's standard dummy text ever since the1500s."
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+      "Lorem Ipsum has been the industry's standard dummy text ever since the1500s.";
 
   bool isSelfEmployed = true;
   bool isRequireUrgently = true;
@@ -30,6 +35,7 @@ class JobPostController extends ChangeNotifier {
   bool isJobType = true;
   bool isFunding = true;
   bool isCarePlan = true;
+  bool isReadMore = false;
 
   List<PlatformFile>? _paths;
   String? directoryPath;
@@ -230,8 +236,9 @@ class JobPostController extends ChangeNotifier {
       print(e);
     }
 
-    fileName = _paths != null ? _paths!.map((e) => e.name).toString() : '...';
+    String fName = _paths != null ? _paths!.map((e) => e.name).toString() : '...';
 
+    fileName = fName.substring(1, fName.length - 1);
     notifyListeners();
   }
 
@@ -256,6 +263,15 @@ class JobPostController extends ChangeNotifier {
   void onLanguageSpeakCheck(List selectedVal) {
     languageSpeakSelected.clear();
     languageSpeakSelected = selectedVal;
+    notifyListeners();
+  }
+
+  void onReadMoreText() {
+    isReadMore = !isReadMore;
+    maxLines = isReadMore ? null : 3;
+
+    print(isReadMore);
+    print(maxLines);
     notifyListeners();
   }
 }

@@ -26,6 +26,12 @@ dependencies:
 #  chat_bubbles: ^1.4.1
   file_picker: ^5.2.5
   flutter_credit_card: 3.0.5
+  image_picker: ^0.8.6+1
+  mime: ^1.0.4
+  uuid: ^3.0.7
+  http: ^0.13.5
+  path_provider: ^2.0.12
+  open_filex: ^4.3.2
 
 dev_dependencies:
   flutter_test:
@@ -39,6 +45,7 @@ flutter:
 
   assets:
     - assets/
+    - assets/messages.json
     - assets/images/
     - assets/images/intro/
 

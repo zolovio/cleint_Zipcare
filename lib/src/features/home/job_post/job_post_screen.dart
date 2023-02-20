@@ -25,7 +25,34 @@ class JobPostScreen extends ConsumerWidget {
 
     return Scaffold(
       key: _scaffoldKey,
-      appBar: getAppBar(jobPostController.currentIndex == 6 ? jobDetail : jobPost, true, context),
+      // appBar: getAppBar(jobPostController.currentIndex == 6 ? jobDetail : jobPost, true, context),
+      appBar: AppBar(
+        elevation: 0,
+        centerTitle: true,
+        automaticallyImplyLeading: true,
+        backgroundColor: lightWhiteColor,
+        iconTheme: const IconThemeData(color: blackColor),
+        leading: IconButton(
+            onPressed: () => jobPostController.currentIndex == 1
+                ? Navigator.pop(context)
+                : jobPostController.updatePageStepper(jobPostController.currentIndex - 1),
+            icon: const Icon(Icons.arrow_back)),
+        title: Text(
+          jobPostController.currentIndex == 6 ? jobDetail : jobPost,
+          style: GoogleFonts.lexend(
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+            color: blackColor,
+          ),
+        ),
+        actions: [
+          if (true)
+            Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: InkWell(child: Image.asset(notification)),
+            )
+        ],
+      ),
       body: ListView(
         children: [
           if (jobPostController.currentIndex <= 5) getStepperWidget("${jobPostController.currentIndex}", "/${jobPostController.totalIndices}", true),
@@ -46,7 +73,6 @@ class JobPostScreen extends ConsumerWidget {
                     if (jobPostController.currentIndex == 1) ...[
                       getQuestionsWidget("Is this a self-employed position?", false, "", false),
                       FormBuilderRadioGroup<String>(
-                        key: UniqueKey(),
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         initialValue: jobPostController.yesNo[jobPostController.isSelfEmployed ? 0 : 1],
                         name: 'self_employed',
@@ -86,7 +112,6 @@ class JobPostScreen extends ConsumerWidget {
                         false,
                       ),
                       FormBuilderRadioGroup<String>(
-                        key: UniqueKey(),
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         initialValue: jobPostController.yesNo[jobPostController.isRequireUrgently ? 0 : 1],
                         name: 'urgent_require',
@@ -121,7 +146,6 @@ class JobPostScreen extends ConsumerWidget {
                       if (jobPostController.isSelfEmployed) ...[
                         getQuestionsWidget("Are you the person needing care?", false, "", false),
                         FormBuilderRadioGroup<String>(
-                          key: UniqueKey(),
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           initialValue: jobPostController.yesNo[jobPostController.isCareNeedFor ? 0 : 1],
                           name: 'care_need',
@@ -155,7 +179,6 @@ class JobPostScreen extends ConsumerWidget {
                         if (!jobPostController.isCareNeedFor) ...[
                           getQuestionsWidget("Are you authorised to post this job on behalf of Person?", false, "", false),
                           FormBuilderRadioGroup<String>(
-                            key: UniqueKey(),
                             autovalidateMode: AutovalidateMode.onUserInteraction,
                             initialValue: jobPostController.yesNo[jobPostController.isAuthorized ? 0 : 1],
                             name: 'authorized',
@@ -205,7 +228,6 @@ class JobPostScreen extends ConsumerWidget {
                       ] else ...[
                         getQuestionsWidget("Is the carer requested for a person or business?", false, "", false),
                         FormBuilderRadioGroup<String>(
-                          key: UniqueKey(),
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           initialValue: jobPostController.requestedProfile[jobPostController.isRequestedProfile ? 0 : 1],
                           name: 'request_profile',
@@ -240,7 +262,6 @@ class JobPostScreen extends ConsumerWidget {
                       const SizedBox(height: 15),
                       getQuestionsWidget("You need care for ?", false, "", false),
                       FormBuilderRadioGroup<String>(
-                        key: UniqueKey(),
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         initialValue: jobPostController.profile[jobPostController.isRequireUrgently ? 0 : 1],
                         name: 'exist_new',
@@ -273,8 +294,8 @@ class JobPostScreen extends ConsumerWidget {
                       ),
                       if (jobPostController.isExistingProfile) ...[
                         FormBuilderDropdown<String>(
-                          key: UniqueKey(),
                           name: 'profile',
+                          validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
                           decoration: const InputDecoration(
                             hintText: 'Select Profile',
                             isDense: true,
@@ -283,6 +304,9 @@ class JobPostScreen extends ConsumerWidget {
                               borderRadius: BorderRadius.all(Radius.circular(15)),
                             ),
                           ),
+                          onChanged: (value) {
+                            _formKey.currentState?.fields['profile']?.validate();
+                          },
                           items: jobPostController.eProfiles
                               .map((value) => DropdownMenuItem(
                                     value: value,
@@ -325,7 +349,6 @@ class JobPostScreen extends ConsumerWidget {
                       getQuestionsWidget("Person needing care name and other details", false, "", false),
                       const SizedBox(height: 20),
                       FormBuilderTextField(
-                        key: UniqueKey(),
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         name: 'f_name',
                         decoration: InputDecoration(
@@ -350,7 +373,6 @@ class JobPostScreen extends ConsumerWidget {
                       ),
                       const SizedBox(height: 20),
                       FormBuilderTextField(
-                        key: UniqueKey(),
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         name: 'l_name',
                         decoration: InputDecoration(
@@ -365,11 +387,9 @@ class JobPostScreen extends ConsumerWidget {
                           ),
                         ),
                         onChanged: (val) {},
-                        validator: FormBuilderValidators.compose(
-                          [
-                            FormBuilderValidators.required(),
-                          ],
-                        ),
+                        validator: FormBuilderValidators.compose([
+                          FormBuilderValidators.required(),
+                        ]),
                         keyboardType: TextInputType.text,
                         textInputAction: TextInputAction.next,
                       ),
@@ -387,6 +407,10 @@ class JobPostScreen extends ConsumerWidget {
                                   borderRadius: BorderRadius.all(Radius.circular(15)),
                                 ),
                               ),
+                              validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
+                              onChanged: (value) {
+                                _formKey.currentState?.fields['age']?.validate();
+                              },
                               items: jobPostController.age
                                   .map((value) => DropdownMenuItem(
                                         value: value,
@@ -417,7 +441,7 @@ class JobPostScreen extends ConsumerWidget {
                                   FormBuilderValidators.required(),
                                 ],
                               ),
-                              keyboardType: TextInputType.text,
+                              keyboardType: TextInputType.number,
                               textInputAction: TextInputAction.next,
                             ),
                           ),
@@ -425,7 +449,6 @@ class JobPostScreen extends ConsumerWidget {
                       ),
                       const SizedBox(height: 20),
                       FormBuilderTextField(
-                        key: UniqueKey(),
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         name: 'address',
                         decoration: InputDecoration(
@@ -451,7 +474,6 @@ class JobPostScreen extends ConsumerWidget {
                       const SizedBox(height: 20),
                       getQuestionsWidget("Type of care*", false, "", false),
                       FormBuilderRadioGroup<String>(
-                        key: UniqueKey(),
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         initialValue: jobPostController.careType[jobPostController.isCareType ? 0 : 1],
                         name: 'care_type',
@@ -486,7 +508,6 @@ class JobPostScreen extends ConsumerWidget {
                       const SizedBox(height: 20),
                       getQuestionsWidget("Type of job*", false, "", false),
                       FormBuilderRadioGroup<String>(
-                        key: UniqueKey(),
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         initialValue: jobPostController.jobType[0],
                         name: 'job_type',
@@ -523,8 +544,8 @@ class JobPostScreen extends ConsumerWidget {
                       Row(
                         children: [
                           Expanded(
-                            child: TextField(
-                              key: UniqueKey(),
+                            child: FormBuilderTextField(
+                              name: 'start_date',
                               controller: dateInput,
                               decoration: InputDecoration(
                                 labelText: "Start Date",
@@ -541,6 +562,7 @@ class JobPostScreen extends ConsumerWidget {
                                   borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                                 ),
                               ),
+                              validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
                               readOnly: true,
                               onTap: () async {
                                 DateTime? pickedDate = await showDatePicker(
@@ -554,6 +576,9 @@ class JobPostScreen extends ConsumerWidget {
                                   dateInput.text = formattedDate;
                                 }
                               },
+                              onChanged: (value) {
+                                _formKey.currentState?.fields['start_date']?.validate();
+                              },
                             ),
                           ),
                           const SizedBox(width: 15),
@@ -561,9 +586,9 @@ class JobPostScreen extends ConsumerWidget {
                             child: Row(
                               children: [
                                 Expanded(
-                                  child: TextField(
-                                    key: UniqueKey(),
+                                  child: FormBuilderTextField(
                                     controller: timeInput,
+                                    name: 'time',
                                     decoration: InputDecoration(
                                       hintText: "00:00",
                                       hintStyle: GoogleFonts.lexend(
@@ -600,6 +625,10 @@ class JobPostScreen extends ConsumerWidget {
                                         borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                                       ),
                                     ),
+                                    validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
+                                    onChanged: (value) {
+                                      _formKey.currentState?.fields['time']?.validate();
+                                    },
                                     readOnly: true,
                                     onTap: () async {
                                       TimeOfDay? pickedTime = await showTimePicker(
@@ -623,10 +652,7 @@ class JobPostScreen extends ConsumerWidget {
                         ],
                       ),
                       const SizedBox(height: 20),
-                      getQuestionsWidget("Preference of carer gender:", false, "", false),
-                      const SizedBox(height: 15),
                       FormBuilderDropdown<String>(
-                        key: UniqueKey(),
                         name: 'hours_per_week',
                         icon: Padding(
                           padding: const EdgeInsets.only(right: 8.0),
@@ -644,6 +670,10 @@ class JobPostScreen extends ConsumerWidget {
                             borderRadius: BorderRadius.all(Radius.circular(15)),
                           ),
                         ),
+                        validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
+                        onChanged: (value) {
+                          _formKey.currentState?.fields['hours_per_week']?.validate();
+                        },
                         items: jobPostController.hoursPerWeek
                             .map((value) => DropdownMenuItem(
                                   onTap: () => jobPostController.onHoursNoChange(value),
@@ -652,10 +682,9 @@ class JobPostScreen extends ConsumerWidget {
                                 ))
                             .toList(),
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 15),
                       getQuestionsWidget("Preference of carer gender:", false, "", false),
                       FormBuilderRadioGroup<String>(
-                        key: UniqueKey(),
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         initialValue: jobPostController.gender[0],
                         name: 'gender',
@@ -690,7 +719,6 @@ class JobPostScreen extends ConsumerWidget {
                     if (jobPostController.currentIndex == 3) ...[
                       getQuestionsWidget("You need care for which health conditions", false, "", false),
                       FormBuilderCheckboxGroup(
-                        key: UniqueKey(),
                         name: 'health_condition',
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -702,6 +730,9 @@ class JobPostScreen extends ConsumerWidget {
                             borderSide: BorderSide.none,
                           ),
                         ),
+                        validator: (value) {
+                          return value == null ? "Please select health condition(s)" : null;
+                        },
                         orientation: OptionsOrientation.vertical,
                         options: jobPostController.healthConditions
                             .map<FormBuilderFieldOption>(
@@ -723,7 +754,6 @@ class JobPostScreen extends ConsumerWidget {
                     if (jobPostController.currentIndex == 4) ...[
                       getQuestionsWidget("What services you need from the carer ?", false, "", false),
                       FormBuilderCheckboxGroup(
-                        key: UniqueKey(),
                         name: 'service_need_for',
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -735,6 +765,9 @@ class JobPostScreen extends ConsumerWidget {
                             borderSide: BorderSide.none,
                           ),
                         ),
+                        validator: (services) {
+                          return services == null ? "Please select service(s)" : null;
+                        },
                         orientation: OptionsOrientation.vertical,
                         options: jobPostController.listServiceRequiredFor
                             .map<FormBuilderFieldOption>(
@@ -755,7 +788,6 @@ class JobPostScreen extends ConsumerWidget {
                       const SizedBox(height: 20),
                       getQuestionsWidget("Things you enjoy", false, "", false),
                       FormBuilderCheckboxGroup(
-                        key: UniqueKey(),
                         name: 'things_enjoy',
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -767,6 +799,9 @@ class JobPostScreen extends ConsumerWidget {
                             borderSide: BorderSide.none,
                           ),
                         ),
+                        validator: (value) {
+                          return value == null ? "Please select interest(s)" : null;
+                        },
                         orientation: OptionsOrientation.vertical,
                         options: jobPostController.listThingsYouEnjoy
                             .map<FormBuilderFieldOption>(
@@ -787,7 +822,6 @@ class JobPostScreen extends ConsumerWidget {
                       const SizedBox(height: 20),
                       getQuestionsWidget("Languages you speak", false, "", true),
                       FormBuilderCheckboxGroup(
-                        key: UniqueKey(),
                         name: 'language_speak',
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -799,6 +833,9 @@ class JobPostScreen extends ConsumerWidget {
                             borderSide: BorderSide.none,
                           ),
                         ),
+                        validator: (value) {
+                          return value == null ? "Please select language(s)" : null;
+                        },
                         orientation: OptionsOrientation.vertical,
                         options: jobPostController.listLanguagesSpeak
                             .map<FormBuilderFieldOption>(
@@ -820,7 +857,6 @@ class JobPostScreen extends ConsumerWidget {
                     if (jobPostController.currentIndex == 5) ...[
                       getQuestionsWidget("Do you have access to funding ?", false, "", false),
                       FormBuilderRadioGroup<String>(
-                        key: UniqueKey(),
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         initialValue: jobPostController.yesNo[0],
                         name: 'funding',
@@ -873,6 +909,10 @@ class JobPostScreen extends ConsumerWidget {
                             borderRadius: BorderRadius.all(Radius.circular(15)),
                           ),
                         ),
+                        validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
+                        onChanged: (value) {
+                          _formKey.currentState?.fields['funding_type']?.validate();
+                        },
                         items: jobPostController.listFundingType
                             .map((value) => DropdownMenuItem(
                                   value: value,
@@ -884,7 +924,6 @@ class JobPostScreen extends ConsumerWidget {
                       getQuestionsWidget("How much you are willing to pay per hour?", false, "", false),
                       const SizedBox(height: 15),
                       FormBuilderTextField(
-                        key: UniqueKey(),
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         name: 'pay_per_hour',
                         decoration: InputDecoration(
@@ -898,19 +937,16 @@ class JobPostScreen extends ConsumerWidget {
                             borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                           ),
                         ),
-                        onChanged: (val) {},
-                        validator: FormBuilderValidators.compose(
-                          [
-                            FormBuilderValidators.required(),
-                          ],
-                        ),
-                        keyboardType: TextInputType.text,
+                        onChanged: (value) {
+                          _formKey.currentState?.fields['pay_per_hour']?.validate();
+                        },
+                        validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
+                        keyboardType: TextInputType.number,
                         textInputAction: TextInputAction.next,
                       ),
                       const SizedBox(height: 20),
                       getQuestionsWidget("Do you have a care plan to upload?", false, "", false),
                       FormBuilderRadioGroup<String>(
-                        key: UniqueKey(),
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         initialValue: jobPostController.yesNo[0],
                         name: 'care_plan',
@@ -944,10 +980,10 @@ class JobPostScreen extends ConsumerWidget {
                       if (jobPostController.isCarePlan) ...[
                         const SizedBox(height: 15),
                         FormBuilderTextField(
-                          key: UniqueKey(),
+                          controller: TextEditingController(text: jobPostController.fileName),
                           autovalidateMode: AutovalidateMode.onUserInteraction,
-                          name: 'upload',
-                          readOnly: true,
+                          name: 'upload_doc',
+                          onTap: () => jobPostController.pickFiles(),
                           decoration: InputDecoration(
                             hintText: jobPostController.fileName,
                             hintStyle: GoogleFonts.lexend(
@@ -966,13 +1002,11 @@ class JobPostScreen extends ConsumerWidget {
                               ),
                             ),
                           ),
-                          onChanged: (val) {},
-                          validator: FormBuilderValidators.compose(
-                            [
-                              FormBuilderValidators.required(),
-                            ],
-                          ),
-                          keyboardType: TextInputType.text,
+                          onChanged: (value) {
+                            _formKey.currentState?.fields['upload_doc']?.validate();
+                          },
+                          validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
+                          keyboardType: TextInputType.none,
                           textInputAction: TextInputAction.next,
                         ),
                       ],
@@ -980,7 +1014,6 @@ class JobPostScreen extends ConsumerWidget {
                       getQuestionsWidget("Any other specific care requirement, likes, dislikes or instructions?", false, "", false),
                       const SizedBox(height: 15),
                       FormBuilderTextField(
-                        key: UniqueKey(),
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         name: 'details',
                         maxLines: 6,
@@ -1516,6 +1549,42 @@ class JobPostScreen extends ConsumerWidget {
                       ],
                     ),
                   ),
+                  const Divider(height: 3, color: hintLightColor),
+                  const SizedBox(height: 15),
+                  getQuestionsWidget("Specific Requirements", false, "", false),
+                  Container(
+                    margin: const EdgeInsets.symmetric(vertical: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          jobPostController.requirementsText,
+                          maxLines: jobPostController.maxLines,
+                          overflow: jobPostController.isReadMore ? TextOverflow.visible : TextOverflow.ellipsis,
+                          style: GoogleFonts.lexend(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                            color: underlineColor,
+                          ),
+                        ),
+                        InkWell(
+                          onTap: () => jobPostController.onReadMoreText(),
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 8.0),
+                            child: Text(
+                              jobPostController.isReadMore ? 'Read Less' : 'Read More',
+                              style: GoogleFonts.lexend(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                                color: blackColor,
+                                decoration: TextDecoration.underline,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -1525,9 +1594,18 @@ class JobPostScreen extends ConsumerWidget {
             child: Padding(
               padding: const EdgeInsets.all(30),
               child: ElevatedButton(
-                onPressed: () => jobPostController.updatePageStepper(
-                  jobPostController.currentIndex <= 6 ? (jobPostController.currentIndex + 1) : jobPostController.currentIndex,
-                ),
+                onPressed: () {
+                  if (_formKey.currentState?.saveAndValidate() ?? false) {
+                    jobPostController.updatePageStepper(
+                      jobPostController.currentIndex <= 6 ? (jobPostController.currentIndex + 1) : jobPostController.currentIndex,
+                    );
+
+                    debugPrint(_formKey.currentState?.value.toString());
+                  } else {
+                    debugPrint(_formKey.currentState?.value.toString());
+                    debugPrint('validation failed');
+                  }
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: primaryColor,
                   shape: RoundedRectangleBorder(
