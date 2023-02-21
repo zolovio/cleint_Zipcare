@@ -25,6 +25,12 @@ const String addProfileText = 'Add new profile';
 const String saveText = 'Save';
 const String viewJobText = 'View Job';
 const String postText = 'Post';
+const String paymentText = 'Payment';
+const String paymentMethodText = 'Payment Methods';
+const String addNewCardText = 'Add New Card ';
+const String payWithCardText = 'Pay with Debit/Credit Card';
+const String addCouponText = 'Add coupons';
+const String newCardText = 'New Card';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";
@@ -52,6 +58,11 @@ const String viewJob = "assets/images/view_job.png";
 const String jobDetailUser = "assets/images/job_detail_user.png";
 const String locationBlue = "assets/images/location_blue.png";
 const String calenderGreen = "assets/images/calender_green.png";
+const String paypal = "assets/images/paypal.png";
+const String googlePay = "assets/images/google_pay.png";
+const String applePay = "assets/images/apple_pay.png";
+const String debitCard = "assets/images/debit_card.png";
+const String coupon = "assets/images/coupon.png";
 
 const double textFieldBorderRadius = 10;
 const double circularBorder = 80;
