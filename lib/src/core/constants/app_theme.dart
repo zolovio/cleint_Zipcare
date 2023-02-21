@@ -54,4 +54,4 @@ const Color avatarColor = Color(0xFFE0DEFE);
 const Color locationColor = Color(0xFFADB2B8);
 const Color errorColor = Color(0xFFFF9090);
 
-final ThemeData themeData = ThemeData(primarySwatch: colorPrimarySwatch, backgroundColor: lightWhiteColor);
+final ThemeData themeData = ThemeData(colorScheme: ColorScheme.fromSwatch(primarySwatch: colorPrimarySwatch).copyWith(background: lightWhiteColor));

@@ -63,6 +63,9 @@ const String googlePay = "assets/images/google_pay.png";
 const String applePay = "assets/images/apple_pay.png";
 const String debitCard = "assets/images/debit_card.png";
 const String coupon = "assets/images/coupon.png";
+const String save = "assets/images/save.png";
+const String expiryDate = "assets/images/expiry_date.png";
+const String card = "assets/images/card.png";
 
 const double textFieldBorderRadius = 10;
 const double circularBorder = 80;

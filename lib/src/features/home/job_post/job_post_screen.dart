@@ -1594,20 +1594,22 @@ class JobPostScreen extends ConsumerWidget {
             child: Padding(
               padding: const EdgeInsets.all(30),
               child: ElevatedButton(
-                onPressed: () {
-                  // if (_formKey.currentState?.saveAndValidate() ?? false) {
-                  jobPostController.currentIndex < 6
-                      ? jobPostController.updatePageStepper(
-                          jobPostController.currentIndex < 6 ? (jobPostController.currentIndex + 1) : jobPostController.currentIndex,
-                        )
-                      : navigatorKey.currentState?.pushNamed(AppRouter.paymentScreen);
+                onPressed: !jobPostController.isAuthorized
+                    ? null
+                    : () {
+                        // if (_formKey.currentState?.saveAndValidate() ?? false) {
+                        jobPostController.currentIndex < 6
+                            ? jobPostController.updatePageStepper(
+                                jobPostController.currentIndex < 6 ? (jobPostController.currentIndex + 1) : jobPostController.currentIndex,
+                              )
+                            : navigatorKey.currentState?.pushNamed(AppRouter.paymentScreen);
 
-                  //   debugPrint(_formKey.currentState?.value.toString());
-                  // } else {
-                  //   debugPrint(_formKey.currentState?.value.toString());
-                  //   debugPrint('validation failed');
-                  // }
-                },
+                        //   debugPrint(_formKey.currentState?.value.toString());
+                        // } else {
+                        //   debugPrint(_formKey.currentState?.value.toString());
+                        //   debugPrint('validation failed');
+                        // }
+                      },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: primaryColor,
                   shape: RoundedRectangleBorder(

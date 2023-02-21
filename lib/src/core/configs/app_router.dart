@@ -6,6 +6,8 @@ import 'package:client_zipcare/src/features/auth/registration/ui/phone_verify/ph
 import 'package:client_zipcare/src/features/auth/registration/ui/signup/registration_screen.dart';
 import 'package:client_zipcare/src/features/home/home_page.dart';
 import 'package:client_zipcare/src/features/home/job_post/job_post_screen.dart';
+import 'package:client_zipcare/src/features/home/job_post/payment/card/add_card.dart';
+import 'package:client_zipcare/src/features/home/job_post/payment/payment_page.dart';
 import 'package:client_zipcare/src/features/home/profile/add_new_profile.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +22,8 @@ class AppRouter {
   static const String messageScreen = '/message';
   static const String jobPostScreen = '/create_job';
   static const String addNewProfile = '/add_new_profile';
+  static const String paymentScreen = '/payment';
+  static const String addCardScreen = '/add_card';
 
   static Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -41,6 +45,10 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => JobPostScreen());
       case addNewProfile:
         return MaterialPageRoute(builder: (_) => AddNewProfile());
+      case AppRouter.paymentScreen:
+        return MaterialPageRoute(builder: (_) => const PaymentScreen());
+      case AppRouter.addCardScreen:
+        return MaterialPageRoute(builder: (_) => AddNewCard());
       default:
         return null;
     }

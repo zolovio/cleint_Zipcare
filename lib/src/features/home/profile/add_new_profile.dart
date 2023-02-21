@@ -1,5 +1,3 @@
-import 'package:client_zipcare/main.dart';
-import 'package:client_zipcare/src/core/configs/app_router.dart';
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/components/custom_widgets.dart';
@@ -204,7 +202,7 @@ class AddNewProfile extends ConsumerWidget {
               child: Padding(
                 padding: const EdgeInsets.all(30),
                 child: ElevatedButton(
-                  onPressed: () => navigatorKey.currentState?.pushNamed(AppRouter.loginScreen),
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: primaryColor,
                     shape: RoundedRectangleBorder(
