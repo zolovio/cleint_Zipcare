@@ -54,6 +54,7 @@ class JobsScreen extends ConsumerWidget {
           ),
         ),
         body: const TabBarView(
+          physics: NeverScrollableScrollPhysics(),
           children: [
             PostedJobScreen(),
             ApprovedJobScreen(),

@@ -8,8 +8,6 @@ final postedJobProvider = ChangeNotifierProvider.autoDispose((ref) => PostedJobC
 class PostedJobController extends ChangeNotifier {
   PostedJobController();
 
-  List<String> users = ["Marry", "Tom", "Kenny", "Marry", "Tom", "Kenny"];
-
   List<Map<String, dynamic>> postedJobsList = [
     {
       "title": "Female Hourly Day carer required.",
