@@ -70,7 +70,7 @@ PreferredSize homeAppBar(BuildContext context) {
               style: ElevatedButton.styleFrom(
                 backgroundColor: primaryColor,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5), // <-- Radius
+                  borderRadius: BorderRadius.circular(5),
                 ),
               ),
               child: Text(

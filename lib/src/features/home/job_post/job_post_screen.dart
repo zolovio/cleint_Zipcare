@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:client_zipcare/main.dart';
 import 'package:client_zipcare/src/core/configs/app_router.dart';
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
@@ -25,7 +27,6 @@ class JobPostScreen extends ConsumerWidget {
 
     return Scaffold(
       key: _scaffoldKey,
-      // appBar: getAppBar(jobPostController.currentIndex == 6 ? jobDetail : jobPost, true, context),
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
@@ -346,132 +347,134 @@ class JobPostScreen extends ConsumerWidget {
                       ],
                     ],
                     if (jobPostController.currentIndex == 2) ...[
-                      getQuestionsWidget("Person needing care name and other details", false, "", false),
-                      const SizedBox(height: 20),
-                      FormBuilderTextField(
-                        autovalidateMode: AutovalidateMode.onUserInteraction,
-                        name: 'f_name',
-                        decoration: InputDecoration(
-                          labelText: 'First Name',
-                          labelStyle: GoogleFonts.lexend(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400,
-                          ),
-                          border: const OutlineInputBorder(
-                            borderSide: BorderSide(width: 1, color: hintLightColor),
-                            borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
-                          ),
-                        ),
-                        onChanged: (val) {},
-                        validator: FormBuilderValidators.compose(
-                          [
-                            FormBuilderValidators.required(),
-                          ],
-                        ),
-                        keyboardType: TextInputType.text,
-                        textInputAction: TextInputAction.next,
-                      ),
-                      const SizedBox(height: 20),
-                      FormBuilderTextField(
-                        autovalidateMode: AutovalidateMode.onUserInteraction,
-                        name: 'l_name',
-                        decoration: InputDecoration(
-                          labelText: 'Last Name',
-                          labelStyle: GoogleFonts.lexend(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400,
-                          ),
-                          border: const OutlineInputBorder(
-                            borderSide: BorderSide(width: 1, color: hintLightColor),
-                            borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
-                          ),
-                        ),
-                        onChanged: (val) {},
-                        validator: FormBuilderValidators.compose([
-                          FormBuilderValidators.required(),
-                        ]),
-                        keyboardType: TextInputType.text,
-                        textInputAction: TextInputAction.next,
-                      ),
-                      const SizedBox(height: 20),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: FormBuilderDropdown<String>(
-                              name: 'age',
-                              decoration: const InputDecoration(
-                                hintText: 'Age',
-                                isDense: true,
-                                border: OutlineInputBorder(
-                                  borderSide: BorderSide(width: 1, color: hintLightColor),
-                                  borderRadius: BorderRadius.all(Radius.circular(15)),
-                                ),
-                              ),
-                              validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
-                              onChanged: (value) {
-                                _formKey.currentState?.fields['age']?.validate();
-                              },
-                              items: jobPostController.age
-                                  .map((value) => DropdownMenuItem(
-                                        value: value,
-                                        child: Text(value),
-                                      ))
-                                  .toList(),
+                      if (jobPostController.isRequestedProfile) ...[
+                        getQuestionsWidget("Person needing care name and other details", false, "", false),
+                        const SizedBox(height: 20),
+                        FormBuilderTextField(
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          name: 'f_name',
+                          decoration: InputDecoration(
+                            labelText: 'First Name',
+                            labelStyle: GoogleFonts.lexend(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            border: const OutlineInputBorder(
+                              borderSide: BorderSide(width: 1, color: hintLightColor),
+                              borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                             ),
                           ),
-                          const SizedBox(width: 20),
-                          Expanded(
-                            child: FormBuilderTextField(
-                              autovalidateMode: AutovalidateMode.onUserInteraction,
-                              name: 'postcode',
-                              decoration: InputDecoration(
-                                labelText: 'Postcode',
-                                labelStyle: GoogleFonts.lexend(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                                border: const OutlineInputBorder(
-                                  borderSide: BorderSide(width: 1, color: hintLightColor),
-                                  borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
-                                ),
-                              ),
-                              onChanged: (val) {},
-                              validator: FormBuilderValidators.compose(
-                                [
-                                  FormBuilderValidators.required(),
-                                ],
-                              ),
-                              keyboardType: TextInputType.number,
-                              textInputAction: TextInputAction.next,
+                          onChanged: (val) {},
+                          validator: FormBuilderValidators.compose(
+                            [
+                              FormBuilderValidators.required(),
+                            ],
+                          ),
+                          keyboardType: TextInputType.text,
+                          textInputAction: TextInputAction.next,
+                        ),
+                        const SizedBox(height: 20),
+                        FormBuilderTextField(
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          name: 'l_name',
+                          decoration: InputDecoration(
+                            labelText: 'Last Name',
+                            labelStyle: GoogleFonts.lexend(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            border: const OutlineInputBorder(
+                              borderSide: BorderSide(width: 1, color: hintLightColor),
+                              borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                             ),
                           ),
-                        ],
-                      ),
-                      const SizedBox(height: 20),
-                      FormBuilderTextField(
-                        autovalidateMode: AutovalidateMode.onUserInteraction,
-                        name: 'address',
-                        decoration: InputDecoration(
-                          labelText: 'Address',
-                          labelStyle: GoogleFonts.lexend(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400,
-                          ),
-                          border: const OutlineInputBorder(
-                            borderSide: BorderSide(width: 1, color: hintLightColor),
-                            borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
-                          ),
-                        ),
-                        onChanged: (val) {},
-                        validator: FormBuilderValidators.compose(
-                          [
+                          onChanged: (val) {},
+                          validator: FormBuilderValidators.compose([
                             FormBuilderValidators.required(),
+                          ]),
+                          keyboardType: TextInputType.text,
+                          textInputAction: TextInputAction.next,
+                        ),
+                        const SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: FormBuilderDropdown<String>(
+                                name: 'age',
+                                decoration: const InputDecoration(
+                                  hintText: 'Age',
+                                  isDense: true,
+                                  border: OutlineInputBorder(
+                                    borderSide: BorderSide(width: 1, color: hintLightColor),
+                                    borderRadius: BorderRadius.all(Radius.circular(15)),
+                                  ),
+                                ),
+                                validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
+                                onChanged: (value) {
+                                  _formKey.currentState?.fields['age']?.validate();
+                                },
+                                items: jobPostController.age
+                                    .map((value) => DropdownMenuItem(
+                                          value: value,
+                                          child: Text(value),
+                                        ))
+                                    .toList(),
+                              ),
+                            ),
+                            const SizedBox(width: 20),
+                            Expanded(
+                              child: FormBuilderTextField(
+                                autovalidateMode: AutovalidateMode.onUserInteraction,
+                                name: 'postcode',
+                                decoration: InputDecoration(
+                                  labelText: 'Postcode',
+                                  labelStyle: GoogleFonts.lexend(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                  border: const OutlineInputBorder(
+                                    borderSide: BorderSide(width: 1, color: hintLightColor),
+                                    borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
+                                  ),
+                                ),
+                                onChanged: (val) {},
+                                validator: FormBuilderValidators.compose(
+                                  [
+                                    FormBuilderValidators.required(),
+                                  ],
+                                ),
+                                keyboardType: TextInputType.number,
+                                textInputAction: TextInputAction.next,
+                              ),
+                            ),
                           ],
                         ),
-                        keyboardType: TextInputType.text,
-                        textInputAction: TextInputAction.next,
-                      ),
-                      const SizedBox(height: 20),
+                        const SizedBox(height: 20),
+                        FormBuilderTextField(
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          name: 'address',
+                          decoration: InputDecoration(
+                            labelText: 'Address',
+                            labelStyle: GoogleFonts.lexend(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            border: const OutlineInputBorder(
+                              borderSide: BorderSide(width: 1, color: hintLightColor),
+                              borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
+                            ),
+                          ),
+                          onChanged: (val) {},
+                          validator: FormBuilderValidators.compose(
+                            [
+                              FormBuilderValidators.required(),
+                            ],
+                          ),
+                          keyboardType: TextInputType.text,
+                          textInputAction: TextInputAction.next,
+                        ),
+                        const SizedBox(height: 20),
+                      ],
                       getQuestionsWidget("Type of care*", false, "", false),
                       FormBuilderRadioGroup<String>(
                         autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -1404,65 +1407,36 @@ class JobPostScreen extends ConsumerWidget {
                   getQuestionsWidget("You need care for which health conditions.", false, "", false),
                   Wrap(
                     spacing: 5,
+                    children: jobPostController.healthConditionsSelected
+                        .map(
+                          (service) => Container(
+                            margin: const EdgeInsets.symmetric(vertical: 5),
+                            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.rectangle,
+                              color: shadowColor,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                            ),
+                            child: Text(
+                              service,
+                              style: GoogleFonts.lexend(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                                color: descGreyColor,
+                              ),
+                            ),
+                          ),
+                        )
+                        .toList(),
+                  ),
+                  const Divider(height: 3, color: hintLightColor),
+                  const SizedBox(height: 15),
+                  getQuestionsWidget("Services you need from the carer", false, "", false),
+                  Wrap(
+                    spacing: 5,
                     children: jobPostController.serviceRequiredSelected
-                        .map(
-                          (service) => Container(
-                            margin: const EdgeInsets.symmetric(vertical: 5),
-                            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.rectangle,
-                              color: shadowColor,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(20),
-                              ),
-                            ),
-                            child: Text(
-                              service,
-                              style: GoogleFonts.lexend(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: descGreyColor,
-                              ),
-                            ),
-                          ),
-                        )
-                        .toList(),
-                  ),
-                  const Divider(height: 3, color: hintLightColor),
-                  const SizedBox(height: 15),
-                  getQuestionsWidget("Things client enjoy’s.", false, "", false),
-                  Wrap(
-                    spacing: 5,
-                    children: jobPostController.thingEnjoySelected
-                        .map(
-                          (service) => Container(
-                            margin: const EdgeInsets.symmetric(vertical: 5),
-                            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.rectangle,
-                              color: shadowColor,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(20),
-                              ),
-                            ),
-                            child: Text(
-                              service,
-                              style: GoogleFonts.lexend(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: descGreyColor,
-                              ),
-                            ),
-                          ),
-                        )
-                        .toList(),
-                  ),
-                  const Divider(height: 3, color: hintLightColor),
-                  const SizedBox(height: 15),
-                  getQuestionsWidget("Languages client speaks.", false, "", false),
-                  Wrap(
-                    spacing: 5,
-                    children: jobPostController.languageSpeakSelected
                         .map(
                           (service) => Container(
                             margin: const EdgeInsets.symmetric(vertical: 5),

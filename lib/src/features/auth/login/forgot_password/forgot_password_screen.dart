@@ -78,7 +78,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: primaryColor,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12), // <-- Radius
+                    borderRadius: BorderRadius.circular(12),
                   ),
                 ),
                 child: Center(

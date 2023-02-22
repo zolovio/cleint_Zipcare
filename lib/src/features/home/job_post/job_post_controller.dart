@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+enum QuesType { text, radio, checkbox }
+
 final jobPostProvider = ChangeNotifierProvider.autoDispose((ref) => JobPostController());
 
 class JobPostController extends ChangeNotifier {
@@ -151,6 +153,17 @@ class JobPostController extends ChangeNotifier {
     [calenderGreen, "22-07-2022", "4:00pm"],
   ];
 
+  List<Map<String, dynamic>> jobPostQuestions = [
+    {"question": "Is this a self-employed position?", "description": "", "type": QuesType.radio},
+    {
+      "question": "Is it an urgent requirement/ needs matching?",
+      "description":
+          "Please note that we are unable to provide matching service for employed positions. Click here for more information about our matching service.",
+      "type": QuesType.radio
+    },
+    {"question": "Are you the person needing care?", "description": "", "type": QuesType.radio},
+  ];
+
   void updatePageStepper(int index) {
     currentIndex = index;
     notifyListeners();
@@ -243,25 +256,25 @@ class JobPostController extends ChangeNotifier {
   }
 
   void onHealthConditionCheck(List selectedVal) {
-    healthConditionsSelected.clear();
+    healthConditionsSelected = [];
     healthConditionsSelected = selectedVal;
     notifyListeners();
   }
 
   void onServiceRequireCheck(List selectedVal) {
-    serviceRequiredSelected.clear();
+    serviceRequiredSelected = [];
     serviceRequiredSelected = selectedVal;
     notifyListeners();
   }
 
   void onThingsEnjoyCheck(List selectedVal) {
-    thingEnjoySelected.clear();
+    thingEnjoySelected = [];
     thingEnjoySelected = selectedVal;
     notifyListeners();
   }
 
   void onLanguageSpeakCheck(List selectedVal) {
-    languageSpeakSelected.clear();
+    languageSpeakSelected = [];
     languageSpeakSelected = selectedVal;
     notifyListeners();
   }
@@ -270,8 +283,6 @@ class JobPostController extends ChangeNotifier {
     isReadMore = !isReadMore;
     maxLines = isReadMore ? null : 3;
 
-    print(isReadMore);
-    print(maxLines);
     notifyListeners();
   }
 }

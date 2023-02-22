@@ -176,7 +176,7 @@ class OnBoardScreen extends ConsumerWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: whiteColor,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12), // <-- Radius
+                          borderRadius: BorderRadius.circular(12),
                         ),
                       ),
                       child: Padding(
@@ -198,7 +198,7 @@ class OnBoardScreen extends ConsumerWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: whiteColor,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12), // <-- Radius
+                          borderRadius: BorderRadius.circular(12),
                         ),
                       ),
                       child: Padding(
