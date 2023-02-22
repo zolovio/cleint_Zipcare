@@ -1,3 +1,5 @@
+import 'package:client_zipcare/main.dart';
+import 'package:client_zipcare/src/core/configs/app_router.dart';
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/home/jobs/posted_jobs/posted_job_controller.dart';
@@ -20,7 +22,7 @@ class PostedJobScreen extends ConsumerWidget {
               ? const EdgeInsets.only(top: 10, left: 12.0, right: 12.0, bottom: 5.0)
               : const EdgeInsets.only(left: 12.0, right: 12.0, bottom: 5.0),
           child: InkWell(
-            onTap: (){},
+            onTap: () => navigatorKey.currentState?.pushNamed(AppRouter.jobDetailTab),
             child: Card(
               elevation: 5,
               shadowColor: shadowColor,

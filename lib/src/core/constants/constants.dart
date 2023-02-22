@@ -33,6 +33,10 @@ const String addCouponText = 'Add coupons';
 const String newCardText = 'New Card';
 const String postedText = 'Posted';
 const String approvedText = 'Approved';
+const String applicantsText = 'Applicants';
+const String allocatedText = 'Allocated';
+const String jobStatusText = 'Job Status';
+const String acceptingApplicationText = 'Accepting Applications';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";

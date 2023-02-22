@@ -5,6 +5,7 @@ import 'package:client_zipcare/src/features/home/jobs/jobs_controller.dart';
 import 'package:client_zipcare/src/features/home/jobs/posted_jobs/posted_job_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class JobsScreen extends ConsumerWidget {
   const JobsScreen({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class JobsScreen extends ConsumerWidget {
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(80),
           child: AppBar(
-            backgroundColor: Colors.white,
+            backgroundColor: lightWhiteColor,
             elevation: 0,
             bottom: TabBar(
               unselectedLabelColor: lightGreyColor,
@@ -32,9 +33,12 @@ class JobsScreen extends ConsumerWidget {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.0),
                         border: Border.all(color: jobsController.selectedIndex == 0 ? primaryColor : lightGreyColor, width: 1)),
-                    child: const Align(
+                    child: Align(
                       alignment: Alignment.center,
-                      child: Text(postedText),
+                      child: Text(
+                        postedText,
+                        style: GoogleFonts.lexend(fontSize: 14, fontWeight: FontWeight.w400),
+                      ),
                     ),
                   ),
                 ),
@@ -43,9 +47,12 @@ class JobsScreen extends ConsumerWidget {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.0),
                         border: Border.all(color: jobsController.selectedIndex == 1 ? primaryColor : lightGreyColor, width: 1)),
-                    child: const Align(
+                    child: Align(
                       alignment: Alignment.center,
-                      child: Text(approvedText),
+                      child: Text(
+                        approvedText,
+                        style: GoogleFonts.lexend(fontSize: 14, fontWeight: FontWeight.w400),
+                      ),
                     ),
                   ),
                 ),
