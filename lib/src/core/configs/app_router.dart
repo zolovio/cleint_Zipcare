@@ -6,8 +6,8 @@ import 'package:client_zipcare/src/features/auth/registration/ui/phone_verify/ph
 import 'package:client_zipcare/src/features/auth/registration/ui/signup/registration_screen.dart';
 import 'package:client_zipcare/src/features/home/home_page.dart';
 import 'package:client_zipcare/src/features/home/job_post/job_post_screen.dart';
-import 'package:client_zipcare/src/features/home/job_post/payment/card/add_card.dart';
-import 'package:client_zipcare/src/features/home/job_post/payment/payment_page.dart';
+import 'package:client_zipcare/src/features/home/payment/card/add_card.dart';
+import 'package:client_zipcare/src/features/home/payment/payment_page.dart';
 import 'package:client_zipcare/src/features/home/profile/add_new_profile.dart';
 import 'package:flutter/material.dart';
 

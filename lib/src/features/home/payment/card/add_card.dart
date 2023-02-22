@@ -1,7 +1,7 @@
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/components/custom_widgets.dart';
-import 'package:client_zipcare/src/features/home/job_post/payment/card/card_controller.dart';
+import 'package:client_zipcare/src/features/home/payment/card/card_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/credit_card_brand.dart';
 import 'package:flutter_credit_card/credit_card_form.dart';

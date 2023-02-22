@@ -3,7 +3,7 @@ import 'package:client_zipcare/src/core/configs/app_router.dart';
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/components/custom_widgets.dart';
-import 'package:client_zipcare/src/features/home/job_post/payment/payment_controller.dart';
+import 'package:client_zipcare/src/features/home/payment/payment_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
