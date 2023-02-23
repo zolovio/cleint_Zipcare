@@ -239,7 +239,7 @@ class HomeScreen extends ConsumerWidget {
                                   backgroundColor: shadowColor,
                                   child: Image.asset(message),
                                 ),
-                                SizedBox(width: 3),
+                                const SizedBox(width: 3),
                                 CircleAvatar(
                                   backgroundColor: shadowColor,
                                   child: Image.asset(favorite),

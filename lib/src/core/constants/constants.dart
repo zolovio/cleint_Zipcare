@@ -40,6 +40,9 @@ const String acceptingApplicationText = 'Accepting Applications';
 const String serviceAgreementText = 'Service Agreement';
 const String invoiceText = 'Invoice';
 const String jobCompletedText = 'Job Completed';
+const String messageText = 'Message';
+const String shortlistText = 'Shortlist';
+const String approveText = 'Approve';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";
@@ -80,6 +83,13 @@ const String user = "assets/images/user.png";
 const String clock = "assets/images/clock.png";
 const String message = "assets/images/message.png";
 const String favorite = "assets/images/favorite.png";
+const String rating = "assets/images/rating.png";
+const String insurance = "assets/images/insurance.png";
+const String dbsStatus = "assets/images/dbs_status.png";
+const String drivingLicense = "assets/images/driving_license.png";
+const String messageSend = "assets/images/message_send.png";
+const String shortlist = "assets/images/shortlist.png";
+const String approve = "assets/images/approve.png";
 
 const double textFieldBorderRadius = 10;
 const double circularBorder = 80;

@@ -38,11 +38,11 @@ class JobPostController extends ChangeNotifier {
   bool isFunding = true;
   bool isCarePlan = true;
   bool isReadMore = false;
+  bool multiPick = false;
 
   List<PlatformFile>? _paths;
   String? directoryPath;
   String? extension;
-  bool multiPick = false;
   FileType pickingType = FileType.custom;
   String? fileName = "Upload Document";
 

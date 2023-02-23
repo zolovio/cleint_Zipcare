@@ -1,3 +1,5 @@
+import 'package:client_zipcare/main.dart';
+import 'package:client_zipcare/src/core/configs/app_router.dart';
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/home/job_detail/applicants/applicants_controller.dart';
@@ -16,6 +18,7 @@ class ApplicantsScreen extends ConsumerWidget {
       itemCount: applicantsController.chatsList.length,
       itemBuilder: (BuildContext context, int index) {
         return InkWell(
+          onTap: () => navigatorKey.currentState?.pushNamed(AppRouter.applicantProfile),
           child: Padding(
             padding: index == 0
                 ? const EdgeInsets.only(top: 10, left: 12.0, right: 12.0, bottom: 15.0)
