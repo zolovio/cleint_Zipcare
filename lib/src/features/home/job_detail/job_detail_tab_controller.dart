@@ -8,10 +8,6 @@ class JobDetailTabController extends ChangeNotifier {
 
   int selectedIndex = 0;
 
-  List<Map<String, dynamic>> jobDetails = [
-    {"ques": "Carer allocation status", "ans": "Yes"},
-  ];
-
   void onSelectedIndex(int index) {
     selectedIndex = index;
     notifyListeners();

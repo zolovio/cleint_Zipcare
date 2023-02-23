@@ -37,6 +37,9 @@ const String applicantsText = 'Applicants';
 const String allocatedText = 'Allocated';
 const String jobStatusText = 'Job Status';
 const String acceptingApplicationText = 'Accepting Applications';
+const String serviceAgreementText = 'Service Agreement';
+const String invoiceText = 'Invoice';
+const String jobCompletedText = 'Job Completed';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";
