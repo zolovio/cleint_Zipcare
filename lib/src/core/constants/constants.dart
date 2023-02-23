@@ -78,6 +78,8 @@ const String expiryDate = "assets/images/expiry_date.png";
 const String card = "assets/images/card.png";
 const String user = "assets/images/user.png";
 const String clock = "assets/images/clock.png";
+const String message = "assets/images/message.png";
+const String favorite = "assets/images/favorite.png";
 
 const double textFieldBorderRadius = 10;
 const double circularBorder = 80;

@@ -234,21 +234,15 @@ class HomeScreen extends ConsumerWidget {
                               ),
                             ),
                             Row(
-                              children: const [
+                              children: [
                                 CircleAvatar(
                                   backgroundColor: shadowColor,
-                                  child: Icon(
-                                    Icons.messenger_outline,
-                                    color: primaryColor,
-                                  ),
+                                  child: Image.asset(message),
                                 ),
                                 SizedBox(width: 3),
                                 CircleAvatar(
                                   backgroundColor: shadowColor,
-                                  child: Icon(
-                                    Icons.favorite_border,
-                                    color: primaryColor,
-                                  ),
+                                  child: Image.asset(favorite),
                                 ),
                               ],
                             )

@@ -1,6 +1,7 @@
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/components/custom_widgets.dart';
+import 'package:client_zipcare/src/features/home/job_detail/applicants/applicants_screen.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/job_detail_screen.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_tab_controller.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,14 @@ class JobDetailTabs extends ConsumerWidget {
     final jobsTabController = ref.watch(jobDetailTabProvider);
 
     return Scaffold(
-      appBar: getAppBar(jobDetail, true, context),
+      appBar: getAppBar(
+          jobsTabController.selectedIndex == 1
+              ? applicantsText
+              : jobsTabController.selectedIndex == 2
+                  ? allocatedText
+                  : jobDetail,
+          true,
+          context),
       body: DefaultTabController(
         length: 3,
         child: Scaffold(
@@ -80,7 +88,7 @@ class JobDetailTabs extends ConsumerWidget {
             physics: NeverScrollableScrollPhysics(),
             children: [
               JobDetailScreen(),
-              Text("2"),
+              ApplicantsScreen(),
               Text("3"),
             ],
           ),
