@@ -43,6 +43,8 @@ const String jobCompletedText = 'Job Completed';
 const String messageText = 'Message';
 const String shortlistText = 'Shortlist';
 const String approveText = 'Approve';
+const String descriptionText = 'Description';
+const String removeText = 'Remove';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";
@@ -81,6 +83,7 @@ const String expiryDate = "assets/images/expiry_date.png";
 const String card = "assets/images/card.png";
 const String user = "assets/images/user.png";
 const String clock = "assets/images/clock.png";
+const String clockRed = "assets/images/clock_red.png";
 const String message = "assets/images/message.png";
 const String favorite = "assets/images/favorite.png";
 const String rating = "assets/images/rating.png";
@@ -90,6 +93,7 @@ const String drivingLicense = "assets/images/driving_license.png";
 const String messageSend = "assets/images/message_send.png";
 const String shortlist = "assets/images/shortlist.png";
 const String approve = "assets/images/approve.png";
+const String remove = "assets/images/remove.png";
 
 const double textFieldBorderRadius = 10;
 const double circularBorder = 80;

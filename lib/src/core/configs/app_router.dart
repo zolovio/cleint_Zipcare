@@ -5,6 +5,7 @@ import 'package:client_zipcare/src/features/auth/registration/ui/email_verify/em
 import 'package:client_zipcare/src/features/auth/registration/ui/phone_verify/phone_verification.dart';
 import 'package:client_zipcare/src/features/auth/registration/ui/signup/registration_screen.dart';
 import 'package:client_zipcare/src/features/home/home_page.dart';
+import 'package:client_zipcare/src/features/home/job_detail/allocated/allocated_profile/allocated_profile.dart';
 import 'package:client_zipcare/src/features/home/job_detail/applicants/applicant_profile/applicant_profile.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_tabs.dart';
 import 'package:client_zipcare/src/features/home/job_post/job_post_screen.dart';
@@ -28,6 +29,7 @@ class AppRouter {
   static const String addCardScreen = '/add_card';
   static const String jobDetailTab = '/job_detail_tab';
   static const String applicantProfile = '/applicant_profile';
+  static const String allocatedProfile = '/allocated_profile';
 
   static Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -57,6 +59,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const JobDetailTabs());
       case AppRouter.applicantProfile:
         return MaterialPageRoute(builder: (_) => const ApplicantProfile());
+      case AppRouter.allocatedProfile:
+        return MaterialPageRoute(builder: (_) => const AllocatedProfile());
       default:
         return null;
     }
