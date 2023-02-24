@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final invoiceProvider = ChangeNotifierProvider.autoDispose((ref) => InvoiceController());
+final invoiceListProvider = ChangeNotifierProvider.autoDispose((ref) => InvoiceListController());
 
-class InvoiceController extends ChangeNotifier {
-  InvoiceController();
+class InvoiceListController extends ChangeNotifier {
+  InvoiceListController();
 
   String invoiceForUser = "Invoices for John Watson";
   String jobID = "Job Id: 126565";
