@@ -1,6 +1,7 @@
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/components/custom_widgets.dart';
+import 'package:client_zipcare/src/features/home/job_detail/allocated/allocated_screen.dart';
 import 'package:client_zipcare/src/features/home/job_detail/applicants/applicants_screen.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/job_detail_screen.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_tab_controller.dart';
@@ -89,7 +90,7 @@ class JobDetailTabs extends ConsumerWidget {
             children: [
               JobDetailScreen(),
               ApplicantsScreen(),
-              Text("3"),
+              AllocatedScreen(),
             ],
           ),
         ),
