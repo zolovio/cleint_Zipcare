@@ -45,6 +45,13 @@ const String shortlistText = 'Shortlist';
 const String approveText = 'Approve';
 const String descriptionText = 'Description';
 const String removeText = 'Remove';
+const String approvalWaitText = 'Waiting for approval';
+const String editServiceText = 'Edit service agreement';
+const String editText = 'Edit';
+const String viewText = 'View';
+const String resetText = 'Reset';
+const String downloadText = 'Download';
+const String invoicesText = 'Invoices';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";
@@ -94,6 +101,9 @@ const String messageSend = "assets/images/message_send.png";
 const String shortlist = "assets/images/shortlist.png";
 const String approve = "assets/images/approve.png";
 const String remove = "assets/images/remove.png";
+const String edit = "assets/images/edit.png";
+const String reset = "assets/images/reset.png";
+const String download = "assets/images/download.png";
 
 const double textFieldBorderRadius = 10;
 const double circularBorder = 80;
