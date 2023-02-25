@@ -55,6 +55,8 @@ const String downloadText = 'Download';
 const String invoicesText = 'Invoices';
 const String payText = 'Pay';
 const String cancelText = 'Cancel';
+const String cancelledText = 'Cancelled';
+const String reasonText = 'Reason';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";

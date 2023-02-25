@@ -3,6 +3,7 @@ import 'package:client_zipcare/src/core/configs/app_router.dart';
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 AppBar getAppBar(String title, bool showAction, BuildContext context) {
@@ -174,5 +175,83 @@ Widget getQuestionsWidget(String ques, bool isDetail, String detail, bool isIcon
         ),
       ],
     ],
+  );
+}
+
+Future<void> showDialogAlert(BuildContext context, String title, TextEditingController controller) async {
+  return showDialog<void>(
+    context: context,
+    barrierDismissible: false, // user must tap button!
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text(
+          title,
+          textAlign: TextAlign.center,
+          style: GoogleFonts.lexend(
+            fontWeight: FontWeight.w600,
+            fontSize: 20,
+            color: blackColor,
+          ),
+        ),
+        content: SingleChildScrollView(
+          child: ListBody(
+            children: <Widget>[
+              FormBuilderTextField(
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                controller: controller,
+                name: 'cancel',
+                maxLines: 5,
+                textAlignVertical: TextAlignVertical.top,
+                decoration: InputDecoration(
+                  labelText: "Please describe your reason (optional)",
+                  labelStyle: GoogleFonts.lexend(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w300,
+                  ),
+                  alignLabelWithHint: true,
+                  border: const OutlineInputBorder(
+                    borderSide: BorderSide(width: 1, color: hintLightColor),
+                    borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
+                  ),
+                ),
+                onChanged: (val) {},
+                keyboardType: TextInputType.text,
+                textInputAction: TextInputAction.next,
+              ),
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () => navigatorKey.currentState?.pop(),
+                style: ElevatedButton.styleFrom(
+                  disabledBackgroundColor: primaryColor.withOpacity(.5),
+                  backgroundColor: primaryColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
+                  child: Center(
+                    child: Text(
+                      submitText,
+                      style: GoogleFonts.lexend(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        color: whiteColor,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      );
+    },
   );
 }

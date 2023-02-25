@@ -6,6 +6,10 @@ final invoiceScreenProvider = ChangeNotifierProvider.autoDispose((ref) => Invoic
 class InvoiceScreenController extends ChangeNotifier {
   InvoiceScreenController();
 
+  bool isCancelled = false;
+
+  TextEditingController alertFieldController = TextEditingController();
+
   Map<String, dynamic> invoiceDetails = {
     "from": {"title": "From", "name": "Ali Abrahim", "address": "28 Narrowboat Close,\nCoventry,\nCV6 6RD, UK"},
     "to": {"title": "To", "name": "John Watson", "address": "28 Narrowboat Close,\nCoventry,\nCV6 6RD, UK"},
@@ -21,4 +25,9 @@ class InvoiceScreenController extends ChangeNotifier {
       {"title": "Amount", "value": "200 "},
     ],
   };
+
+  void onCancel(){
+    isCancelled = !isCancelled;
+    notifyListeners();
+  }
 }

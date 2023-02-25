@@ -22,7 +22,7 @@ class InvoiceScreen extends ConsumerWidget {
             ElevatedButton(
               onPressed: null,
               style: ElevatedButton.styleFrom(
-                disabledBackgroundColor: primaryColor.withOpacity(.2),
+                disabledBackgroundColor: invoiceController.isCancelled ? redColor.withOpacity(.2) : primaryColor.withOpacity(.2),
                 backgroundColor: primaryColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -35,11 +35,11 @@ class InvoiceScreen extends ConsumerWidget {
                     Expanded(
                       child: Center(
                         child: Text(
-                          approvalPendingText,
+                          invoiceController.isCancelled ? cancelledText : approvalPendingText,
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w400,
                             fontSize: 15,
-                            color: primaryColor,
+                            color: invoiceController.isCancelled ? redColor : primaryColor,
                           ),
                         ),
                       ),
@@ -271,7 +271,7 @@ class InvoiceScreen extends ConsumerWidget {
                 color: hintColor,
               ),
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 20),
             Container(
               padding: const EdgeInsets.all(5),
               color: shadowColor,
@@ -295,6 +295,7 @@ class InvoiceScreen extends ConsumerWidget {
                                 padding: const EdgeInsets.all(8.0),
                                 child: Text(
                                   invoice["title"],
+                                  textAlign: TextAlign.center,
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w400,
                                     fontSize: 13,
@@ -329,6 +330,7 @@ class InvoiceScreen extends ConsumerWidget {
                               padding: const EdgeInsets.all(8.0),
                               child: Text(
                                 invoice["value"],
+                                textAlign: TextAlign.center,
                                 style: GoogleFonts.lexend(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 13,
@@ -375,11 +377,44 @@ class InvoiceScreen extends ConsumerWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 35),
+            const SizedBox(height: 20),
+            if (invoiceController.isCancelled) ...[
+              Container(
+                height: 50,
+                padding: const EdgeInsets.all(8.0),
+                decoration: BoxDecoration(
+                  color: primaryColor.withOpacity(.2),
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(10),
+                  ),
+                ),
+                child: Wrap(
+                  children: [
+                    Text(
+                      "$reasonText : ",
+                      style: GoogleFonts.lexend(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 13,
+                        color: descGreyColor,
+                      ),
+                    ),
+                    Text(
+                      invoiceController.alertFieldController.text,
+                      style: GoogleFonts.lexend(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 13,
+                        color: descGreyColor,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+            ],
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: invoiceController.isCancelled ? null : () {},
                 style: ElevatedButton.styleFrom(
                   disabledBackgroundColor: primaryColor.withOpacity(.5),
                   backgroundColor: primaryColor,
@@ -409,43 +444,48 @@ class InvoiceScreen extends ConsumerWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Row(
-              children: <Widget>[
-                const Expanded(child: Divider()),
-                Text(
-                  "OR",
-                  style: GoogleFonts.lexend(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 15,
-                    color: hintColor,
+            if (!invoiceController.isCancelled) ...[
+              Row(
+                children: <Widget>[
+                  const Expanded(child: Divider()),
+                  Text(
+                    "OR",
+                    style: GoogleFonts.lexend(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 15,
+                      color: hintColor,
+                    ),
                   ),
-                ),
-                const Expanded(child: Divider()),
-              ],
-            ),
-            const SizedBox(height: 20),
-            Center(
-              child: OutlinedButton(
-                onPressed: () {},
-                style: ButtonStyle(
-                  side: MaterialStateProperty.all(
-                    const BorderSide(
+                  const Expanded(child: Divider()),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Center(
+                child: OutlinedButton(
+                  onPressed: () {
+                    showDialogAlert(context, "Do you want to cancel this invoice?", invoiceController.alertFieldController);
+                    invoiceController.onCancel();
+                  },
+                  style: ButtonStyle(
+                    side: MaterialStateProperty.all(
+                      const BorderSide(
+                        color: redColor,
+                        width: 1,
+                        style: BorderStyle.solid,
+                      ),
+                    ),
+                  ),
+                  child: Text(
+                    cancelText,
+                    style: GoogleFonts.lexend(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 15,
                       color: redColor,
-                      width: 1,
-                      style: BorderStyle.solid,
                     ),
                   ),
                 ),
-                child: Text(
-                  cancelText,
-                  style: GoogleFonts.lexend(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 15,
-                    color: redColor,
-                  ),
-                ),
               ),
-            ),
+            ],
           ],
         ),
       ),
