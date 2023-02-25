@@ -1060,7 +1060,6 @@ class JobPostScreen extends ConsumerWidget {
                         Padding(
                           padding: const EdgeInsets.only(top: circularBorder / 2.0),
 
-                          ///here we create space for the circle avatar to get ut of the box
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(7.0),
@@ -1127,7 +1126,6 @@ class JobPostScreen extends ConsumerWidget {
                           ),
                         ),
 
-                        ///Image Avatar
                         Container(
                           padding: const EdgeInsets.all(3.0),
                           decoration: const BoxDecoration(

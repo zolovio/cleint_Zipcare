@@ -166,7 +166,7 @@ class PaymentScreen extends ConsumerWidget {
               child: Padding(
                 padding: const EdgeInsets.all(15),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => navigatorKey.currentState?.pushNamed(AppRouter.paymentStatusScreen),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: primaryColor,
                     shape: RoundedRectangleBorder(

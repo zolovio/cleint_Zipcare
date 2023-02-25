@@ -14,6 +14,7 @@ import 'package:client_zipcare/src/features/home/job_detail/job_detail_tabs.dart
 import 'package:client_zipcare/src/features/home/job_post/job_post_screen.dart';
 import 'package:client_zipcare/src/features/home/payment/card/add_card.dart';
 import 'package:client_zipcare/src/features/home/payment/payment_page.dart';
+import 'package:client_zipcare/src/features/home/payment/payment_status/payment_status_screen.dart';
 import 'package:client_zipcare/src/features/home/profile/add_new_profile.dart';
 import 'package:flutter/material.dart';
 
@@ -36,6 +37,7 @@ class AppRouter {
   static const String serviceAgreement = '/service_agreement';
   static const String invoice = '/invoice';
   static const String invoiceScreen = '/invoice_screen';
+  static const String paymentStatusScreen = '/payment_status';
 
   static Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -73,6 +75,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const InvoicesList());
       case AppRouter.invoiceScreen:
         return MaterialPageRoute(builder: (_) => const InvoiceScreen());
+      case AppRouter.paymentStatusScreen:
+        return MaterialPageRoute(builder: (_) => const PaymentStatusScreen());
       default:
         return null;
     }

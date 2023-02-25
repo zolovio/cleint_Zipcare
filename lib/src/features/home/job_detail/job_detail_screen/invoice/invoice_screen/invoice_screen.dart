@@ -1,3 +1,5 @@
+import 'package:client_zipcare/main.dart';
+import 'package:client_zipcare/src/core/configs/app_router.dart';
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/components/custom_widgets.dart';
@@ -414,7 +416,7 @@ class InvoiceScreen extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: ElevatedButton(
-                onPressed: invoiceController.isCancelled ? null : () {},
+                onPressed: invoiceController.isCancelled ? null : () => navigatorKey.currentState?.pushNamed(AppRouter.paymentScreen),
                 style: ElevatedButton.styleFrom(
                   disabledBackgroundColor: primaryColor.withOpacity(.5),
                   backgroundColor: primaryColor,
