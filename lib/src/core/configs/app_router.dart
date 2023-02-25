@@ -7,7 +7,6 @@ import 'package:client_zipcare/src/features/auth/registration/ui/signup/registra
 import 'package:client_zipcare/src/features/home/home_page.dart';
 import 'package:client_zipcare/src/features/home/job_detail/allocated/allocated_profile/allocated_profile.dart';
 import 'package:client_zipcare/src/features/home/job_detail/applicants/applicant_profile/applicant_profile.dart';
-import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/invoice/invoice_screen/invoice_screen.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/invoice/invoices_list.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/service_agreement/service_agreement_screen.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_tabs.dart';
@@ -36,7 +35,7 @@ class AppRouter {
   static const String allocatedProfile = '/allocated_profile';
   static const String serviceAgreement = '/service_agreement';
   static const String invoice = '/invoice';
-  static const String invoiceScreen = '/invoice_screen';
+  // static const String invoiceScreen = '/invoice_screen';
   static const String paymentStatusScreen = '/payment_status';
 
   static Route<dynamic>? generateRoute(RouteSettings settings) {
@@ -73,8 +72,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const ServiceAgreement());
       case AppRouter.invoice:
         return MaterialPageRoute(builder: (_) => const InvoicesList());
-      case AppRouter.invoiceScreen:
-        return MaterialPageRoute(builder: (_) => const InvoiceScreen());
+      // case AppRouter.invoiceScreen:
+      //   return MaterialPageRoute(builder: (_) => const InvoiceScreen(jobCompleted: false));
       case AppRouter.paymentStatusScreen:
         return MaterialPageRoute(builder: (_) => const PaymentStatusScreen());
       default:

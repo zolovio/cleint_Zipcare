@@ -3,6 +3,7 @@ import 'package:client_zipcare/src/core/configs/app_router.dart';
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/components/custom_widgets.dart';
+import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/invoice/invoice_screen/invoice_screen.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/job_detail_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -364,7 +365,11 @@ class JobDetailScreen extends ConsumerWidget {
                 ),
                 const SizedBox(height: 15),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => navigatorKey.currentState?.push(
+                    MaterialPageRoute(
+                      builder: (_) => const InvoiceScreen(jobCompleted: true),
+                    ),
+                  ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: primaryColor,
                     shape: RoundedRectangleBorder(

@@ -29,6 +29,15 @@ class InvoiceScreenController extends ChangeNotifier {
       {"title": "End date/Time", "value": "10 July 2022 14:00"},
       {"title": "Amount", "value": "200 "},
     ],
+    "expense": {"title": "Expenses", "value": "PPE kit"},
+    "cost": {"title": "Cost", "value": "£ 500"},
+    "description": {
+      "title": "Description",
+      "value":
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+    },
+    "expenses": {"title": "Expenses", "value": "£ 500"},
+    "total": {"title": "Grand Total", "value": "£ 500"},
   };
 
   void onCancel() {

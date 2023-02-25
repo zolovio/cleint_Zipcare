@@ -1,9 +1,9 @@
 import 'package:client_zipcare/main.dart';
-import 'package:client_zipcare/src/core/configs/app_router.dart';
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/invoice/invoice_list_controller.dart';
+import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/invoice/invoice_screen/invoice_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -50,7 +50,13 @@ class InvoicesList extends ConsumerWidget {
                   const SizedBox(height: 25),
                 ],
                 InkWell(
-                  onTap: () => navigatorKey.currentState?.pushNamed(AppRouter.invoiceScreen),
+                  onTap: () => navigatorKey.currentState?.push(
+                    MaterialPageRoute(
+                      builder: (_) => const InvoiceScreen(
+                        jobCompleted: false,
+                      ),
+                    ),
+                  ),
                   child: Card(
                     elevation: 5,
                     shadowColor: shadowColor,

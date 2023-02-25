@@ -118,6 +118,7 @@ const String completed = "assets/images/complete.png";
 const String cut = "assets/images/cut.png";
 const String saveImage = "assets/images/save_image.png";
 const String issue = "assets/images/issue.png";
+const String receipt = "assets/images/receipt.png";
 
 const double textFieldBorderRadius = 10;
 const double circularBorder = 80;
