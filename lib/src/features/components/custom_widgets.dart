@@ -178,49 +178,80 @@ Widget getQuestionsWidget(String ques, bool isDetail, String detail, bool isIcon
   );
 }
 
-Future<void> showDialogAlert(BuildContext context, String title, TextEditingController controller) async {
+Future<void> showDialogAlert(
+  BuildContext context,
+  String title,
+  String label,
+  TextEditingController controller,
+  bool showField,
+) async {
   return showDialog<void>(
     context: context,
     barrierDismissible: false, // user must tap button!
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text(
-          title,
-          textAlign: TextAlign.center,
-          style: GoogleFonts.lexend(
-            fontWeight: FontWeight.w600,
-            fontSize: 20,
-            color: blackColor,
-          ),
-        ),
-        content: SingleChildScrollView(
-          child: ListBody(
-            children: <Widget>[
-              FormBuilderTextField(
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                controller: controller,
-                name: 'cancel',
-                maxLines: 5,
-                textAlignVertical: TextAlignVertical.top,
-                decoration: InputDecoration(
-                  labelText: "Please describe your reason (optional)",
-                  labelStyle: GoogleFonts.lexend(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w300,
-                  ),
-                  alignLabelWithHint: true,
-                  border: const OutlineInputBorder(
-                    borderSide: BorderSide(width: 1, color: hintLightColor),
-                    borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
+        titlePadding: const EdgeInsets.all(0.0),
+        title: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 10, 10, 0),
+              child: GestureDetector(
+                onTap: () {},
+                child: Container(
+                  alignment: FractionalOffset.topRight,
+                  child: GestureDetector(
+                    child: Image.asset(cut),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
                   ),
                 ),
-                onChanged: (val) {},
-                keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
               ),
-            ],
-          ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.lexend(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 20,
+                  color: blackColor,
+                ),
+              ),
+            ),
+          ],
         ),
+        content: showField
+            ? SingleChildScrollView(
+                child: ListBody(
+                  children: <Widget>[
+                    FormBuilderTextField(
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      controller: controller,
+                      name: 'cancel',
+                      maxLines: 5,
+                      textAlignVertical: TextAlignVertical.top,
+                      decoration: InputDecoration(
+                        labelText: label,
+                        labelStyle: GoogleFonts.lexend(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w300,
+                        ),
+                        alignLabelWithHint: true,
+                        border: const OutlineInputBorder(
+                          borderSide: BorderSide(width: 1, color: hintLightColor),
+                          borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
+                        ),
+                      ),
+                      onChanged: (val) {},
+                      keyboardType: TextInputType.text,
+                      textInputAction: TextInputAction.next,
+                    ),
+                  ],
+                ),
+              )
+            : null,
         actions: <Widget>[
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -250,6 +281,130 @@ Future<void> showDialogAlert(BuildContext context, String title, TextEditingCont
               ),
             ],
           ),
+        ],
+      );
+    },
+  );
+}
+
+Future<void> showRatingDialog(
+  BuildContext context,
+  String image,
+  String title,
+  String subTitle,
+  String fieldName,
+  TextEditingController controller,
+  String label,
+) {
+  return showDialog<void>(
+    context: context,
+    barrierDismissible: false, // user must tap button!
+    builder: (BuildContext context) {
+      return AlertDialog(
+        titlePadding: EdgeInsets.zero,
+        contentPadding: EdgeInsets.zero,
+        title: Image.asset(
+          saveImage,
+          width: 150,
+          height: 150,
+        ),
+        content: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: Container(
+                    color: primaryColor,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  title,
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.lexend(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 18,
+                                    color: whiteColor,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Text(
+                            subTitle,
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.lexend(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14,
+                              color: whiteColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                FormBuilderTextField(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  controller: controller,
+                  name: 'label',
+                  maxLines: 5,
+                  textAlignVertical: TextAlignVertical.top,
+                  decoration: InputDecoration(
+                    hintText: label,
+                    hintStyle: GoogleFonts.lexend(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w300,
+                    ),
+                    alignLabelWithHint: true,
+                    border: const OutlineInputBorder(
+                      borderSide: BorderSide(width: 1, color: hintLightColor),
+                      borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
+                    ),
+                  ),
+                  onChanged: (val) {},
+                  keyboardType: TextInputType.text,
+                  textInputAction: TextInputAction.next,
+                ),
+              ],
+            ),
+          ),
+        ),
+        actions: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              ElevatedButton(
+                onPressed: () => navigatorKey.currentState?.pop(),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: primaryColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
+                  child: Center(
+                    child: Text(
+                      submitText,
+                      style: GoogleFonts.lexend(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        color: whiteColor,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 15),
         ],
       );
     },

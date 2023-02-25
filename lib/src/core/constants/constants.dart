@@ -58,6 +58,10 @@ const String cancelText = 'Cancel';
 const String cancelledText = 'Cancelled';
 const String reasonText = 'Reason';
 const String paymentStatusText = 'Payment Status';
+const String confirmText = 'Confirm';
+const String yesText = 'Yes';
+const String noText = 'No';
+const String postReviewText = 'Post a Review';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";
@@ -111,6 +115,9 @@ const String edit = "assets/images/edit.png";
 const String reset = "assets/images/reset.png";
 const String download = "assets/images/download.png";
 const String completed = "assets/images/complete.png";
+const String cut = "assets/images/cut.png";
+const String saveImage = "assets/images/save_image.png";
+const String issue = "assets/images/issue.png";
 
 const double textFieldBorderRadius = 10;
 const double circularBorder = 80;

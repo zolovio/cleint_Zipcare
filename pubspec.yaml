@@ -34,6 +34,7 @@ dependencies:
   open_filex: ^4.3.2
   video_player: ^2.5.2
   data_table_2: ^2.3.12
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:

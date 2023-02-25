@@ -7,8 +7,13 @@ class InvoiceScreenController extends ChangeNotifier {
   InvoiceScreenController();
 
   bool isCancelled = false;
+  bool isCompleted = false;
+  bool isApproved = false;
+  bool isConfirm = true;
 
   TextEditingController alertFieldController = TextEditingController();
+  TextEditingController ratingController = TextEditingController();
+  TextEditingController issueController = TextEditingController();
 
   Map<String, dynamic> invoiceDetails = {
     "from": {"title": "From", "name": "Ali Abrahim", "address": "28 Narrowboat Close,\nCoventry,\nCV6 6RD, UK"},
@@ -26,8 +31,23 @@ class InvoiceScreenController extends ChangeNotifier {
     ],
   };
 
-  void onCancel(){
+  void onCancel() {
     isCancelled = !isCancelled;
+    notifyListeners();
+  }
+
+  void onCompleted() {
+    isCompleted = !isCompleted;
+    notifyListeners();
+  }
+
+  void onApproved() {
+    isApproved = !isApproved;
+    notifyListeners();
+  }
+
+  void onConfirm() {
+    isConfirm = !isConfirm;
     notifyListeners();
   }
 }
