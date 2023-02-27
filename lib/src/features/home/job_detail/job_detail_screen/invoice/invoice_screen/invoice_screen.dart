@@ -10,16 +10,17 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class InvoiceScreen extends ConsumerWidget {
-  const InvoiceScreen({Key? key, required this.jobCompleted}) : super(key: key);
+  const InvoiceScreen({Key? key, required this.jobCompleted, required this.isContract}) : super(key: key);
 
   final bool jobCompleted;
+  final bool isContract;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final invoiceController = ref.watch(invoiceScreenProvider);
 
     return Scaffold(
-      appBar: getAppBar(invoiceText, true, context),
+      appBar: getAppBar(isContract ? depositText : invoiceText, true, context),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: ListView(
@@ -461,47 +462,48 @@ class InvoiceScreen extends ConsumerWidget {
                 ),
               ),
             ] else ...[
-              ElevatedButton(
-                onPressed: null,
-                style: ElevatedButton.styleFrom(
-                  disabledBackgroundColor: invoiceController.isCancelled
-                      ? redColor.withOpacity(.2)
-                      : invoiceController.isCompleted
-                          ? greenColor.withOpacity(.1)
-                          : primaryColor.withOpacity(.2),
-                  backgroundColor: primaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+              if (!isContract)
+                ElevatedButton(
+                  onPressed: null,
+                  style: ElevatedButton.styleFrom(
+                    disabledBackgroundColor: invoiceController.isCancelled
+                        ? redColor.withOpacity(.2)
+                        : invoiceController.isCompleted
+                            ? greenColor.withOpacity(.1)
+                            : primaryColor.withOpacity(.2),
+                    backgroundColor: primaryColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 5.0),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Center(
-                          child: Text(
-                            invoiceController.isCancelled
-                                ? cancelledText
-                                : invoiceController.isCompleted
-                                    ? approvedText
-                                    : approvalPendingText,
-                            style: GoogleFonts.lexend(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15,
-                              color: invoiceController.isCancelled
-                                  ? redColor
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 5.0),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Center(
+                            child: Text(
+                              invoiceController.isCancelled
+                                  ? cancelledText
                                   : invoiceController.isCompleted
-                                      ? greenColor
-                                      : primaryColor,
+                                      ? approvedText
+                                      : approvalPendingText,
+                              style: GoogleFonts.lexend(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 15,
+                                color: invoiceController.isCancelled
+                                    ? redColor
+                                    : invoiceController.isCompleted
+                                        ? greenColor
+                                        : primaryColor,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
               const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1036,7 +1038,7 @@ class InvoiceScreen extends ConsumerWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              if (!invoiceController.isCancelled && !invoiceController.isCompleted) ...[
+              if (!isContract && (!invoiceController.isCancelled && !invoiceController.isCompleted)) ...[
                 Row(
                   children: <Widget>[
                     const Expanded(child: Divider()),

@@ -1,4 +1,6 @@
-import 'package:flutter/widgets.dart';
+import 'package:client_zipcare/main.dart';
+import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/invoice/invoice_screen/invoice_screen.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final serviceAgreementProvider = ChangeNotifierProvider.autoDispose((ref) => ServiceAgreementController());
@@ -9,6 +11,7 @@ class ServiceAgreementController extends ChangeNotifier {
   bool isEdit = false;
   bool isView = false;
   bool isApproved = false;
+  bool isSend = false;
 
   String contractData = "";
 
@@ -48,6 +51,8 @@ class ServiceAgreementController extends ChangeNotifier {
 
   void onView(String value) {
     isView = !isView;
+    isEdit = !isEdit;
+
     contractData = value;
 
     notifyListeners();
@@ -58,5 +63,23 @@ class ServiceAgreementController extends ChangeNotifier {
     contractData = contractDetail;
 
     notifyListeners();
+  }
+
+  void onSend() {
+    isSend = !isSend;
+
+    isEdit = false;
+    isView = false;
+    isApproved = false;
+
+    notifyListeners();
+  }
+
+  void onSendNav(bool contract) {
+    navigatorKey.currentState?.push(
+      MaterialPageRoute(
+        builder: (_) => InvoiceScreen(jobCompleted: false, isContract: contract),
+      ),
+    );
   }
 }

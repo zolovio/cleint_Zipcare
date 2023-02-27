@@ -65,6 +65,10 @@ const String postReviewText = 'Post a Review';
 const String generateContractText = 'Generate Contract';
 const String timesheetText = 'Timesheet';
 const String endEmpText = 'End Employment';
+const String contractText = 'Contract';
+const String sendText = 'Send';
+const String payDepositText = 'Pay Deposit';
+const String depositText = 'Deposit';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";

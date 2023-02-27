@@ -121,7 +121,7 @@ class JobDetailController extends ChangeNotifier {
   onJobCompleted() {
     navigatorKey.currentState?.push(
       MaterialPageRoute(
-        builder: (_) => const InvoiceScreen(jobCompleted: true),
+        builder: (_) => const InvoiceScreen(jobCompleted: true, isContract: false),
       ),
     );
   }

@@ -8,7 +8,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ServiceAgreement extends ConsumerWidget {
-  const ServiceAgreement({Key? key}) : super(key: key);
+  const ServiceAgreement({Key? key, required this.isContract}) : super(key: key);
+
+  final bool isContract;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -20,46 +22,48 @@ class ServiceAgreement extends ConsumerWidget {
         padding: const EdgeInsets.all(15.0),
         child: ListView(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: Column(
-                children: [
-                  ElevatedButton(
-                    onPressed: null,
-                    style: ElevatedButton.styleFrom(
-                      disabledBackgroundColor: primaryColor.withOpacity(.2),
-                      backgroundColor: primaryColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+            if (!isContract) ...[
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Column(
+                  children: [
+                    ElevatedButton(
+                      onPressed: null,
+                      style: ElevatedButton.styleFrom(
+                        disabledBackgroundColor: primaryColor.withOpacity(.2),
+                        backgroundColor: primaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 5.0),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Center(
-                              child: Text(
-                                serviceController.isEdit
-                                    ? editServiceText
-                                    : serviceController.isApproved
-                                        ? approvedText
-                                        : approvalWaitText,
-                                style: GoogleFonts.lexend(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 15,
-                                  color: serviceController.isApproved ? greenColor : primaryColor,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 5.0),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Center(
+                                child: Text(
+                                  serviceController.isEdit
+                                      ? editServiceText
+                                      : serviceController.isApproved
+                                          ? approvedText
+                                          : approvalWaitText,
+                                  style: GoogleFonts.lexend(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 15,
+                                    color: serviceController.isApproved ? greenColor : primaryColor,
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
+            ],
             const SizedBox(height: 10),
             if (!serviceController.isEdit) ...[
               Padding(
@@ -185,7 +189,11 @@ class ServiceAgreement extends ConsumerWidget {
                             Expanded(
                               child: Center(
                                 child: Text(
-                                  serviceController.isEdit ? viewText : editText,
+                                  serviceController.isEdit
+                                      ? viewText
+                                      : serviceController.isSend
+                                          ? downloadText
+                                          : editText,
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w600,
                                     fontSize: 18,
@@ -194,14 +202,27 @@ class ServiceAgreement extends ConsumerWidget {
                                 ),
                               ),
                             ),
-                            Image.asset(serviceController.isEdit ? viewJob : edit),
+                            Image.asset(
+                                serviceController.isEdit
+                                    ? viewJob
+                                    : serviceController.isSend
+                                        ? download
+                                        : edit,
+                                width: 20,
+                                height: 20),
                           ],
                         ),
                       ),
                     ),
                     const SizedBox(height: 15),
                     ElevatedButton(
-                      onPressed: () => serviceController.isEdit ? serviceController.onReset() : serviceController.onApprove(),
+                      onPressed: () => serviceController.isEdit
+                          ? serviceController.onReset()
+                          : serviceController.isSend
+                              ? serviceController.onSendNav(isContract)
+                              : isContract
+                                  ? serviceController.onSend()
+                                  : serviceController.onApprove(),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: primaryColor,
                         shape: RoundedRectangleBorder(
@@ -215,7 +236,13 @@ class ServiceAgreement extends ConsumerWidget {
                             Expanded(
                               child: Center(
                                 child: Text(
-                                  serviceController.isEdit ? resetText : approveText,
+                                  serviceController.isEdit
+                                      ? resetText
+                                      : serviceController.isSend
+                                          ? payDepositText
+                                          : isContract
+                                              ? sendText
+                                              : approveText,
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w600,
                                     fontSize: 18,
@@ -224,7 +251,12 @@ class ServiceAgreement extends ConsumerWidget {
                                 ),
                               ),
                             ),
-                            Image.asset(serviceController.isEdit ? reset : approve),
+                            if (!serviceController.isSend)
+                              Image.asset(serviceController.isEdit
+                                  ? reset
+                                  : isContract
+                                      ? messageSend
+                                      : approve),
                           ],
                         ),
                       ),

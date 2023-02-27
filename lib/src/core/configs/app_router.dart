@@ -6,8 +6,8 @@ import 'package:client_zipcare/src/features/auth/registration/ui/phone_verify/ph
 import 'package:client_zipcare/src/features/auth/registration/ui/signup/registration_screen.dart';
 import 'package:client_zipcare/src/features/home/home_page.dart';
 import 'package:client_zipcare/src/features/home/job_detail/applicants/applicant_profile/applicant_profile.dart';
+import 'package:client_zipcare/src/features/home/job_detail/contract/generate_contract.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/invoice/invoices_list.dart';
-import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/service_agreement/service_agreement_screen.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_tabs.dart';
 import 'package:client_zipcare/src/features/home/job_post/job_post_screen.dart';
 import 'package:client_zipcare/src/features/home/payment/card/add_card.dart';
@@ -32,10 +32,11 @@ class AppRouter {
   static const String jobDetailTab = '/job_detail_tab';
   static const String applicantProfile = '/applicant_profile';
   // static const String allocatedProfile = '/allocated_profile';
-  static const String serviceAgreement = '/service_agreement';
+  // static const String serviceAgreement = '/service_agreement';
   static const String invoice = '/invoice';
   // static const String invoiceScreen = '/invoice_screen';
   static const String paymentStatusScreen = '/payment_status';
+  static const String generateContract = '/generate_contract';
 
   static Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -67,14 +68,16 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const ApplicantProfile());
       // case AppRouter.allocatedProfile:
       //   return MaterialPageRoute(builder: (_) => const AllocatedProfile());
-      case AppRouter.serviceAgreement:
-        return MaterialPageRoute(builder: (_) => const ServiceAgreement());
+      // case AppRouter.serviceAgreement:
+      //   return MaterialPageRoute(builder: (_) => const ServiceAgreement());
       case AppRouter.invoice:
         return MaterialPageRoute(builder: (_) => const InvoicesList());
       // case AppRouter.invoiceScreen:
       //   return MaterialPageRoute(builder: (_) => const InvoiceScreen(jobCompleted: false));
       case AppRouter.paymentStatusScreen:
         return MaterialPageRoute(builder: (_) => const PaymentStatusScreen());
+      case AppRouter.generateContract:
+        return MaterialPageRoute(builder: (_) => GenerateContract());
       default:
         return null;
     }

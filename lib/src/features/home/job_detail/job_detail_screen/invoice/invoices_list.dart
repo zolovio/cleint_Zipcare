@@ -52,9 +52,7 @@ class InvoicesList extends ConsumerWidget {
                 InkWell(
                   onTap: () => navigatorKey.currentState?.push(
                     MaterialPageRoute(
-                      builder: (_) => const InvoiceScreen(
-                        jobCompleted: false,
-                      ),
+                      builder: (_) => const InvoiceScreen(jobCompleted: false, isContract: false),
                     ),
                   ),
                   child: Card(
