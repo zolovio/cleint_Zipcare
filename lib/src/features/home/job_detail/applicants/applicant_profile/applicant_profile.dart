@@ -1,8 +1,8 @@
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/controls_overlay.dart';
 import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/job_detail/applicants/applicant_profile/applicant_profile_controller.dart';
+import 'package:flick_video_player/flick_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,24 +16,21 @@ class ApplicantProfile extends ConsumerStatefulWidget {
 }
 
 class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
-  late VideoPlayerController _controller;
+  late FlickManager flickManager;
 
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.network('https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4');
-    _controller.addListener(() {
-      setState(() {});
-    });
-    _controller.setLooping(true);
-    _controller.initialize().then((_) => setState(() {}));
-    _controller.play();
+
+    flickManager = FlickManager(
+      videoPlayerController: VideoPlayerController.network("https://www.youtube.com/watch?v=C0DPdy98e4c"),
+    );
   }
 
   @override
   void dispose() {
     super.dispose();
-    _controller.dispose();
+    flickManager.dispose();
   }
 
   @override
@@ -301,31 +298,13 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                   color: hintColor,
                 ),
               ),
-              _controller.value.isInitialized
-                  ? Padding(
-                      padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                      child: ClipRRect(
-                        borderRadius: const BorderRadius.all(Radius.circular(10)),
-                        child: AspectRatio(
-                          aspectRatio: _controller.value.aspectRatio,
-                          child: Stack(
-                            alignment: Alignment.bottomCenter,
-                            children: <Widget>[
-                              VideoPlayer(_controller),
-                              ControlsOverlay(controller: _controller),
-                              VideoProgressIndicator(_controller, allowScrubbing: true),
-                            ],
-                          ),
-                        ),
-                      ),
-                    )
-                  : Padding(
-                      padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                      child: ClipRRect(
-                        borderRadius: const BorderRadius.all(Radius.circular(10)),
-                        child: Image.network("https://miro.medium.com/max/1400/0*xMaFF2hSXpf_kIfG.jpg"),
-                      ),
-                    ),
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.all(Radius.circular(10)),
+                  child: FlickVideoPlayer(flickManager: flickManager),
+                ),
+              ),
               const SizedBox(height: 10),
               const Divider(height: 3, color: hintLightColor),
               const SizedBox(height: 10),
