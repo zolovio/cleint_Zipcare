@@ -1,5 +1,7 @@
+import 'package:client_zipcare/main.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:flutter/widgets.dart';
+import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/invoice/invoice_screen/invoice_screen.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 enum JobStatus { active, completed, rejected }
@@ -113,5 +115,13 @@ class JobDetailController extends ChangeNotifier {
     maxLines = isReadMore ? null : 3;
 
     notifyListeners();
+  }
+
+  onJobCompleted() {
+    navigatorKey.currentState?.push(
+      MaterialPageRoute(
+        builder: (_) => const InvoiceScreen(jobCompleted: true),
+      ),
+    );
   }
 }
