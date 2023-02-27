@@ -24,6 +24,17 @@ class AllocatedProfile extends ConsumerWidget {
             if (isApproved) ...[
               Padding(
                 padding: const EdgeInsets.only(top: 10.0, bottom: 15),
+                child: Text(
+                  profileController.applicantProfile["detail"],
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.lexend(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500,
+                    color: blackColor,
+                  ),
+                ),
+              ),
+            ],
             Padding(
               padding: const EdgeInsets.only(top: 18.0),
               child: SizedBox(
@@ -94,7 +105,7 @@ class AllocatedProfile extends ConsumerWidget {
                                           )
                                           .toList(),
                                     ),
-                                  )
+                                  ),
                                 ],
                               ),
                             ),
@@ -123,6 +134,7 @@ class AllocatedProfile extends ConsumerWidget {
               ),
             ),
             const SizedBox(height: 20),
+            if (isApproved) ...[
               Row(
                 children: [
                   Expanded(
