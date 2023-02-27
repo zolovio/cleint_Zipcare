@@ -12,6 +12,9 @@ class AllocatedProfileController extends ChangeNotifier {
   bool isReadMore = false;
 
   Map<String, dynamic> applicantProfile = {
+    "detail": "Female Hourly Day Carer Required",
+    "status": {"title": "Job Status", "value": "In-Progress"},
+    "payroll": {"title": "Payroll Setup Status", "value": "Yes"},
     "profile_img": logo,
     "name": "Mary",
     "job_id": "Job Id: #126565",

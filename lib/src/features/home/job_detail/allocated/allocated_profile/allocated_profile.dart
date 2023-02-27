@@ -7,18 +7,23 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AllocatedProfile extends ConsumerWidget {
-  const AllocatedProfile({Key? key}) : super(key: key);
+  const AllocatedProfile({Key? key, required this.isApproved}) : super(key: key);
+
+  final bool isApproved;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final profileController = ref.watch(allocatedProfileProvider);
 
     return Scaffold(
-      appBar: getAppBar(applicantsText, true, context),
+      appBar: getAppBar(isApproved ? jobDetail : allocatedText, true, context),
       body: Padding(
         padding: const EdgeInsets.all(18.0),
         child: ListView(
           children: [
+            if (isApproved) ...[
+              Padding(
+                padding: const EdgeInsets.only(top: 10.0, bottom: 15),
             Padding(
               padding: const EdgeInsets.only(top: 18.0),
               child: SizedBox(
@@ -117,6 +122,78 @@ class AllocatedProfile extends ConsumerWidget {
                 ),
               ),
             ),
+            const SizedBox(height: 20),
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      profileController.applicantProfile["status"]["title"],
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.lexend(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                        color: blackColor,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    " : ",
+                    textAlign: TextAlign.start,
+                    style: GoogleFonts.lexend(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
+                      color: blackColor,
+                    ),
+                  ),
+                  Expanded(
+                    child: Text(
+                      profileController.applicantProfile["status"]["value"],
+                      textAlign: TextAlign.start,
+                      style: GoogleFonts.lexend(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                        color: blueColor,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      profileController.applicantProfile["payroll"]["title"],
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.lexend(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                        color: blackColor,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    " : ",
+                    textAlign: TextAlign.start,
+                    style: GoogleFonts.lexend(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
+                      color: blackColor,
+                    ),
+                  ),
+                  Expanded(
+                    child: Text(
+                      profileController.applicantProfile["payroll"]["value"],
+                      textAlign: TextAlign.start,
+                      style: GoogleFonts.lexend(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                        color: blueColor,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
             const SizedBox(height: 20),
             Text(
               descriptionText,
@@ -419,26 +496,25 @@ class AllocatedProfile extends ConsumerWidget {
             const Divider(height: 3, color: hintLightColor),
             const SizedBox(height: 15),
             const SizedBox(height: 35),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Column(
-                children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: primaryColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 5.0),
-                      child: Row(
-                        children: [
-                          Expanded(
+            isApproved
+                ? Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Column(
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            disabledBackgroundColor: primaryColor.withOpacity(.5),
+                            backgroundColor: primaryColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 5.0),
                             child: Center(
                               child: Text(
-                                removeText,
+                                generateContractText,
                                 style: GoogleFonts.lexend(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 18,
@@ -447,14 +523,119 @@ class AllocatedProfile extends ConsumerWidget {
                               ),
                             ),
                           ),
-                          Image.asset(remove),
-                        ],
-                      ),
+                        ),
+                        const SizedBox(height: 15),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            disabledBackgroundColor: primaryColor.withOpacity(.5),
+                            backgroundColor: primaryColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 5.0),
+                            child: Center(
+                              child: Text(
+                                timesheetText,
+                                style: GoogleFonts.lexend(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 18,
+                                  color: whiteColor,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 15),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            disabledBackgroundColor: primaryColor.withOpacity(.5),
+                            backgroundColor: primaryColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 5.0),
+                            child: Center(
+                              child: Text(
+                                invoiceText,
+                                style: GoogleFonts.lexend(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 18,
+                                  color: whiteColor,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 15),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            disabledBackgroundColor: primaryColor.withOpacity(.5),
+                            backgroundColor: primaryColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 5.0),
+                            child: Center(
+                              child: Text(
+                                endEmpText,
+                                style: GoogleFonts.lexend(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 18,
+                                  color: whiteColor,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 15),
+                      ],
+                    ),
+                  )
+                : Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Column(
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: primaryColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 5.0),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: Center(
+                                    child: Text(
+                                      removeText,
+                                      style: GoogleFonts.lexend(
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 18,
+                                        color: whiteColor,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Image.asset(remove),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
-            ),
           ],
         ),
       ),

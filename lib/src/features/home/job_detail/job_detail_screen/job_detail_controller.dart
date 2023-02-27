@@ -15,6 +15,7 @@ class JobDetailController extends ChangeNotifier {
   bool isReadMore = false;
 
   bool switchApplicationMode = true;
+  bool isShortlisted = true;
 
   String userName = "John Watson";
   String jobId = "Job Id: #126565";

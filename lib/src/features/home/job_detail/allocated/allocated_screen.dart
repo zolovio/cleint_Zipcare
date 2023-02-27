@@ -1,5 +1,3 @@
-import 'package:client_zipcare/main.dart';
-import 'package:client_zipcare/src/core/configs/app_router.dart';
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/home/job_detail/allocated/allocated_controller.dart';
@@ -18,7 +16,7 @@ class AllocatedScreen extends ConsumerWidget {
       itemCount: allocatedController.allocatedPersonList.length,
       itemBuilder: (BuildContext context, int index) {
         return InkWell(
-          onTap: () => navigatorKey.currentState?.pushNamed(AppRouter.allocatedProfile),
+          onTap: () => allocatedController.onTap(),
           child: Padding(
             padding: index == 0
                 ? const EdgeInsets.only(top: 10, left: 12.0, right: 12.0, bottom: 15.0)

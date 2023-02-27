@@ -56,5 +56,6 @@ const Color locationColor = Color(0xFFADB2B8);
 const Color errorColor = Color(0xFFFF9090);
 const Color cyanColor = Color(0xFF32CEFF);
 const Color redColor = Color(0xFFFF3232);
+const Color blueColor = Color(0xFF1E74DB);
 
 final ThemeData themeData = ThemeData(colorScheme: ColorScheme.fromSwatch(primarySwatch: colorPrimarySwatch).copyWith(background: lightWhiteColor));

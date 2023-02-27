@@ -1,8 +1,6 @@
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/home/jobs/approved_jobs/approved_job_screen.dart';
 import 'package:client_zipcare/src/features/home/jobs/jobs_controller.dart';
-import 'package:client_zipcare/src/features/home/jobs/posted_jobs/posted_job_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -60,12 +58,9 @@ class JobsScreen extends ConsumerWidget {
             ),
           ),
         ),
-        body: const TabBarView(
-          physics: NeverScrollableScrollPhysics(),
-          children: [
-            PostedJobScreen(),
-            ApprovedJobScreen(),
-          ],
+        body: TabBarView(
+          physics: const NeverScrollableScrollPhysics(),
+          children: jobsController.pages,
         ),
       ),
     );

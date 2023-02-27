@@ -62,6 +62,9 @@ const String confirmText = 'Confirm';
 const String yesText = 'Yes';
 const String noText = 'No';
 const String postReviewText = 'Post a Review';
+const String generateContractText = 'Generate Contract';
+const String timesheetText = 'Timesheet';
+const String endEmpText = 'End Employment';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";

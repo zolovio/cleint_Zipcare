@@ -20,7 +20,7 @@ class ApprovedJobScreen extends ConsumerWidget {
               ? const EdgeInsets.only(top: 10, left: 12.0, right: 12.0, bottom: 5.0)
               : const EdgeInsets.only(left: 12.0, right: 12.0, bottom: 5.0),
           child: InkWell(
-            onTap: () {},
+            onTap: approvedJobController.approvedJobsList[index]["status"][1] == "Active Job" ? () => approvedJobController.onActiveJob() : null,
             child: Card(
               elevation: 5,
               shadowColor: shadowColor,

@@ -1,4 +1,6 @@
-import 'package:flutter/widgets.dart';
+import 'package:client_zipcare/main.dart';
+import 'package:client_zipcare/src/features/home/job_detail/allocated/allocated_profile/allocated_profile.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 enum JobStatus { active, completed, rejected }
@@ -40,4 +42,8 @@ class ApprovedJobController extends ChangeNotifier {
       "status": [JobStatus.active, "Active Job"],
     },
   ];
+
+  void onActiveJob() {
+    navigatorKey.currentState?.push(MaterialPageRoute(builder: (_) => const AllocatedProfile(isApproved: true)));
+  }
 }
