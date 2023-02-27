@@ -4,6 +4,7 @@ import 'package:client_zipcare/src/core/constants/app_theme.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/job_detail_controller.dart';
+import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/service_agreement/service_agreement_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -305,7 +306,11 @@ class JobDetailScreen extends ConsumerWidget {
             child: Column(
               children: [
                 ElevatedButton(
-                  onPressed: () => navigatorKey.currentState?.pushNamed(AppRouter.serviceAgreement),
+                  onPressed: () => navigatorKey.currentState?.push(
+                    MaterialPageRoute(
+                      builder: (_) => const ServiceAgreement(isContract: false),
+                    ),
+                  ),
                   style: ElevatedButton.styleFrom(
                     disabledBackgroundColor: primaryColor.withOpacity(.5),
                     backgroundColor: primaryColor,

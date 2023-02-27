@@ -1,3 +1,5 @@
+import 'package:client_zipcare/main.dart';
+import 'package:client_zipcare/src/core/configs/app_router.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -70,6 +72,11 @@ class AllocatedProfileController extends ChangeNotifier {
     isReadMore = !isReadMore;
     maxLines = isReadMore ? null : 3;
 
+    notifyListeners();
+  }
+
+  void onGenerateContract() {
+    navigatorKey.currentState?.pushNamed(AppRouter.generateContract);
     notifyListeners();
   }
 }

@@ -514,7 +514,7 @@ class AllocatedProfile extends ConsumerWidget {
                     child: Column(
                       children: [
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () => profileController.onGenerateContract(),
                           style: ElevatedButton.styleFrom(
                             disabledBackgroundColor: primaryColor.withOpacity(.5),
                             backgroundColor: primaryColor,
