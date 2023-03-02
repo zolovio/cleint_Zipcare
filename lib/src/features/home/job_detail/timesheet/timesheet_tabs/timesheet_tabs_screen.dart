@@ -22,6 +22,7 @@ class TimesheetTabsScreen extends ConsumerWidget {
         itemCount: items.length,
         itemBuilder: (BuildContext context, int index) {
           return InkWell(
+            onTap: () => tabController.onTimesheetTap(items[index]["name"]!),
             child: Card(
               elevation: 4,
               shadowColor: shadowColor,

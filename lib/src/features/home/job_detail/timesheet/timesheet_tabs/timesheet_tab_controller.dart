@@ -1,4 +1,7 @@
+import 'package:client_zipcare/main.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
+import 'package:client_zipcare/src/features/home/job_detail/timesheet/timesheet_tabs/timesheet_detail/timesheet_detail_screen.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -93,4 +96,12 @@ class TimesheetTabController extends ChangeNotifier {
       "status": "Cancelled"
     },
   ];
+
+  void onTimesheetTap(String title) {
+    navigatorKey.currentState?.push(
+      MaterialPageRoute(
+        builder: (_) => TimesheetDetailScreen(title: title),
+      ),
+    );
+  }
 }

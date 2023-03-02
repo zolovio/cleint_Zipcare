@@ -72,6 +72,7 @@ const String depositText = 'Deposit';
 const String listTimesheetText = 'List of Timesheet';
 const String pendingText = 'Pending';
 const String rejectedText = 'Rejected';
+const String rejectText = 'Reject';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";
