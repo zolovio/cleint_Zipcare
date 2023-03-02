@@ -538,7 +538,7 @@ class AllocatedProfile extends ConsumerWidget {
                         ),
                         const SizedBox(height: 15),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () => profileController.onTimeSheetNav(),
                           style: ElevatedButton.styleFrom(
                             disabledBackgroundColor: primaryColor.withOpacity(.5),
                             backgroundColor: primaryColor,

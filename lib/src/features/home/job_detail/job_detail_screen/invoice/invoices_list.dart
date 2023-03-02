@@ -141,9 +141,11 @@ class InvoicesList extends ConsumerWidget {
                                           style: GoogleFonts.lexend(
                                             fontWeight: FontWeight.w500,
                                             fontSize: 11,
-                                            color: invoiceController.invoices[index]["status"] == "Completed"
+                                            color: invoiceController.invoices[index]["status"] ==
+                                                    "Completed"
                                                 ? deepGreenColor
-                                                : invoiceController.invoices[index]["status"] == "Pending"
+                                                : invoiceController.invoices[index]["status"] ==
+                                                        "Pending"
                                                     ? ratingColor
                                                     : redColor,
                                           ),
@@ -165,48 +167,6 @@ class InvoicesList extends ConsumerWidget {
           },
         ),
       ),
-      // body: Padding(
-      //   padding: const EdgeInsets.all(18.0),
-      //   child: ListView(
-      //     children: [
-      //       Row(
-      //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //         children: [
-      //           Text(
-      //             invoiceController.invoiceForUser,
-      //             style: GoogleFonts.lexend(
-      //               fontSize: 16,
-      //               fontWeight: FontWeight.w500,
-      //               color: blackColor,
-      //             ),
-      //           ),
-      //           Text(
-      //             invoiceController.jobID,
-      //             style: GoogleFonts.lexend(
-      //               fontSize: 14,
-      //               fontWeight: FontWeight.w400,
-      //               color: blackColor,
-      //             ),
-      //           ),
-      //         ],
-      //       ),
-      //       Column(
-      //         children: invoiceController.invoices
-      //             .map<Widget>(
-      //               (invoice) => Text(
-      //                 invoice["invoice"],
-      //                 style: GoogleFonts.lexend(
-      //                   fontSize: 16,
-      //                   fontWeight: FontWeight.w500,
-      //                   color: blackColor,
-      //                 ),
-      //               ),
-      //             )
-      //             .toList(),
-      //       ),
-      //     ],
-      //   ),
-      // ),
     );
   }
 }

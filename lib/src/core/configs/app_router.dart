@@ -9,6 +9,7 @@ import 'package:client_zipcare/src/features/home/job_detail/applicants/applicant
 import 'package:client_zipcare/src/features/home/job_detail/contract/generate_contract.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/invoice/invoices_list.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_tabs.dart';
+import 'package:client_zipcare/src/features/home/job_detail/timesheet/timesheet_screen.dart';
 import 'package:client_zipcare/src/features/home/job_post/job_post_screen.dart';
 import 'package:client_zipcare/src/features/home/payment/card/add_card.dart';
 import 'package:client_zipcare/src/features/home/payment/payment_page.dart';
@@ -37,6 +38,7 @@ class AppRouter {
   // static const String invoiceScreen = '/invoice_screen';
   static const String paymentStatusScreen = '/payment_status';
   static const String generateContract = '/generate_contract';
+  static const String timeSheet = '/time_sheet';
 
   static Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -78,6 +80,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const PaymentStatusScreen());
       case AppRouter.generateContract:
         return MaterialPageRoute(builder: (_) => GenerateContract());
+      case AppRouter.timeSheet:
+        return MaterialPageRoute(builder: (_) => const TimesheetScreen());
       default:
         return null;
     }

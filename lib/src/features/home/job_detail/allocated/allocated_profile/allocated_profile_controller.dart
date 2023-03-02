@@ -79,4 +79,8 @@ class AllocatedProfileController extends ChangeNotifier {
     navigatorKey.currentState?.pushNamed(AppRouter.generateContract);
     notifyListeners();
   }
+
+  onTimeSheetNav() {
+    navigatorKey.currentState?.pushNamed(AppRouter.timeSheet);
+  }
 }
