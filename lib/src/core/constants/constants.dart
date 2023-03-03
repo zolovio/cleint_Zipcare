@@ -76,6 +76,7 @@ const String rejectText = 'Reject';
 const String accountText = 'Account';
 const String profileText = 'Profile';
 const String myProfileText = 'My Profile';
+const String profileListText = 'Profiles List';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";
@@ -138,6 +139,9 @@ const String help = "assets/images/help.png";
 const String reviews = "assets/images/reviews.png";
 const String settings = "assets/images/settings.png";
 const String faq = "assets/images/faq.png";
+const String profileList = "assets/images/profile_list.png";
+const String delete = "assets/images/delete.png";
+const String addButton = "assets/images/add_button.png";
 
 const double textFieldBorderRadius = 10;
 const double circularBorder = 80;
