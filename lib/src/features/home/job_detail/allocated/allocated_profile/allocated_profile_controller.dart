@@ -4,7 +4,8 @@ import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final allocatedProfileProvider = ChangeNotifierProvider.autoDispose((ref) => AllocatedProfileController());
+final allocatedProfileProvider =
+    ChangeNotifierProvider.autoDispose((ref) => AllocatedProfileController());
 
 class AllocatedProfileController extends ChangeNotifier {
   AllocatedProfileController();
@@ -12,6 +13,10 @@ class AllocatedProfileController extends ChangeNotifier {
   int? maxLines = 2;
 
   bool isReadMore = false;
+  String noticeDate = "";
+  TextEditingController noticePeriodController = TextEditingController();
+
+  List<String> yesNo = ["Yes", "No"];
 
   Map<String, dynamic> applicantProfile = {
     "detail": "Female Hourly Day Carer Required",
@@ -82,5 +87,9 @@ class AllocatedProfileController extends ChangeNotifier {
 
   onTimeSheetNav() {
     navigatorKey.currentState?.pushNamed(AppRouter.timeSheet);
+  }
+
+  onInvoiceTap() {
+    navigatorKey.currentState?.pushNamed(AppRouter.invoice);
   }
 }

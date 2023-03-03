@@ -1,10 +1,14 @@
+import 'package:client_zipcare/main.dart';
 import 'package:client_zipcare/src/core/constants/app_theme.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/job_detail/allocated/allocated_profile/allocated_profile_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 
 class AllocatedProfile extends ConsumerWidget {
   const AllocatedProfile({Key? key, required this.isApproved}) : super(key: key);
@@ -479,7 +483,8 @@ class AllocatedProfile extends ConsumerWidget {
                   Text(
                     profileController.applicantProfile["requirements"]["text"],
                     maxLines: profileController.maxLines,
-                    overflow: profileController.isReadMore ? TextOverflow.visible : TextOverflow.ellipsis,
+                    overflow:
+                        profileController.isReadMore ? TextOverflow.visible : TextOverflow.ellipsis,
                     style: GoogleFonts.lexend(
                       fontSize: 13,
                       fontWeight: FontWeight.w400,
@@ -562,7 +567,7 @@ class AllocatedProfile extends ConsumerWidget {
                         ),
                         const SizedBox(height: 15),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () => profileController.onInvoiceTap(),
                           style: ElevatedButton.styleFrom(
                             disabledBackgroundColor: primaryColor.withOpacity(.5),
                             backgroundColor: primaryColor,
@@ -586,7 +591,147 @@ class AllocatedProfile extends ConsumerWidget {
                         ),
                         const SizedBox(height: 15),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () => showDialog<void>(
+                            context: context,
+                            barrierDismissible: false, // user must tap button!
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                titlePadding: EdgeInsets.zero,
+                                contentPadding: EdgeInsets.zero,
+                                title: Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Text(
+                                    '"Please note that we need at least 2 weeks of notice before the end date."',
+                                    textAlign: TextAlign.start,
+                                    style: GoogleFonts.lexend(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 18,
+                                      color: blackColor,
+                                    ),
+                                  ),
+                                ),
+                                content: SingleChildScrollView(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(15.0),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            getQuestionsWidget("Are you sure?", false, "", false),
+                                            FormBuilderRadioGroup<String>(
+                                              autovalidateMode: AutovalidateMode.onUserInteraction,
+                                              initialValue: profileController.yesNo[0],
+                                              name: 'yes_no',
+                                              materialTapTargetSize:
+                                                  MaterialTapTargetSize.shrinkWrap,
+                                              wrapSpacing: MediaQuery.of(context).size.width * 0.2,
+                                              decoration: const InputDecoration(
+                                                isDense: true,
+                                                contentPadding: EdgeInsets.only(top: 10),
+                                                enabledBorder: OutlineInputBorder(
+                                                  borderSide: BorderSide.none,
+                                                ),
+                                              ),
+                                              validator: FormBuilderValidators.compose(
+                                                  [FormBuilderValidators.required()]),
+                                              options: profileController.yesNo
+                                                  .map(
+                                                    (val) => FormBuilderFieldOption(
+                                                      value: val,
+                                                      child: Text(
+                                                        val,
+                                                        style: GoogleFonts.lexend(
+                                                          fontSize: 15,
+                                                          fontWeight: FontWeight.w400,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  )
+                                                  .toList(growable: false),
+                                              controlAffinity: ControlAffinity.leading,
+                                            ),
+                                            FormBuilderTextField(
+                                              name: 'notice_date',
+                                              controller: profileController.noticePeriodController,
+                                              decoration: InputDecoration(
+                                                labelText: "Select a date 2 weeks from now",
+                                                labelStyle: GoogleFonts.lexend(
+                                                  fontSize: 13,
+                                                  fontWeight: FontWeight.w400,
+                                                ),
+                                                suffixIcon: Padding(
+                                                  padding: const EdgeInsets.all(12.0),
+                                                  child:
+                                                      Image.asset(calender, width: 10, height: 10),
+                                                ),
+                                                border: const OutlineInputBorder(
+                                                  borderSide:
+                                                      BorderSide(width: 1, color: hintLightColor),
+                                                  borderRadius: BorderRadius.all(
+                                                      Radius.circular(textFieldBorderRadius)),
+                                                ),
+                                              ),
+                                              validator: FormBuilderValidators.compose(
+                                                  [FormBuilderValidators.required()]),
+                                              readOnly: true,
+                                              onTap: () async {
+                                                DateTime? pickedDate = await showDatePicker(
+                                                    context: context,
+                                                    initialDate: DateTime.now(),
+                                                    firstDate: DateTime(2000),
+                                                    lastDate: DateTime(3000));
+
+                                                if (pickedDate != null) {
+                                                  String formattedDate =
+                                                      DateFormat('dd-MMM-yyyy').format(pickedDate);
+
+                                                  profileController.noticePeriodController.text =
+                                                      formattedDate;
+                                                }
+                                              },
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                actions: <Widget>[
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      ElevatedButton(
+                                        onPressed: () => navigatorKey.currentState?.pop(),
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: primaryColor,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(10),
+                                          ),
+                                        ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 10.0, horizontal: 35.0),
+                                          child: Center(
+                                            child: Text(
+                                              submitText,
+                                              style: GoogleFonts.lexend(
+                                                fontWeight: FontWeight.w400,
+                                                fontSize: 15,
+                                                color: whiteColor,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 15),
+                                ],
+                              );
+                            },
+                          ),
                           style: ElevatedButton.styleFrom(
                             disabledBackgroundColor: primaryColor.withOpacity(.5),
                             backgroundColor: primaryColor,
