@@ -1,3 +1,4 @@
+import 'package:client_zipcare/src/features/home/account/account_screen.dart';
 import 'package:client_zipcare/src/features/home/chat/chat_screen.dart';
 import 'package:client_zipcare/src/features/home/home_screen/home_screen.dart';
 import 'package:client_zipcare/src/features/home/jobs/jobs_screen.dart';
@@ -13,7 +14,12 @@ class HomeController extends ChangeNotifier {
 
   int currentIndex = 0;
 
-  final List<Widget> pages = [const HomeScreen(), const JobsScreen(), const ChatScreen(), const Text('account')];
+  final List<Widget> pages = [
+    const HomeScreen(),
+    const JobsScreen(),
+    const ChatScreen(),
+    const AccountScreen()
+  ];
 
   void onTapped(int index) {
     currentIndex = index;

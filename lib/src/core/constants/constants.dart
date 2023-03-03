@@ -73,6 +73,9 @@ const String listTimesheetText = 'List of Timesheet';
 const String pendingText = 'Pending';
 const String rejectedText = 'Rejected';
 const String rejectText = 'Reject';
+const String accountText = 'Account';
+const String profileText = 'Profile';
+const String myProfileText = 'My Profile';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";
@@ -130,6 +133,11 @@ const String cut = "assets/images/cut.png";
 const String saveImage = "assets/images/save_image.png";
 const String issue = "assets/images/issue.png";
 const String receipt = "assets/images/receipt.png";
+const String profile = "assets/images/profile.png";
+const String help = "assets/images/help.png";
+const String reviews = "assets/images/reviews.png";
+const String settings = "assets/images/settings.png";
+const String faq = "assets/images/faq.png";
 
 const double textFieldBorderRadius = 10;
 const double circularBorder = 80;

@@ -16,10 +16,10 @@ class HomePage extends ConsumerWidget {
     final homeController = ref.watch(homeProvider);
 
     return Scaffold(
-      appBar: homeController.currentIndex != 2
+      appBar: homeController.currentIndex < 2
           ? homeAppBar(context)
           : getAppBar(
-              chatText,
+              homeController.currentIndex == 3 ? accountText : chatText,
               true,
               context,
             ),
