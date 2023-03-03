@@ -38,7 +38,10 @@ class AccountScreen extends ConsumerWidget {
                   ),
                 ],
               ),
-              Image.asset(logo, width: 120, height: 120),
+              InkWell(
+                onTap: () => accountController.onProfileView(),
+                child: Image.asset(logo, width: 120, height: 120),
+              ),
               Padding(
                 padding: const EdgeInsets.only(top: 15.0),
                 child: Text(

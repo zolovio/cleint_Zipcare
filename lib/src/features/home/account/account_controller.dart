@@ -20,4 +20,8 @@ class AccountController extends ChangeNotifier {
   onCardTap(String page) {
     navigatorKey.currentState?.pushNamed(page);
   }
+
+  onProfileView() {
+    navigatorKey.currentState?.pushNamed(AppRouter.myProfile);
+  }
 }

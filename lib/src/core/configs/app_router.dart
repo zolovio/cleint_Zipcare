@@ -6,6 +6,7 @@ import 'package:client_zipcare/src/features/auth/registration/ui/phone_verify/ph
 import 'package:client_zipcare/src/features/auth/registration/ui/signup/registration_screen.dart';
 import 'package:client_zipcare/src/features/home/account/faq/faq_screen.dart';
 import 'package:client_zipcare/src/features/home/account/help/help_screen.dart';
+import 'package:client_zipcare/src/features/home/account/my_profile/my_profile_screen.dart';
 import 'package:client_zipcare/src/features/home/account/profiles/profiles_screen.dart';
 import 'package:client_zipcare/src/features/home/account/reviews/reviews_screen.dart';
 import 'package:client_zipcare/src/features/home/account/settings/settings_controller.dart';
@@ -44,6 +45,7 @@ class AppRouter {
   static const String paymentStatusScreen = '/payment_status';
   static const String generateContract = '/generate_contract';
   static const String timeSheet = '/time_sheet';
+  static const String myProfile = '/my_profile';
   static const String profiles = '/profiles';
   static const String help = '/help';
   static const String reviews = '/reviews';
@@ -92,6 +94,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => GenerateContract());
       case AppRouter.timeSheet:
         return MaterialPageRoute(builder: (_) => const TimesheetScreen());
+      case AppRouter.myProfile:
+        return MaterialPageRoute(builder: (_) => const MyProfileScreen());
       case AppRouter.profiles:
         return MaterialPageRoute(builder: (_) => const ProfilesScreen());
       case AppRouter.help:
