@@ -82,6 +82,7 @@ const String faqText = 'FAQ\'s';
 const String myReviewText = 'My Reviews';
 const String settingsText = 'Settings';
 const String logoutText = 'Logout';
+const String aboutUsText = 'About Us';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";
