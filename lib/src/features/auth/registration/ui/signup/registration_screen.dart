@@ -454,7 +454,7 @@ class RegistrationScreen extends ConsumerWidget {
             child: Padding(
               padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
               child: ElevatedButton(
-                onPressed: () => navigatorKey.currentState?.pushNamed(AppRouter.loginScreen),
+                onPressed: () => controller.onLogin(),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: primaryColor,
                   shape: RoundedRectangleBorder(
@@ -484,36 +484,34 @@ class RegistrationScreen extends ConsumerWidget {
               ),
             ),
           ),
-        ],
-      ),
-      bottomNavigationBar: Material(
-        child: Padding(
-          padding: const EdgeInsets.only(bottom: 15.0),
-          child: Wrap(
-            alignment: WrapAlignment.center,
-            children: [
-              Text(
-                'Already have an account? ',
-                style: GoogleFonts.lexend(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              InkWell(
-                // onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>TermsAndConditionScreen(),),),
-                onTap: () {},
-                child: Text(
-                  loginText,
+          const SizedBox(height: 20),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 15.0),
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              children: [
+                Text(
+                  'Already have an account? ',
                   style: GoogleFonts.lexend(
                     fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    color: primaryColor,
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
-              ),
-            ],
+                InkWell(
+                  onTap: () => controller.onLogin(),
+                  child: Text(
+                    loginText,
+                    style: GoogleFonts.lexend(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: primaryColor,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

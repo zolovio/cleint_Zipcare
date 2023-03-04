@@ -1,7 +1,10 @@
+import 'package:client_zipcare/main.dart';
+import 'package:client_zipcare/src/core/configs/app_router.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final registrationProvider = ChangeNotifierProvider.autoDispose<RegistrationController>((ref) => RegistrationController());
+final registrationProvider =
+    ChangeNotifierProvider.autoDispose<RegistrationController>((ref) => RegistrationController());
 
 class RegistrationController extends ChangeNotifier {
   RegistrationController();
@@ -25,5 +28,9 @@ class RegistrationController extends ChangeNotifier {
   void changeCountry(String cName) {
     countryName = cName;
     notifyListeners();
+  }
+
+  onLogin() {
+    navigatorKey.currentState?.pushNamed(AppRouter.loginScreen);
   }
 }

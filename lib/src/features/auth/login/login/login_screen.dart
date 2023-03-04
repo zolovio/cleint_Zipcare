@@ -104,14 +104,17 @@ class LoginScreen extends ConsumerWidget {
                           color: rememberMeColor,
                         ),
                       ),
-                      Text(
-                        '$forgotPassText?',
-                        style: GoogleFonts.lexend(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                          color: primaryColor,
-                          decoration: TextDecoration.underline,
-                          decorationColor: underlineColor,
+                      InkWell(
+                        onTap: () => loginCon.onForgotPassword(),
+                        child: Text(
+                          '$forgotPassText?',
+                          style: GoogleFonts.lexend(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            color: primaryColor,
+                            decoration: TextDecoration.underline,
+                            decorationColor: underlineColor,
+                          ),
                         ),
                       ),
                     ],
@@ -129,7 +132,7 @@ class LoginScreen extends ConsumerWidget {
             child: Padding(
               padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
               child: ElevatedButton(
-                onPressed: () => navigatorKey.currentState?.pushNamed(AppRouter.forgotPassScreen),
+                onPressed: () => loginCon.onLogin(),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: primaryColor,
                   shape: RoundedRectangleBorder(
