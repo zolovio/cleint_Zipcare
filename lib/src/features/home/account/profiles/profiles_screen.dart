@@ -23,7 +23,7 @@ class ProfilesScreen extends ConsumerWidget {
             return Padding(
               padding: const EdgeInsets.only(left: 12.0, right: 12.0, bottom: 5.0),
               child: Card(
-                elevation: 5,
+                elevation: 1,
                 shadowColor: shadowColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
@@ -53,7 +53,7 @@ class ProfilesScreen extends ConsumerWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 5.0),
+                                  padding: const EdgeInsets.only(left: 15.0),
                                   child: Text(
                                     profileController.profilesList[index]["name"]!,
                                     style: GoogleFonts.lexend(

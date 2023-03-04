@@ -1,3 +1,5 @@
+import 'package:client_zipcare/src/core/constants/constants.dart';
+import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:flutter/material.dart';
 
 class FAQScreen extends StatelessWidget {
@@ -5,6 +7,8 @@ class FAQScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: getAppBar(faqText, true, context),
+    );
   }
 }

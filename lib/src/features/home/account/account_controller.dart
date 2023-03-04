@@ -9,6 +9,8 @@ final accountProvider = ChangeNotifierProvider.autoDispose((ref) => AccountContr
 class AccountController extends ChangeNotifier {
   AccountController();
 
+  double progress = 0.8;
+
   final List<Map<String, String>> profileCards = [
     {"title": "Profiles", "img": profile, "page": AppRouter.profiles},
     {"title": "help", "img": help, "page": AppRouter.help},

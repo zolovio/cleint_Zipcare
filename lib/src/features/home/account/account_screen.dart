@@ -95,10 +95,11 @@ class AccountScreen extends ConsumerWidget {
                   Column(
                     children: [
                       Transform.translate(
-                        offset: Offset((totalWidth * 1.9 * 0.8) - totalWidth, -5),
+                        offset: Offset(
+                            (totalWidth * 1.9 * accountController.progress) - totalWidth, -5),
                         child: Container(
                           child: Text(
-                            "${(0.8 * 100).toStringAsFixed(0)}%",
+                            "${(accountController.progress * 100).toStringAsFixed(0)}%",
                             style: GoogleFonts.lexend(
                               fontSize: 12.0,
                               color: blackColor,
@@ -110,7 +111,7 @@ class AccountScreen extends ConsumerWidget {
                         padding: EdgeInsets.zero,
                         lineHeight: 5,
                         backgroundColor: whiteColor,
-                        percent: 0.8,
+                        percent: accountController.progress,
                         progressColor: primaryColor,
                       ),
                     ],

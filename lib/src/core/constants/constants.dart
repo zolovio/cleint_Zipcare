@@ -77,6 +77,8 @@ const String accountText = 'Account';
 const String profileText = 'Profile';
 const String myProfileText = 'My Profile';
 const String profileListText = 'Profiles List';
+const String helpText = 'Help';
+const String faqText = 'FAQ\'s';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";
