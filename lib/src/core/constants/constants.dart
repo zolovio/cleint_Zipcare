@@ -84,6 +84,7 @@ const String settingsText = 'Settings';
 const String logoutText = 'Logout';
 const String aboutUsText = 'About Us';
 const String termConditionText = 'Terms and Conditions';
+const String privacyPolicyText = 'Privacy Policy';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";
