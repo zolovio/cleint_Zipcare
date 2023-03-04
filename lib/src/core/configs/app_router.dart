@@ -9,7 +9,11 @@ import 'package:client_zipcare/src/features/home/account/help/help_screen.dart';
 import 'package:client_zipcare/src/features/home/account/my_profile/my_profile_screen.dart';
 import 'package:client_zipcare/src/features/home/account/profiles/profiles_screen.dart';
 import 'package:client_zipcare/src/features/home/account/reviews/reviews_screen.dart';
-import 'package:client_zipcare/src/features/home/account/settings/settings_controller.dart';
+import 'package:client_zipcare/src/features/home/account/settings/about_us/about_us.dart';
+import 'package:client_zipcare/src/features/home/account/settings/change_password/change_pass_screen.dart';
+import 'package:client_zipcare/src/features/home/account/settings/privacy_policy/privacy_policy.dart';
+import 'package:client_zipcare/src/features/home/account/settings/settings_screen.dart';
+import 'package:client_zipcare/src/features/home/account/settings/terms_condition/terms_condition.dart';
 import 'package:client_zipcare/src/features/home/home_page.dart';
 import 'package:client_zipcare/src/features/home/job_detail/applicants/applicant_profile/applicant_profile.dart';
 import 'package:client_zipcare/src/features/home/job_detail/contract/generate_contract.dart';
@@ -51,6 +55,10 @@ class AppRouter {
   static const String reviews = '/reviews';
   static const String settings = '/settings';
   static const String faq = '/faq';
+  static const String changePass = '/change_pass';
+  static const String aboutUs = '/about_us';
+  static const String termsCondition = '/terms_condition';
+  static const String privacyPolicy = '/privacy_policy';
 
   static Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -106,6 +114,14 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const SettingsScreen());
       case AppRouter.faq:
         return MaterialPageRoute(builder: (_) => const FAQScreen());
+      case AppRouter.changePass:
+        return MaterialPageRoute(builder: (_) => const ChangePassword());
+      case AppRouter.aboutUs:
+        return MaterialPageRoute(builder: (_) => const AboutUs());
+      case AppRouter.termsCondition:
+        return MaterialPageRoute(builder: (_) => const TermsNCondition());
+      case AppRouter.privacyPolicy:
+        return MaterialPageRoute(builder: (_) => const PrivacyPolicy());
       default:
         return null;
     }
