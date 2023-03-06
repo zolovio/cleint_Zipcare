@@ -21,6 +21,7 @@ import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/in
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_tabs.dart';
 import 'package:client_zipcare/src/features/home/job_detail/timesheet/timesheet_screen.dart';
 import 'package:client_zipcare/src/features/home/job_post/job_post_screen.dart';
+import 'package:client_zipcare/src/features/home/notification/notification_screen.dart';
 import 'package:client_zipcare/src/features/home/payment/card/add_card.dart';
 import 'package:client_zipcare/src/features/home/payment/payment_page.dart';
 import 'package:client_zipcare/src/features/home/payment/payment_status/payment_status_screen.dart';
@@ -59,6 +60,7 @@ class AppRouter {
   static const String aboutUs = '/about_us';
   static const String termsCondition = '/terms_condition';
   static const String privacyPolicy = '/privacy_policy';
+  static const String notification = '/notification';
 
   static Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -122,6 +124,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const TermsNCondition());
       case AppRouter.privacyPolicy:
         return MaterialPageRoute(builder: (_) => const PrivacyPolicy());
+      case AppRouter.notification:
+        return MaterialPageRoute(builder: (_) => const NotificationScreen());
       default:
         return null;
     }

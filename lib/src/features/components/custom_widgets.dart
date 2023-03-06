@@ -13,7 +13,8 @@ AppBar getAppBar(String title, bool showAction, BuildContext context) {
     automaticallyImplyLeading: true,
     backgroundColor: lightWhiteColor,
     iconTheme: const IconThemeData(color: blackColor),
-    leading: IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Icons.arrow_back)),
+    leading:
+        IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Icons.arrow_back)),
     title: Text(
       title,
       style: GoogleFonts.lexend(
@@ -24,10 +25,13 @@ AppBar getAppBar(String title, bool showAction, BuildContext context) {
     ),
     actions: [
       if (showAction)
-        Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: InkWell(child: Image.asset(notification)),
-        )
+        InkWell(
+          onTap: () => navigatorKey.currentState?.pushNamed(AppRouter.notification),
+          child: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: InkWell(child: Image.asset(notification)),
+          ),
+        ),
     ],
   );
 }
@@ -82,10 +86,13 @@ PreferredSize homeAppBar(BuildContext context) {
               ),
             ),
             actions: [
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: InkWell(child: Image.asset(notification)),
-              )
+              InkWell(
+                onTap: () => navigatorKey.currentState?.pushNamed(AppRouter.notification),
+                child: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: InkWell(child: Image.asset(notification)),
+                ),
+              ),
             ],
           ),
         ],
