@@ -88,6 +88,9 @@ const String privacyPolicyText = 'Privacy Policy';
 const String notificationText = 'Notifications';
 const String markReadText = 'Mark all as read';
 const String acceptText = 'Accept';
+const String changePasswordText = 'Change Password';
+const String passChangedText = 'Password Changed';
+const String goBackText = 'Go Back';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";
@@ -156,6 +159,7 @@ const String addButton = "assets/images/add_button.png";
 const String tickButton = "assets/images/tick.png";
 const String profileImg1 = "assets/images/profile1.png";
 const String profileImg2 = "assets/images/profile2.png";
+const String passChanged = "assets/images/password_changed.png";
 
 const double textFieldBorderRadius = 10;
 const double circularBorder = 80;

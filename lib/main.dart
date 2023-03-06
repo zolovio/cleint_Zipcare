@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
           theme: themeData,
           navigatorKey: navigatorKey,
           onGenerateRoute: (settings) => AppRouter.generateRoute(settings),
-          home: OnBoardScreen(),
+          home: const HomePage(),
         );
       },
     );
