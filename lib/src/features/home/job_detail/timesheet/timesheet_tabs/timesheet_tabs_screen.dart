@@ -1,4 +1,4 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/features/home/job_detail/timesheet/timesheet_tabs/timesheet_tab_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -25,7 +25,7 @@ class TimesheetTabsScreen extends ConsumerWidget {
             onTap: () => tabController.onTimesheetTap(items[index]["name"]!),
             child: Card(
               elevation: 4,
-              shadowColor: shadowColor,
+              shadowColor: AppColors.shadowColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5),
               ),
@@ -43,7 +43,7 @@ class TimesheetTabsScreen extends ConsumerWidget {
                             padding: const EdgeInsets.all(10),
                             decoration: const BoxDecoration(
                               shape: BoxShape.circle,
-                              color: avatarColor,
+                              color: AppColors.avatarColor,
                             ),
                             child: const Icon(Icons.line_style_sharp),
                           ),
@@ -60,7 +60,7 @@ class TimesheetTabsScreen extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w500,
                                     fontSize: 17,
-                                    color: blackColor,
+                                    color: AppColors.blackColor,
                                   ),
                                 ),
                               ),
@@ -71,7 +71,7 @@ class TimesheetTabsScreen extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w400,
                                     fontSize: 10,
-                                    color: lightGreyColor,
+                                    color: AppColors.greyColor,
                                   ),
                                 ),
                               ),
@@ -90,10 +90,10 @@ class TimesheetTabsScreen extends ConsumerWidget {
                                     fontWeight: FontWeight.w600,
                                     fontSize: 15,
                                     color: items[index]["status"] == "Approved"
-                                        ? deepGreenColor
+                                        ? AppColors.deepGreenColor
                                         : items[index]["status"] == "Pending"
-                                            ? blueColor
-                                            : redColor,
+                                            ? AppColors.blueColor
+                                            : AppColors.redColor,
                                   ),
                                 ),
                                 Padding(
@@ -105,10 +105,10 @@ class TimesheetTabsScreen extends ConsumerWidget {
                                       fontWeight: FontWeight.w500,
                                       fontSize: 11,
                                       color: items[index]["status"] == "Approved"
-                                          ? deepGreenColor
+                                          ? AppColors.deepGreenColor
                                           : items[index]["status"] == "Pending"
-                                              ? blueColor
-                                              : redColor,
+                                              ? AppColors.blueColor
+                                              : AppColors.redColor,
                                     ),
                                   ),
                                 ),

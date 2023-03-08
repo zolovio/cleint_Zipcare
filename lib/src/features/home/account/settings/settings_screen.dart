@@ -1,6 +1,6 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/account/settings/settings_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -33,22 +33,22 @@ class SettingsScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 16,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                       height: 1.6,
                     ),
                   ),
                 ),
                 trailing: index == 0
                     ? CupertinoSwitch(
-                        activeColor: greenColor,
-                        thumbColor: whiteColor,
+                        activeColor: AppColors.greenColor,
+                        thumbColor: AppColors.whiteColor,
                         trackColor: Colors.black12,
                         value: settingsController.switchApplicationMode,
                         onChanged: (value) => settingsController.onSwitchApplicationMode(),
                       )
                     : null,
               ),
-              const Divider(height: 3, color: hintLightColor),
+              const Divider(height: 3, color: AppColors.lighterGreyColor),
               if (index == settingsController.settingTabs.length - 1) ...[
                 const SizedBox(height: 35),
                 Padding(
@@ -56,7 +56,7 @@ class SettingsScreen extends ConsumerWidget {
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: primaryColor,
+                      backgroundColor: AppColors.darkPurpleColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
@@ -72,7 +72,7 @@ class SettingsScreen extends ConsumerWidget {
                                 style: GoogleFonts.lexend(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 18,
-                                  color: whiteColor,
+                                  color: AppColors.whiteColor,
                                 ),
                               ),
                             ),

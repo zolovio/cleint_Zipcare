@@ -1,7 +1,8 @@
 import 'package:client_zipcare/main.dart';
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/components/custom_widgets.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/job_detail/allocated/allocated_profile/allocated_profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -34,7 +35,7 @@ class AllocatedProfile extends ConsumerWidget {
                   style: GoogleFonts.lexend(
                     fontSize: 15,
                     fontWeight: FontWeight.w500,
-                    color: blackColor,
+                    color: AppColors.blackColor,
                   ),
                 ),
               ),
@@ -53,7 +54,7 @@ class AllocatedProfile extends ConsumerWidget {
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(7.0),
-                              color: avatarColor.withOpacity(0.45),
+                              color: AppColors.avatarColor.withOpacity(0.45),
                             ),
                             width: double.infinity,
                             child: Padding(
@@ -66,7 +67,7 @@ class AllocatedProfile extends ConsumerWidget {
                                     style: GoogleFonts.lexend(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w700,
-                                      color: primaryColor,
+                                      color: AppColors.darkPurpleColor,
                                     ),
                                   ),
                                   Text(
@@ -74,7 +75,7 @@ class AllocatedProfile extends ConsumerWidget {
                                     style: GoogleFonts.lexend(
                                       fontSize: 15,
                                       fontWeight: FontWeight.w500,
-                                      color: hintColor,
+                                      color: AppColors.mediumSlateColor,
                                     ),
                                   ),
                                   const SizedBox(height: 10.0),
@@ -93,7 +94,7 @@ class AllocatedProfile extends ConsumerWidget {
                                                   style: GoogleFonts.lexend(
                                                     fontSize: 13,
                                                     fontWeight: FontWeight.w400,
-                                                    color: hintColor,
+                                                    color: AppColors.mediumSlateColor,
                                                   ),
                                                 ),
                                                 Text(
@@ -101,7 +102,7 @@ class AllocatedProfile extends ConsumerWidget {
                                                   style: GoogleFonts.lexend(
                                                     fontSize: 13,
                                                     fontWeight: FontWeight.w400,
-                                                    color: hintColor,
+                                                    color: AppColors.mediumSlateColor,
                                                   ),
                                                 ),
                                               ],
@@ -119,7 +120,7 @@ class AllocatedProfile extends ConsumerWidget {
                           padding: const EdgeInsets.all(3.0),
                           decoration: const BoxDecoration(
                             shape: BoxShape.circle,
-                            color: whiteColor,
+                            color: AppColors.whiteColor,
                           ),
                           child: SizedBox(
                             width: circularBorder,
@@ -148,7 +149,7 @@ class AllocatedProfile extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
-                        color: blackColor,
+                        color: AppColors.blackColor,
                       ),
                     ),
                   ),
@@ -158,7 +159,7 @@ class AllocatedProfile extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontSize: 15,
                       fontWeight: FontWeight.w400,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                   Expanded(
@@ -168,7 +169,7 @@ class AllocatedProfile extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
-                        color: blueColor,
+                        color: AppColors.blueColor,
                       ),
                     ),
                   ),
@@ -183,7 +184,7 @@ class AllocatedProfile extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
-                        color: blackColor,
+                        color: AppColors.blackColor,
                       ),
                     ),
                   ),
@@ -193,7 +194,7 @@ class AllocatedProfile extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontSize: 15,
                       fontWeight: FontWeight.w400,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                   Expanded(
@@ -203,7 +204,7 @@ class AllocatedProfile extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
-                        color: blueColor,
+                        color: AppColors.blueColor,
                       ),
                     ),
                   ),
@@ -216,18 +217,18 @@ class AllocatedProfile extends ConsumerWidget {
               style: GoogleFonts.lexend(
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
-                color: blackColor,
+                color: AppColors.blackColor,
               ),
             ),
             const SizedBox(height: 10),
-            const Divider(height: 3, color: hintLightColor),
+            const Divider(height: 3, color: AppColors.lighterGreyColor),
             const SizedBox(height: 15),
             Text(
               profileController.applicantProfile["services"]["title"],
               style: GoogleFonts.lexend(
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
-                color: hintColor,
+                color: AppColors.mediumSlateColor,
               ),
             ),
             const SizedBox(height: 10),
@@ -240,7 +241,7 @@ class AllocatedProfile extends ConsumerWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                       decoration: const BoxDecoration(
                         shape: BoxShape.rectangle,
-                        color: shadowColor,
+                        color: AppColors.shadowColor,
                         borderRadius: BorderRadius.all(
                           Radius.circular(20),
                         ),
@@ -250,7 +251,7 @@ class AllocatedProfile extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
-                          color: descGreyColor,
+                          color: AppColors.darkGreyColor,
                         ),
                       ),
                     ),
@@ -263,7 +264,7 @@ class AllocatedProfile extends ConsumerWidget {
               style: GoogleFonts.lexend(
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
-                color: hintColor,
+                color: AppColors.mediumSlateColor,
               ),
             ),
             const SizedBox(height: 10),
@@ -276,7 +277,7 @@ class AllocatedProfile extends ConsumerWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                       decoration: const BoxDecoration(
                         shape: BoxShape.rectangle,
-                        color: shadowColor,
+                        color: AppColors.shadowColor,
                         borderRadius: BorderRadius.all(
                           Radius.circular(20),
                         ),
@@ -286,7 +287,7 @@ class AllocatedProfile extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
-                          color: descGreyColor,
+                          color: AppColors.darkGreyColor,
                         ),
                       ),
                     ),
@@ -299,7 +300,7 @@ class AllocatedProfile extends ConsumerWidget {
               style: GoogleFonts.lexend(
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
-                color: hintColor,
+                color: AppColors.mediumSlateColor,
               ),
             ),
             const SizedBox(height: 10),
@@ -312,7 +313,7 @@ class AllocatedProfile extends ConsumerWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                       decoration: const BoxDecoration(
                         shape: BoxShape.rectangle,
-                        color: shadowColor,
+                        color: AppColors.shadowColor,
                         borderRadius: BorderRadius.all(
                           Radius.circular(20),
                         ),
@@ -322,7 +323,7 @@ class AllocatedProfile extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
-                          color: descGreyColor,
+                          color: AppColors.darkGreyColor,
                         ),
                       ),
                     ),
@@ -335,7 +336,7 @@ class AllocatedProfile extends ConsumerWidget {
               style: GoogleFonts.lexend(
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
-                color: hintColor,
+                color: AppColors.mediumSlateColor,
               ),
             ),
             const SizedBox(height: 10),
@@ -348,7 +349,7 @@ class AllocatedProfile extends ConsumerWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                       decoration: const BoxDecoration(
                         shape: BoxShape.rectangle,
-                        color: shadowColor,
+                        color: AppColors.shadowColor,
                         borderRadius: BorderRadius.all(
                           Radius.circular(20),
                         ),
@@ -358,7 +359,7 @@ class AllocatedProfile extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
-                          color: descGreyColor,
+                          color: AppColors.darkGreyColor,
                         ),
                       ),
                     ),
@@ -371,7 +372,7 @@ class AllocatedProfile extends ConsumerWidget {
               style: GoogleFonts.lexend(
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
-                color: hintColor,
+                color: AppColors.mediumSlateColor,
               ),
             ),
             const SizedBox(height: 10),
@@ -384,7 +385,7 @@ class AllocatedProfile extends ConsumerWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                       decoration: const BoxDecoration(
                         shape: BoxShape.rectangle,
-                        color: shadowColor,
+                        color: AppColors.shadowColor,
                         borderRadius: BorderRadius.all(
                           Radius.circular(20),
                         ),
@@ -394,7 +395,7 @@ class AllocatedProfile extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
-                          color: descGreyColor,
+                          color: AppColors.darkGreyColor,
                         ),
                       ),
                     ),
@@ -407,7 +408,7 @@ class AllocatedProfile extends ConsumerWidget {
               style: GoogleFonts.lexend(
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
-                color: hintColor,
+                color: AppColors.mediumSlateColor,
               ),
             ),
             const SizedBox(height: 10),
@@ -420,7 +421,7 @@ class AllocatedProfile extends ConsumerWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                       decoration: const BoxDecoration(
                         shape: BoxShape.rectangle,
-                        color: shadowColor,
+                        color: AppColors.shadowColor,
                         borderRadius: BorderRadius.all(
                           Radius.circular(20),
                         ),
@@ -430,7 +431,7 @@ class AllocatedProfile extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
-                          color: descGreyColor,
+                          color: AppColors.darkGreyColor,
                         ),
                       ),
                     ),
@@ -443,7 +444,7 @@ class AllocatedProfile extends ConsumerWidget {
               style: GoogleFonts.lexend(
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
-                color: hintColor,
+                color: AppColors.mediumSlateColor,
               ),
             ),
             const SizedBox(height: 10),
@@ -456,14 +457,14 @@ class AllocatedProfile extends ConsumerWidget {
                   style: GoogleFonts.lexend(
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
-                    color: cyanColor,
+                    color: AppColors.cyanColor,
                     decoration: TextDecoration.underline,
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 10),
-            const Divider(height: 3, color: hintLightColor),
+            const Divider(height: 3, color: AppColors.lighterGreyColor),
             const SizedBox(height: 10),
             Text(
               profileController.applicantProfile["requirements"]["title"],
@@ -472,7 +473,7 @@ class AllocatedProfile extends ConsumerWidget {
               style: GoogleFonts.lexend(
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
-                color: hintColor,
+                color: AppColors.mediumSlateColor,
               ),
             ),
             Container(
@@ -488,7 +489,7 @@ class AllocatedProfile extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontSize: 13,
                       fontWeight: FontWeight.w400,
-                      color: hintColor,
+                      color: AppColors.mediumSlateColor,
                     ),
                   ),
                   InkWell(
@@ -500,7 +501,7 @@ class AllocatedProfile extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontSize: 13,
                           fontWeight: FontWeight.w500,
-                          color: descGreyColor,
+                          color: AppColors.darkGreyColor,
                           decoration: TextDecoration.underline,
                         ),
                       ),
@@ -510,7 +511,7 @@ class AllocatedProfile extends ConsumerWidget {
               ),
             ),
             const SizedBox(height: 10),
-            const Divider(height: 3, color: hintLightColor),
+            const Divider(height: 3, color: AppColors.lighterGreyColor),
             const SizedBox(height: 15),
             const SizedBox(height: 35),
             isApproved
@@ -521,8 +522,8 @@ class AllocatedProfile extends ConsumerWidget {
                         ElevatedButton(
                           onPressed: () => profileController.onGenerateContract(),
                           style: ElevatedButton.styleFrom(
-                            disabledBackgroundColor: primaryColor.withOpacity(.5),
-                            backgroundColor: primaryColor,
+                            disabledBackgroundColor: AppColors.darkPurpleColor.withOpacity(.5),
+                            backgroundColor: AppColors.darkPurpleColor,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
@@ -535,7 +536,7 @@ class AllocatedProfile extends ConsumerWidget {
                                 style: GoogleFonts.lexend(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 18,
-                                  color: whiteColor,
+                                  color: AppColors.whiteColor,
                                 ),
                               ),
                             ),
@@ -545,8 +546,8 @@ class AllocatedProfile extends ConsumerWidget {
                         ElevatedButton(
                           onPressed: () => profileController.onTimeSheetNav(),
                           style: ElevatedButton.styleFrom(
-                            disabledBackgroundColor: primaryColor.withOpacity(.5),
-                            backgroundColor: primaryColor,
+                            disabledBackgroundColor: AppColors.darkPurpleColor.withOpacity(.5),
+                            backgroundColor: AppColors.darkPurpleColor,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
@@ -559,7 +560,7 @@ class AllocatedProfile extends ConsumerWidget {
                                 style: GoogleFonts.lexend(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 18,
-                                  color: whiteColor,
+                                  color: AppColors.whiteColor,
                                 ),
                               ),
                             ),
@@ -569,8 +570,8 @@ class AllocatedProfile extends ConsumerWidget {
                         ElevatedButton(
                           onPressed: () => profileController.onInvoiceTap(),
                           style: ElevatedButton.styleFrom(
-                            disabledBackgroundColor: primaryColor.withOpacity(.5),
-                            backgroundColor: primaryColor,
+                            disabledBackgroundColor: AppColors.darkPurpleColor.withOpacity(.5),
+                            backgroundColor: AppColors.darkPurpleColor,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
@@ -583,7 +584,7 @@ class AllocatedProfile extends ConsumerWidget {
                                 style: GoogleFonts.lexend(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 18,
-                                  color: whiteColor,
+                                  color: AppColors.whiteColor,
                                 ),
                               ),
                             ),
@@ -606,7 +607,7 @@ class AllocatedProfile extends ConsumerWidget {
                                     style: GoogleFonts.lexend(
                                       fontWeight: FontWeight.w500,
                                       fontSize: 18,
-                                      color: blackColor,
+                                      color: AppColors.blackColor,
                                     ),
                                   ),
                                 ),
@@ -667,8 +668,8 @@ class AllocatedProfile extends ConsumerWidget {
                                                       Image.asset(calender, width: 10, height: 10),
                                                 ),
                                                 border: const OutlineInputBorder(
-                                                  borderSide:
-                                                      BorderSide(width: 1, color: hintLightColor),
+                                                  borderSide: BorderSide(
+                                                      width: 1, color: AppColors.lighterGreyColor),
                                                   borderRadius: BorderRadius.all(
                                                       Radius.circular(textFieldBorderRadius)),
                                                 ),
@@ -705,7 +706,7 @@ class AllocatedProfile extends ConsumerWidget {
                                       ElevatedButton(
                                         onPressed: () => navigatorKey.currentState?.pop(),
                                         style: ElevatedButton.styleFrom(
-                                          backgroundColor: primaryColor,
+                                          backgroundColor: AppColors.darkPurpleColor,
                                           shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(10),
                                           ),
@@ -719,7 +720,7 @@ class AllocatedProfile extends ConsumerWidget {
                                               style: GoogleFonts.lexend(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 15,
-                                                color: whiteColor,
+                                                color: AppColors.whiteColor,
                                               ),
                                             ),
                                           ),
@@ -733,8 +734,8 @@ class AllocatedProfile extends ConsumerWidget {
                             },
                           ),
                           style: ElevatedButton.styleFrom(
-                            disabledBackgroundColor: primaryColor.withOpacity(.5),
-                            backgroundColor: primaryColor,
+                            disabledBackgroundColor: AppColors.darkPurpleColor.withOpacity(.5),
+                            backgroundColor: AppColors.darkPurpleColor,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
@@ -747,7 +748,7 @@ class AllocatedProfile extends ConsumerWidget {
                                 style: GoogleFonts.lexend(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 18,
-                                  color: whiteColor,
+                                  color: AppColors.whiteColor,
                                 ),
                               ),
                             ),
@@ -764,7 +765,7 @@ class AllocatedProfile extends ConsumerWidget {
                         ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: primaryColor,
+                            backgroundColor: AppColors.darkPurpleColor,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
@@ -780,7 +781,7 @@ class AllocatedProfile extends ConsumerWidget {
                                       style: GoogleFonts.lexend(
                                         fontWeight: FontWeight.w600,
                                         fontSize: 18,
-                                        color: whiteColor,
+                                        color: AppColors.whiteColor,
                                       ),
                                     ),
                                   ),

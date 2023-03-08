@@ -1,10 +1,10 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:client_zipcare/main.dart';
+import 'package:client_zipcare/src/core/components/custom_widgets.dart';
 import 'package:client_zipcare/src/core/configs/app_router.dart';
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/job_post/job_post_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -31,8 +31,8 @@ class JobPostScreen extends ConsumerWidget {
         elevation: 0,
         centerTitle: true,
         automaticallyImplyLeading: true,
-        backgroundColor: lightWhiteColor,
-        iconTheme: const IconThemeData(color: blackColor),
+        backgroundColor: AppColors.lightWhiteColor,
+        iconTheme: const IconThemeData(color: AppColors.blackColor),
         leading: IconButton(
             onPressed: () => jobPostController.currentIndex == 1
                 ? Navigator.pop(context)
@@ -43,7 +43,7 @@ class JobPostScreen extends ConsumerWidget {
           style: GoogleFonts.lexend(
             fontSize: 20,
             fontWeight: FontWeight.w500,
-            color: blackColor,
+            color: AppColors.blackColor,
           ),
         ),
         actions: [
@@ -214,7 +214,7 @@ class JobPostScreen extends ConsumerWidget {
                                     errorStyle: GoogleFonts.lexend(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w400,
-                                      color: errorColor,
+                                      color: AppColors.lightRedColor,
                                     ),
                                     errorMaxLines: 2,
                                   )
@@ -325,7 +325,7 @@ class JobPostScreen extends ConsumerWidget {
                             hintText: 'Select Profile',
                             isDense: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(width: 1, color: hintLightColor),
+                              borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                               borderRadius: BorderRadius.all(Radius.circular(15)),
                             ),
                           ),
@@ -345,14 +345,14 @@ class JobPostScreen extends ConsumerWidget {
                               navigatorKey.currentState?.pushNamed(AppRouter.addNewProfile),
                           style: ElevatedButton.styleFrom(
                             elevation: 0,
-                            backgroundColor: lightWhiteColor,
+                            backgroundColor: AppColors.lightWhiteColor,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
                           ),
                           child: Row(
                             children: [
-                              Image.asset(add, color: blackColor),
+                              Image.asset(add, color: AppColors.blackColor),
                               Expanded(
                                 child: Padding(
                                   padding:
@@ -362,7 +362,7 @@ class JobPostScreen extends ConsumerWidget {
                                     style: GoogleFonts.lexend(
                                       fontWeight: FontWeight.w500,
                                       fontSize: 15,
-                                      color: blackColor,
+                                      color: AppColors.blackColor,
                                     ),
                                   ),
                                 ),
@@ -387,7 +387,7 @@ class JobPostScreen extends ConsumerWidget {
                               fontWeight: FontWeight.w400,
                             ),
                             border: const OutlineInputBorder(
-                              borderSide: BorderSide(width: 1, color: hintLightColor),
+                              borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                             ),
@@ -412,7 +412,7 @@ class JobPostScreen extends ConsumerWidget {
                               fontWeight: FontWeight.w400,
                             ),
                             border: const OutlineInputBorder(
-                              borderSide: BorderSide(width: 1, color: hintLightColor),
+                              borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                             ),
@@ -434,7 +434,8 @@ class JobPostScreen extends ConsumerWidget {
                                   hintText: 'Age',
                                   isDense: true,
                                   border: OutlineInputBorder(
-                                    borderSide: BorderSide(width: 1, color: hintLightColor),
+                                    borderSide:
+                                        BorderSide(width: 1, color: AppColors.lighterGreyColor),
                                     borderRadius: BorderRadius.all(Radius.circular(15)),
                                   ),
                                 ),
@@ -463,7 +464,8 @@ class JobPostScreen extends ConsumerWidget {
                                     fontWeight: FontWeight.w400,
                                   ),
                                   border: const OutlineInputBorder(
-                                    borderSide: BorderSide(width: 1, color: hintLightColor),
+                                    borderSide:
+                                        BorderSide(width: 1, color: AppColors.lighterGreyColor),
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                                   ),
@@ -491,7 +493,7 @@ class JobPostScreen extends ConsumerWidget {
                               fontWeight: FontWeight.w400,
                             ),
                             border: const OutlineInputBorder(
-                              borderSide: BorderSide(width: 1, color: hintLightColor),
+                              borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                             ),
@@ -596,7 +598,8 @@ class JobPostScreen extends ConsumerWidget {
                                   child: Image.asset(calender, width: 20, height: 10),
                                 ),
                                 border: const OutlineInputBorder(
-                                  borderSide: BorderSide(width: 1, color: hintLightColor),
+                                  borderSide:
+                                      BorderSide(width: 1, color: AppColors.lighterGreyColor),
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                                 ),
@@ -666,7 +669,8 @@ class JobPostScreen extends ConsumerWidget {
                                         ),
                                       ),
                                       border: const OutlineInputBorder(
-                                        borderSide: BorderSide(width: 1, color: hintLightColor),
+                                        borderSide:
+                                            BorderSide(width: 1, color: AppColors.lighterGreyColor),
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(textFieldBorderRadius)),
                                       ),
@@ -715,7 +719,7 @@ class JobPostScreen extends ConsumerWidget {
                           ),
                           isDense: true,
                           border: const OutlineInputBorder(
-                            borderSide: BorderSide(width: 1, color: hintLightColor),
+                            borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                             borderRadius: BorderRadius.all(Radius.circular(15)),
                           ),
                         ),
@@ -795,7 +799,7 @@ class JobPostScreen extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w400,
-                                    color: hintColor,
+                                    color: AppColors.mediumSlateColor,
                                   ),
                                 ),
                               ),
@@ -831,7 +835,7 @@ class JobPostScreen extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w400,
-                                    color: hintColor,
+                                    color: AppColors.mediumSlateColor,
                                   ),
                                 ),
                               ),
@@ -865,7 +869,7 @@ class JobPostScreen extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w400,
-                                    color: hintColor,
+                                    color: AppColors.mediumSlateColor,
                                   ),
                                 ),
                               ),
@@ -899,7 +903,7 @@ class JobPostScreen extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w400,
-                                    color: hintColor,
+                                    color: AppColors.mediumSlateColor,
                                   ),
                                 ),
                               ),
@@ -959,7 +963,7 @@ class JobPostScreen extends ConsumerWidget {
                           ),
                           isDense: true,
                           border: const OutlineInputBorder(
-                            borderSide: BorderSide(width: 1, color: hintLightColor),
+                            borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                             borderRadius: BorderRadius.all(Radius.circular(15)),
                           ),
                         ),
@@ -989,7 +993,7 @@ class JobPostScreen extends ConsumerWidget {
                             fontWeight: FontWeight.w400,
                           ),
                           border: const OutlineInputBorder(
-                            borderSide: BorderSide(width: 1, color: hintLightColor),
+                            borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                             borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                           ),
                         ),
@@ -1049,7 +1053,7 @@ class JobPostScreen extends ConsumerWidget {
                               fontWeight: FontWeight.w400,
                             ),
                             border: const OutlineInputBorder(
-                              borderSide: BorderSide(width: 1, color: hintLightColor),
+                              borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                             ),
@@ -1091,7 +1095,7 @@ class JobPostScreen extends ConsumerWidget {
                           ),
                           alignLabelWithHint: true,
                           border: const OutlineInputBorder(
-                            borderSide: BorderSide(width: 1, color: hintLightColor),
+                            borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                             borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                           ),
                         ),
@@ -1124,7 +1128,7 @@ class JobPostScreen extends ConsumerWidget {
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(7.0),
-                              color: avatarColor.withOpacity(0.45),
+                              color: AppColors.avatarColor.withOpacity(0.45),
                             ),
                             width: double.infinity,
                             child: Padding(
@@ -1137,7 +1141,7 @@ class JobPostScreen extends ConsumerWidget {
                                     style: GoogleFonts.lexend(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w700,
-                                      color: primaryColor,
+                                      color: AppColors.darkPurpleColor,
                                     ),
                                   ),
                                   Text(
@@ -1145,7 +1149,7 @@ class JobPostScreen extends ConsumerWidget {
                                     style: GoogleFonts.lexend(
                                       fontSize: 15,
                                       fontWeight: FontWeight.w500,
-                                      color: hintColor,
+                                      color: AppColors.mediumSlateColor,
                                     ),
                                   ),
                                   const SizedBox(height: 10.0),
@@ -1164,7 +1168,7 @@ class JobPostScreen extends ConsumerWidget {
                                                   style: GoogleFonts.lexend(
                                                     fontSize: 13,
                                                     fontWeight: FontWeight.w400,
-                                                    color: hintColor,
+                                                    color: AppColors.mediumSlateColor,
                                                   ),
                                                 ),
                                                 Text(
@@ -1172,7 +1176,7 @@ class JobPostScreen extends ConsumerWidget {
                                                   style: GoogleFonts.lexend(
                                                     fontSize: 13,
                                                     fontWeight: FontWeight.w400,
-                                                    color: hintColor,
+                                                    color: AppColors.mediumSlateColor,
                                                   ),
                                                 ),
                                               ],
@@ -1190,14 +1194,14 @@ class JobPostScreen extends ConsumerWidget {
                           padding: const EdgeInsets.all(3.0),
                           decoration: const BoxDecoration(
                             shape: BoxShape.circle,
-                            color: whiteColor,
+                            color: AppColors.whiteColor,
                           ),
                           child: Container(
                             width: circularBorder,
                             height: circularBorder,
                             decoration: const BoxDecoration(
                               shape: BoxShape.circle,
-                              color: avatarColor,
+                              color: AppColors.avatarColor,
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(4.0),
@@ -1207,7 +1211,7 @@ class JobPostScreen extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontSize: 30,
                                     fontWeight: FontWeight.w400,
-                                    color: blackColor,
+                                    color: AppColors.blackColor,
                                   ),
                                 ),
                               ),
@@ -1226,7 +1230,7 @@ class JobPostScreen extends ConsumerWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Divider(height: 3, color: hintLightColor),
+                  const Divider(height: 3, color: AppColors.lighterGreyColor),
                   const SizedBox(height: 15),
                   getQuestionsWidget("Is this a self-employed position?", false, "", false),
                   Container(
@@ -1234,7 +1238,7 @@ class JobPostScreen extends ConsumerWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                     decoration: const BoxDecoration(
                       shape: BoxShape.rectangle,
-                      color: shadowColor,
+                      color: AppColors.shadowColor,
                       borderRadius: BorderRadius.all(
                         Radius.circular(20),
                       ),
@@ -1246,11 +1250,11 @@ class JobPostScreen extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
-                        color: descGreyColor,
+                        color: AppColors.darkGreyColor,
                       ),
                     ),
                   ),
-                  const Divider(height: 3, color: hintLightColor),
+                  const Divider(height: 3, color: AppColors.lighterGreyColor),
                   const SizedBox(height: 15),
                   getQuestionsWidget(
                       "Is it an urgent requirement/ needs matching?", false, "", false),
@@ -1259,7 +1263,7 @@ class JobPostScreen extends ConsumerWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                     decoration: const BoxDecoration(
                       shape: BoxShape.rectangle,
-                      color: shadowColor,
+                      color: AppColors.shadowColor,
                       borderRadius: BorderRadius.all(
                         Radius.circular(20),
                       ),
@@ -1271,11 +1275,11 @@ class JobPostScreen extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
-                        color: descGreyColor,
+                        color: AppColors.darkGreyColor,
                       ),
                     ),
                   ),
-                  const Divider(height: 3, color: hintLightColor),
+                  const Divider(height: 3, color: AppColors.lighterGreyColor),
                   const SizedBox(height: 15),
                   getQuestionsWidget(
                       "Is the carer requested for a person or business?", false, "", false),
@@ -1284,7 +1288,7 @@ class JobPostScreen extends ConsumerWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                     decoration: const BoxDecoration(
                       shape: BoxShape.rectangle,
-                      color: shadowColor,
+                      color: AppColors.shadowColor,
                       borderRadius: BorderRadius.all(
                         Radius.circular(20),
                       ),
@@ -1296,11 +1300,11 @@ class JobPostScreen extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
-                        color: descGreyColor,
+                        color: AppColors.darkGreyColor,
                       ),
                     ),
                   ),
-                  const Divider(height: 3, color: hintLightColor),
+                  const Divider(height: 3, color: AppColors.lighterGreyColor),
                   const SizedBox(height: 15),
                   getQuestionsWidget("Are you the person needing care", false, "", false),
                   Container(
@@ -1308,7 +1312,7 @@ class JobPostScreen extends ConsumerWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                     decoration: const BoxDecoration(
                       shape: BoxShape.rectangle,
-                      color: shadowColor,
+                      color: AppColors.shadowColor,
                       borderRadius: BorderRadius.all(
                         Radius.circular(20),
                       ),
@@ -1320,11 +1324,11 @@ class JobPostScreen extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
-                        color: descGreyColor,
+                        color: AppColors.darkGreyColor,
                       ),
                     ),
                   ),
-                  const Divider(height: 3, color: hintLightColor),
+                  const Divider(height: 3, color: AppColors.lighterGreyColor),
                   const SizedBox(height: 15),
                   getQuestionsWidget("Type of care*", false, "", false),
                   Container(
@@ -1332,7 +1336,7 @@ class JobPostScreen extends ConsumerWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                     decoration: const BoxDecoration(
                       shape: BoxShape.rectangle,
-                      color: shadowColor,
+                      color: AppColors.shadowColor,
                       borderRadius: BorderRadius.all(
                         Radius.circular(20),
                       ),
@@ -1344,11 +1348,11 @@ class JobPostScreen extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
-                        color: descGreyColor,
+                        color: AppColors.darkGreyColor,
                       ),
                     ),
                   ),
-                  const Divider(height: 3, color: hintLightColor),
+                  const Divider(height: 3, color: AppColors.lighterGreyColor),
                   const SizedBox(height: 15),
                   getQuestionsWidget("Type of job*", false, "", false),
                   Container(
@@ -1356,7 +1360,7 @@ class JobPostScreen extends ConsumerWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                     decoration: const BoxDecoration(
                       shape: BoxShape.rectangle,
-                      color: shadowColor,
+                      color: AppColors.shadowColor,
                       borderRadius: BorderRadius.all(
                         Radius.circular(20),
                       ),
@@ -1368,11 +1372,11 @@ class JobPostScreen extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
-                        color: descGreyColor,
+                        color: AppColors.darkGreyColor,
                       ),
                     ),
                   ),
-                  const Divider(height: 3, color: hintLightColor),
+                  const Divider(height: 3, color: AppColors.lighterGreyColor),
                   const SizedBox(height: 15),
                   getQuestionsWidget("When do you require care ?", false, "", false),
                   Padding(
@@ -1388,7 +1392,7 @@ class JobPostScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w400,
-                                color: descGreyColor,
+                                color: AppColors.darkGreyColor,
                               ),
                             ),
                             Text(
@@ -1396,7 +1400,7 @@ class JobPostScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w400,
-                                color: blackColor,
+                                color: AppColors.blackColor,
                               ),
                             ),
                           ],
@@ -1408,7 +1412,7 @@ class JobPostScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w400,
-                                color: descGreyColor,
+                                color: AppColors.darkGreyColor,
                               ),
                             ),
                             Text(
@@ -1416,7 +1420,7 @@ class JobPostScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w400,
-                                color: blackColor,
+                                color: AppColors.blackColor,
                               ),
                             ),
                             Text(
@@ -1424,7 +1428,7 @@ class JobPostScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w400,
-                                color: blackColor,
+                                color: AppColors.blackColor,
                               ),
                             ),
                           ],
@@ -1436,7 +1440,7 @@ class JobPostScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w400,
-                                color: descGreyColor,
+                                color: AppColors.darkGreyColor,
                               ),
                             ),
                             Text(
@@ -1444,7 +1448,7 @@ class JobPostScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w400,
-                                color: blackColor,
+                                color: AppColors.blackColor,
                               ),
                             ),
                           ],
@@ -1452,7 +1456,7 @@ class JobPostScreen extends ConsumerWidget {
                       ],
                     ),
                   ),
-                  const Divider(height: 3, color: hintLightColor),
+                  const Divider(height: 3, color: AppColors.lighterGreyColor),
                   const SizedBox(height: 15),
                   getQuestionsWidget("Carer’s Gender", false, "", false),
                   Container(
@@ -1460,7 +1464,7 @@ class JobPostScreen extends ConsumerWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                     decoration: const BoxDecoration(
                       shape: BoxShape.rectangle,
-                      color: shadowColor,
+                      color: AppColors.shadowColor,
                       borderRadius: BorderRadius.all(
                         Radius.circular(20),
                       ),
@@ -1470,11 +1474,11 @@ class JobPostScreen extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
-                        color: descGreyColor,
+                        color: AppColors.darkGreyColor,
                       ),
                     ),
                   ),
-                  const Divider(height: 3, color: hintLightColor),
+                  const Divider(height: 3, color: AppColors.lighterGreyColor),
                   const SizedBox(height: 15),
                   getQuestionsWidget(
                       "You need care for which health conditions.", false, "", false),
@@ -1487,7 +1491,7 @@ class JobPostScreen extends ConsumerWidget {
                             padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                             decoration: const BoxDecoration(
                               shape: BoxShape.rectangle,
-                              color: shadowColor,
+                              color: AppColors.shadowColor,
                               borderRadius: BorderRadius.all(
                                 Radius.circular(20),
                               ),
@@ -1497,14 +1501,14 @@ class JobPostScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w400,
-                                color: descGreyColor,
+                                color: AppColors.darkGreyColor,
                               ),
                             ),
                           ),
                         )
                         .toList(),
                   ),
-                  const Divider(height: 3, color: hintLightColor),
+                  const Divider(height: 3, color: AppColors.lighterGreyColor),
                   const SizedBox(height: 15),
                   getQuestionsWidget("Services you need from the carer", false, "", false),
                   Wrap(
@@ -1516,7 +1520,7 @@ class JobPostScreen extends ConsumerWidget {
                             padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                             decoration: const BoxDecoration(
                               shape: BoxShape.rectangle,
-                              color: shadowColor,
+                              color: AppColors.shadowColor,
                               borderRadius: BorderRadius.all(
                                 Radius.circular(20),
                               ),
@@ -1526,14 +1530,14 @@ class JobPostScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w400,
-                                color: descGreyColor,
+                                color: AppColors.darkGreyColor,
                               ),
                             ),
                           ),
                         )
                         .toList(),
                   ),
-                  const Divider(height: 3, color: hintLightColor),
+                  const Divider(height: 3, color: AppColors.lighterGreyColor),
                   const SizedBox(height: 15),
                   getQuestionsWidget("Access to funding?", false, "", false),
                   Container(
@@ -1541,7 +1545,7 @@ class JobPostScreen extends ConsumerWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                     decoration: const BoxDecoration(
                       shape: BoxShape.rectangle,
-                      color: shadowColor,
+                      color: AppColors.shadowColor,
                       borderRadius: BorderRadius.all(
                         Radius.circular(20),
                       ),
@@ -1551,11 +1555,11 @@ class JobPostScreen extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
-                        color: descGreyColor,
+                        color: AppColors.darkGreyColor,
                       ),
                     ),
                   ),
-                  const Divider(height: 3, color: hintLightColor),
+                  const Divider(height: 3, color: AppColors.lighterGreyColor),
                   const SizedBox(height: 15),
                   getQuestionsWidget("Type of funding", false, "", false),
                   Container(
@@ -1563,7 +1567,7 @@ class JobPostScreen extends ConsumerWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                     decoration: const BoxDecoration(
                       shape: BoxShape.rectangle,
-                      color: shadowColor,
+                      color: AppColors.shadowColor,
                       borderRadius: BorderRadius.all(
                         Radius.circular(20),
                       ),
@@ -1573,11 +1577,11 @@ class JobPostScreen extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
-                        color: descGreyColor,
+                        color: AppColors.darkGreyColor,
                       ),
                     ),
                   ),
-                  const Divider(height: 3, color: hintLightColor),
+                  const Divider(height: 3, color: AppColors.lighterGreyColor),
                   const SizedBox(height: 15),
                   getQuestionsWidget("Care plan Documents", false, "", false),
                   Container(
@@ -1590,13 +1594,13 @@ class JobPostScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
-                            color: descGreyColor,
+                            color: AppColors.darkGreyColor,
                           ),
                         ),
                       ],
                     ),
                   ),
-                  const Divider(height: 3, color: hintLightColor),
+                  const Divider(height: 3, color: AppColors.lighterGreyColor),
                   const SizedBox(height: 15),
                   getQuestionsWidget("Specific Requirements", false, "", false),
                   Container(
@@ -1613,7 +1617,7 @@ class JobPostScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
-                            color: underlineColor,
+                            color: AppColors.mediumGreyColor,
                           ),
                         ),
                         InkWell(
@@ -1625,7 +1629,7 @@ class JobPostScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w500,
-                                color: blackColor,
+                                color: AppColors.blackColor,
                                 decoration: TextDecoration.underline,
                               ),
                             ),
@@ -1662,7 +1666,7 @@ class JobPostScreen extends ConsumerWidget {
                         // }
                       },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: primaryColor,
+                  backgroundColor: AppColors.darkPurpleColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -1682,7 +1686,7 @@ class JobPostScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w600,
                               fontSize: 18,
-                              color: whiteColor,
+                              color: AppColors.whiteColor,
                             ),
                           ),
                         ),

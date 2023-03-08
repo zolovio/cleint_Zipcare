@@ -1,4 +1,4 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/home/account/account_controller.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +32,7 @@ class AccountScreen extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        color: primaryColor,
+                        color: AppColors.darkPurpleColor,
                       ),
                     ),
                   ),
@@ -50,7 +50,7 @@ class AccountScreen extends ConsumerWidget {
                   style: GoogleFonts.lexend(
                     fontSize: 20,
                     fontWeight: FontWeight.w500,
-                    color: blackColor,
+                    color: AppColors.blackColor,
                   ),
                 ),
               ),
@@ -60,8 +60,8 @@ class AccountScreen extends ConsumerWidget {
           ElevatedButton(
             onPressed: null,
             style: ElevatedButton.styleFrom(
-              disabledBackgroundColor: primaryColor.withOpacity(.2),
-              backgroundColor: primaryColor,
+              disabledBackgroundColor: AppColors.darkPurpleColor.withOpacity(.2),
+              backgroundColor: AppColors.darkPurpleColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -78,7 +78,7 @@ class AccountScreen extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontWeight: FontWeight.w500,
                           fontSize: 13,
-                          color: blackColor,
+                          color: AppColors.blackColor,
                         ),
                       ),
                       Text(
@@ -86,7 +86,7 @@ class AccountScreen extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontWeight: FontWeight.w400,
                           fontSize: 13,
-                          color: primaryColor,
+                          color: AppColors.darkPurpleColor,
                         ),
                       ),
                     ],
@@ -97,22 +97,20 @@ class AccountScreen extends ConsumerWidget {
                       Transform.translate(
                         offset: Offset(
                             (totalWidth * 1.9 * accountController.progress) - totalWidth, -5),
-                        child: Container(
-                          child: Text(
-                            "${(accountController.progress * 100).toStringAsFixed(0)}%",
-                            style: GoogleFonts.lexend(
-                              fontSize: 12.0,
-                              color: blackColor,
-                            ),
+                        child: Text(
+                          "${(accountController.progress * 100).toStringAsFixed(0)}%",
+                          style: GoogleFonts.lexend(
+                            fontSize: 12.0,
+                            color: AppColors.blackColor,
                           ),
                         ),
                       ),
                       LinearPercentIndicator(
                         padding: EdgeInsets.zero,
                         lineHeight: 5,
-                        backgroundColor: whiteColor,
+                        backgroundColor: AppColors.whiteColor,
                         percent: accountController.progress,
-                        progressColor: primaryColor,
+                        progressColor: AppColors.darkPurpleColor,
                       ),
                     ],
                   ),
@@ -122,7 +120,7 @@ class AccountScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
-                      color: hintColor,
+                      color: AppColors.mediumSlateColor,
                     ),
                   ),
                 ],
@@ -152,7 +150,7 @@ class AccountScreen extends ConsumerWidget {
                     child: Container(
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        color: whiteColor,
+                        color: AppColors.whiteColor,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Column(
@@ -169,7 +167,7 @@ class AccountScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontSize: 18,
                               fontWeight: FontWeight.w500,
-                              color: blackColor,
+                              color: AppColors.blackColor,
                             ),
                           ),
                         ],

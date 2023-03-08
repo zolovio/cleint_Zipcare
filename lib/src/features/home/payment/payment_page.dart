@@ -1,8 +1,8 @@
 import 'package:client_zipcare/main.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
 import 'package:client_zipcare/src/core/configs/app_router.dart';
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/payment/payment_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -31,7 +31,7 @@ class PaymentScreen extends ConsumerWidget {
                   style: GoogleFonts.lexend(
                     fontSize: 20,
                     fontWeight: FontWeight.w500,
-                    color: darkGreyColor,
+                    color: AppColors.deepGreyColor,
                   ),
                 ),
                 InkWell(
@@ -43,7 +43,7 @@ class PaymentScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontSize: 17,
                       fontWeight: FontWeight.w500,
-                      color: ratingColor,
+                      color: AppColors.yellowColor,
                     ),
                   ),
                 ),
@@ -58,7 +58,8 @@ class PaymentScreen extends ConsumerWidget {
                             padding: const EdgeInsets.only(top: 8.0, bottom: 10.0),
                             child: ListTile(
                               shape: OutlineInputBorder(
-                                borderSide: BorderSide(color: hintLightColor.withOpacity(0.4)),
+                                borderSide:
+                                    BorderSide(color: AppColors.lighterGreyColor.withOpacity(0.4)),
                                 borderRadius: const BorderRadius.all(Radius.circular(10)),
                               ),
                               leading: Image.asset(paymentList[0]),
@@ -84,14 +85,15 @@ class PaymentScreen extends ConsumerWidget {
                                     style: GoogleFonts.lexend(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w500,
-                                      color: darkGreyColor,
+                                      color: AppColors.deepGreyColor,
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(top: 12.0, bottom: 10.0),
                                     child: ListTile(
                                       shape: OutlineInputBorder(
-                                        borderSide: BorderSide(color: hintLightColor.withOpacity(0.4)),
+                                        borderSide: BorderSide(
+                                            color: AppColors.lighterGreyColor.withOpacity(0.4)),
                                         borderRadius: const BorderRadius.all(Radius.circular(10)),
                                       ),
                                       leading: Image.asset(paymentList[0], width: 20, height: 20),
@@ -118,14 +120,15 @@ class PaymentScreen extends ConsumerWidget {
                                     style: GoogleFonts.lexend(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w500,
-                                      color: darkGreyColor,
+                                      color: AppColors.deepGreyColor,
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(top: 12.0, bottom: 10.0),
                                     child: ListTile(
                                       shape: OutlineInputBorder(
-                                        borderSide: BorderSide(color: hintLightColor.withOpacity(0.4)),
+                                        borderSide: BorderSide(
+                                            color: AppColors.lighterGreyColor.withOpacity(0.4)),
                                         borderRadius: const BorderRadius.all(Radius.circular(10)),
                                       ),
                                       leading: Image.asset(paymentList[0], width: 20, height: 20),
@@ -149,7 +152,7 @@ class PaymentScreen extends ConsumerWidget {
                                           style: GoogleFonts.lexend(
                                             fontSize: 16,
                                             fontWeight: FontWeight.w400,
-                                            color: blackColor,
+                                            color: AppColors.blackColor,
                                           ),
                                         ),
                                       ),
@@ -166,9 +169,10 @@ class PaymentScreen extends ConsumerWidget {
               child: Padding(
                 padding: const EdgeInsets.all(15),
                 child: ElevatedButton(
-                  onPressed: () => navigatorKey.currentState?.pushNamed(AppRouter.paymentStatusScreen),
+                  onPressed: () =>
+                      navigatorKey.currentState?.pushNamed(AppRouter.paymentStatusScreen),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: primaryColor,
+                    backgroundColor: AppColors.darkPurpleColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -184,7 +188,7 @@ class PaymentScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 18,
-                                color: whiteColor,
+                                color: AppColors.whiteColor,
                               ),
                             ),
                           ),

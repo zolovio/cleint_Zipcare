@@ -1,6 +1,6 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/notification/notification_controller.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +34,7 @@ class NotificationScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 15,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                   items: notificationController.filterItems
@@ -46,7 +46,7 @@ class NotificationScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w400,
                               fontSize: 14,
-                              color: blackColor,
+                              color: AppColors.blackColor,
                             ),
                           ),
                         ),
@@ -59,8 +59,8 @@ class NotificationScreen extends ConsumerWidget {
                     padding: const EdgeInsets.only(left: 5, right: 5),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
-                      border: Border.all(color: blackColor),
-                      color: shadowColor,
+                      border: Border.all(color: AppColors.blackColor),
+                      color: AppColors.shadowColor,
                     ),
                   ),
                   iconStyleData: const IconStyleData(
@@ -72,7 +72,7 @@ class NotificationScreen extends ConsumerWidget {
                   ),
                   dropdownStyleData: DropdownStyleData(
                     decoration: BoxDecoration(
-                      color: shadowColor,
+                      color: AppColors.shadowColor,
                       borderRadius: BorderRadius.circular(5),
                     ),
                   ),
@@ -88,7 +88,7 @@ class NotificationScreen extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontWeight: FontWeight.w400,
                         fontSize: 15,
-                        color: primaryColor,
+                        color: AppColors.darkPurpleColor,
                       ),
                     ),
                     const SizedBox(width: 5),
@@ -121,7 +121,7 @@ class NotificationScreen extends ConsumerWidget {
                                 style: GoogleFonts.lexend(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 15,
-                                  color: blackColor,
+                                  color: AppColors.blackColor,
                                 ),
                               ),
                               if (notification["type"] == "button") ...[
@@ -132,7 +132,7 @@ class NotificationScreen extends ConsumerWidget {
                                     ElevatedButton(
                                       onPressed: () {},
                                       style: ElevatedButton.styleFrom(
-                                        backgroundColor: deepGreenColor,
+                                        backgroundColor: AppColors.deepGreenColor,
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(10),
                                         ),
@@ -153,7 +153,7 @@ class NotificationScreen extends ConsumerWidget {
                                     ElevatedButton(
                                       onPressed: () {},
                                       style: ElevatedButton.styleFrom(
-                                        backgroundColor: redColor,
+                                        backgroundColor: AppColors.redColor,
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(10),
                                         ),
@@ -179,7 +179,7 @@ class NotificationScreen extends ConsumerWidget {
                                   child: Row(
                                     children: [
                                       const VerticalDivider(
-                                        color: hintLightColor,
+                                        color: AppColors.lighterGreyColor,
                                         thickness: 2,
                                         indent: 4,
                                       ),
@@ -189,7 +189,7 @@ class NotificationScreen extends ConsumerWidget {
                                           style: GoogleFonts.lexend(
                                             fontWeight: FontWeight.w400,
                                             fontSize: 12,
-                                            color: hintColor,
+                                            color: AppColors.lightGreyColor,
                                           ),
                                         ),
                                       ),
@@ -204,7 +204,7 @@ class NotificationScreen extends ConsumerWidget {
                                 style: GoogleFonts.lexend(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 13,
-                                  color: lightGreyColor,
+                                  color: AppColors.greyColor,
                                 ),
                               ),
                             ],

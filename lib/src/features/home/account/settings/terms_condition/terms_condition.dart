@@ -1,6 +1,6 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -34,7 +34,7 @@ class TermsNCondition extends StatelessWidget {
                 style: GoogleFonts.lexend(
                   fontWeight: FontWeight.w400,
                   fontSize: 15,
-                  color: hintColor,
+                  color: AppColors.mediumSlateColor,
                   height: 1.6,
                 ),
               ),

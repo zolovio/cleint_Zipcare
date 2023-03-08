@@ -1,4 +1,4 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/home/home_screen/home_screen_controller.dart';
 import 'package:flutter/material.dart';
@@ -30,14 +30,14 @@ class HomeScreen extends ConsumerWidget {
                       hintStyle: GoogleFonts.lexend(
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
-                        color: hintLightColor,
+                        color: AppColors.lighterGreyColor,
                       ),
                       suffixIcon: InkWell(
                         onTap: () {},
-                        child: const Icon(Icons.search, color: hintColor),
+                        child: const Icon(Icons.search, color: AppColors.mediumSlateColor),
                       ),
                       border: const OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: hintLightColor),
+                        borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                       ),
                     ),
@@ -55,7 +55,7 @@ class HomeScreen extends ConsumerWidget {
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         elevation: 3,
-                        backgroundColor: whiteColor,
+                        backgroundColor: AppColors.whiteColor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -65,7 +65,7 @@ class HomeScreen extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontWeight: FontWeight.w400,
                           fontSize: 15,
-                          color: blackColor,
+                          color: AppColors.blackColor,
                         ),
                       ),
                     ),
@@ -75,7 +75,7 @@ class HomeScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w500,
                       fontSize: 18,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                 ],
@@ -87,7 +87,7 @@ class HomeScreen extends ConsumerWidget {
                   : const EdgeInsets.only(left: 12.0, right: 12.0, bottom: 5.0),
               child: Card(
                 elevation: 5,
-                shadowColor: shadowColor,
+                shadowColor: AppColors.shadowColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -121,7 +121,7 @@ class HomeScreen extends ConsumerWidget {
                                     style: GoogleFonts.lexend(
                                       fontWeight: FontWeight.w400,
                                       fontSize: 18,
-                                      color: blackColor,
+                                      color: AppColors.blackColor,
                                     ),
                                   ),
                                 ),
@@ -138,7 +138,7 @@ class HomeScreen extends ConsumerWidget {
                                             style: GoogleFonts.lexend(
                                               fontWeight: FontWeight.w400,
                                               fontSize: 13,
-                                              color: locationColor,
+                                              color: AppColors.lightGreyColor,
                                             ),
                                           ),
                                         ],
@@ -150,7 +150,7 @@ class HomeScreen extends ConsumerWidget {
                                           style: GoogleFonts.lexend(
                                             fontWeight: FontWeight.w400,
                                             fontSize: 13,
-                                            color: locationColor,
+                                            color: AppColors.lightGreyColor,
                                           ),
                                         ),
                                       ),
@@ -164,14 +164,14 @@ class HomeScreen extends ConsumerWidget {
                                     children: [
                                       const Icon(
                                         Icons.star,
-                                        color: ratingColor,
+                                        color: AppColors.yellowColor,
                                       ),
                                       Text(
                                         " ${homeScreenController.ratings[index]} ",
                                         style: GoogleFonts.lexend(
                                           fontWeight: FontWeight.w500,
                                           fontSize: 15,
-                                          color: darkGreyColor,
+                                          color: AppColors.deepGreyColor,
                                         ),
                                       ),
                                       Text(
@@ -179,7 +179,7 @@ class HomeScreen extends ConsumerWidget {
                                         style: GoogleFonts.lexend(
                                           fontWeight: FontWeight.w400,
                                           fontSize: 13,
-                                          color: locationColor,
+                                          color: AppColors.lightGreyColor,
                                         ),
                                       ),
                                     ],
@@ -199,7 +199,7 @@ class HomeScreen extends ConsumerWidget {
                                   margin: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
                                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                                   decoration: const BoxDecoration(
-                                    color: shadowColor,
+                                    color: AppColors.shadowColor,
                                     borderRadius: BorderRadius.all(
                                       Radius.circular(25),
                                     ),
@@ -210,7 +210,7 @@ class HomeScreen extends ConsumerWidget {
                                     style: GoogleFonts.lexend(
                                       fontWeight: FontWeight.w400,
                                       fontSize: 13,
-                                      color: blackColor,
+                                      color: AppColors.blackColor,
                                     ),
                                   ),
                                 ),
@@ -229,19 +229,19 @@ class HomeScreen extends ConsumerWidget {
                                 style: GoogleFonts.lexend(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14,
-                                  color: locationColor,
+                                  color: AppColors.lightGreyColor,
                                 ),
                               ),
                             ),
                             Row(
                               children: [
                                 CircleAvatar(
-                                  backgroundColor: shadowColor,
+                                  backgroundColor: AppColors.shadowColor,
                                   child: Image.asset(message),
                                 ),
                                 const SizedBox(width: 3),
                                 CircleAvatar(
-                                  backgroundColor: shadowColor,
+                                  backgroundColor: AppColors.shadowColor,
                                   child: Image.asset(favorite),
                                 ),
                               ],

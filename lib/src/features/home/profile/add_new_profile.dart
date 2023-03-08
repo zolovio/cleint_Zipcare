@@ -1,6 +1,7 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/components/custom_widgets.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/profile/new_profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -37,7 +38,8 @@ class AddNewProfile extends ConsumerWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     const SizedBox(height: 15),
-                    getQuestionsWidget("Person needing care name and other details", false, "", false),
+                    getQuestionsWidget(
+                        "Person needing care name and other details", false, "", false),
                     const SizedBox(height: 20),
                     FormBuilderTextField(
                       autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -49,7 +51,7 @@ class AddNewProfile extends ConsumerWidget {
                           fontWeight: FontWeight.w400,
                         ),
                         border: const OutlineInputBorder(
-                          borderSide: BorderSide(width: 1, color: hintLightColor),
+                          borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                           borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                         ),
                       ),
@@ -73,7 +75,7 @@ class AddNewProfile extends ConsumerWidget {
                           fontWeight: FontWeight.w400,
                         ),
                         border: const OutlineInputBorder(
-                          borderSide: BorderSide(width: 1, color: hintLightColor),
+                          borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                           borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                         ),
                       ),
@@ -96,7 +98,7 @@ class AddNewProfile extends ConsumerWidget {
                               hintText: 'Age',
                               isDense: true,
                               border: OutlineInputBorder(
-                                borderSide: BorderSide(width: 1, color: hintLightColor),
+                                borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                                 borderRadius: BorderRadius.all(Radius.circular(15)),
                               ),
                             ),
@@ -120,8 +122,9 @@ class AddNewProfile extends ConsumerWidget {
                                 fontWeight: FontWeight.w400,
                               ),
                               border: const OutlineInputBorder(
-                                borderSide: BorderSide(width: 1, color: hintLightColor),
-                                borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
+                                borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                               ),
                             ),
                             onChanged: (val) {},
@@ -147,7 +150,7 @@ class AddNewProfile extends ConsumerWidget {
                           fontWeight: FontWeight.w400,
                         ),
                         border: const OutlineInputBorder(
-                          borderSide: BorderSide(width: 1, color: hintLightColor),
+                          borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                           borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                         ),
                       ),
@@ -204,7 +207,7 @@ class AddNewProfile extends ConsumerWidget {
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: primaryColor,
+                    backgroundColor: AppColors.darkPurpleColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -216,7 +219,7 @@ class AddNewProfile extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
-                        color: whiteColor,
+                        color: AppColors.whiteColor,
                       ),
                     ),
                   ),

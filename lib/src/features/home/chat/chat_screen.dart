@@ -1,5 +1,5 @@
 import 'package:client_zipcare/main.dart';
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/home/chat/chat_controller.dart';
 import 'package:client_zipcare/src/features/home/chat/chat_window/chat_window_screen.dart';
@@ -28,7 +28,7 @@ class ChatScreen extends ConsumerWidget {
                 : const EdgeInsets.only(left: 12.0, right: 12.0, bottom: 5.0),
             child: Card(
               elevation: 5,
-              shadowColor: shadowColor,
+              shadowColor: AppColors.shadowColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -62,7 +62,7 @@ class ChatScreen extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w400,
                                     fontSize: 17,
-                                    color: blackColor,
+                                    color: AppColors.blackColor,
                                   ),
                                 ),
                               ),
@@ -74,7 +74,7 @@ class ChatScreen extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w300,
                                     fontSize: 14,
-                                    color: lightGreyColor,
+                                    color: AppColors.greyColor,
                                   ),
                                 ),
                               ),

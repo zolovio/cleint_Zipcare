@@ -1,6 +1,6 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/account/settings/change_password/change_pass_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -27,7 +27,7 @@ class ChangePassword extends ConsumerWidget {
               style: GoogleFonts.lexend(
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
-                color: blackColor,
+                color: AppColors.blackColor,
               ),
             ),
           ),
@@ -60,7 +60,7 @@ class ChangePassword extends ConsumerWidget {
                             : Icons.visibility),
                       ),
                       border: const OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: hintLightColor),
+                        borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                         borderRadius: BorderRadius.all(Radius.circular(15)),
                       ),
                     ),
@@ -92,7 +92,7 @@ class ChangePassword extends ConsumerWidget {
                             : Icons.visibility),
                       ),
                       border: const OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: hintLightColor),
+                        borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                         borderRadius: BorderRadius.all(Radius.circular(15)),
                       ),
                     ),
@@ -124,7 +124,7 @@ class ChangePassword extends ConsumerWidget {
                             : Icons.visibility),
                       ),
                       border: const OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: hintLightColor),
+                        borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                         borderRadius: BorderRadius.all(Radius.circular(15)),
                       ),
                     ),
@@ -149,7 +149,7 @@ class ChangePassword extends ConsumerWidget {
               child: ElevatedButton(
                 onPressed: () => changePassController.onPasswordChange(),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: primaryColor,
+                  backgroundColor: AppColors.darkPurpleColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -162,7 +162,7 @@ class ChangePassword extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
-                        color: whiteColor,
+                        color: AppColors.whiteColor,
                       ),
                     ),
                   ),

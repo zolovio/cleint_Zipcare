@@ -1,8 +1,8 @@
 import 'package:client_zipcare/main.dart';
+import 'package:client_zipcare/src/core/components/custom_widgets.dart';
 import 'package:client_zipcare/src/core/configs/app_router.dart';
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/job_detail_controller.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/service_agreement/service_agreement_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -29,7 +29,7 @@ class JobDetailScreen extends ConsumerWidget {
               style: GoogleFonts.lexend(
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
-                color: blackColor,
+                color: AppColors.blackColor,
               ),
             ),
           ),
@@ -45,7 +45,7 @@ class JobDetailScreen extends ConsumerWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(7.0),
-                          color: avatarColor.withOpacity(0.45),
+                          color: AppColors.avatarColor.withOpacity(0.45),
                         ),
                         width: double.infinity,
                         child: Padding(
@@ -58,7 +58,7 @@ class JobDetailScreen extends ConsumerWidget {
                                 style: GoogleFonts.lexend(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w700,
-                                  color: primaryColor,
+                                  color: AppColors.darkPurpleColor,
                                 ),
                               ),
                               Text(
@@ -66,7 +66,7 @@ class JobDetailScreen extends ConsumerWidget {
                                 style: GoogleFonts.lexend(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w500,
-                                  color: hintColor,
+                                  color: AppColors.mediumSlateColor,
                                 ),
                               ),
                               const SizedBox(height: 10.0),
@@ -85,7 +85,7 @@ class JobDetailScreen extends ConsumerWidget {
                                               style: GoogleFonts.lexend(
                                                 fontSize: 13,
                                                 fontWeight: FontWeight.w400,
-                                                color: hintColor,
+                                                color: AppColors.mediumSlateColor,
                                               ),
                                             ),
                                             Text(
@@ -93,7 +93,7 @@ class JobDetailScreen extends ConsumerWidget {
                                               style: GoogleFonts.lexend(
                                                 fontSize: 13,
                                                 fontWeight: FontWeight.w400,
-                                                color: hintColor,
+                                                color: AppColors.mediumSlateColor,
                                               ),
                                             ),
                                           ],
@@ -111,14 +111,14 @@ class JobDetailScreen extends ConsumerWidget {
                       padding: const EdgeInsets.all(3.0),
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
-                        color: lightWhiteColor,
+                        color: AppColors.lightWhiteColor,
                       ),
                       child: Container(
                         width: circularBorder,
                         height: circularBorder,
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          color: avatarColor,
+                          color: AppColors.avatarColor,
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(4.0),
@@ -128,7 +128,7 @@ class JobDetailScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontSize: 30,
                                 fontWeight: FontWeight.w400,
-                                color: blackColor,
+                                color: AppColors.blackColor,
                               ),
                             ),
                           ),
@@ -141,7 +141,7 @@ class JobDetailScreen extends ConsumerWidget {
             ),
           ),
           const SizedBox(height: 10),
-          const Divider(height: 3, color: hintLightColor),
+          const Divider(height: 3, color: AppColors.lighterGreyColor),
           const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -161,14 +161,14 @@ class JobDetailScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
-                      color: greenColor,
+                      color: AppColors.greenColor,
                     ),
                   ),
                 ],
               ),
               CupertinoSwitch(
-                activeColor: greenColor,
-                thumbColor: whiteColor,
+                activeColor: AppColors.greenColor,
+                thumbColor: AppColors.whiteColor,
                 trackColor: Colors.black12,
                 value: jobDetailController.switchApplicationMode,
                 onChanged: (value) => jobDetailController.onSwitchApplicationMode(),
@@ -189,10 +189,11 @@ class JobDetailScreen extends ConsumerWidget {
                               children: detail["ans"]
                                   .map<Widget>((ans) => Container(
                                         margin: const EdgeInsets.symmetric(vertical: 10),
-                                        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 20.0, vertical: 5),
                                         decoration: const BoxDecoration(
                                           shape: BoxShape.rectangle,
-                                          color: shadowColor,
+                                          color: AppColors.shadowColor,
                                           borderRadius: BorderRadius.all(
                                             Radius.circular(20),
                                           ),
@@ -202,7 +203,7 @@ class JobDetailScreen extends ConsumerWidget {
                                           style: GoogleFonts.lexend(
                                             fontSize: 12,
                                             fontWeight: FontWeight.w400,
-                                            color: descGreyColor,
+                                            color: AppColors.darkGreyColor,
                                           ),
                                         ),
                                       ))
@@ -221,7 +222,7 @@ class JobDetailScreen extends ConsumerWidget {
                                         style: GoogleFonts.lexend(
                                           fontSize: 11,
                                           fontWeight: FontWeight.w400,
-                                          color: descGreyColor,
+                                          color: AppColors.darkGreyColor,
                                         ),
                                       ),
                                       Text(
@@ -229,7 +230,7 @@ class JobDetailScreen extends ConsumerWidget {
                                         style: GoogleFonts.lexend(
                                           fontSize: 11,
                                           fontWeight: FontWeight.w400,
-                                          color: blackColor,
+                                          color: AppColors.blackColor,
                                         ),
                                       ),
                                     ],
@@ -241,7 +242,7 @@ class JobDetailScreen extends ConsumerWidget {
                                         style: GoogleFonts.lexend(
                                           fontSize: 11,
                                           fontWeight: FontWeight.w400,
-                                          color: descGreyColor,
+                                          color: AppColors.darkGreyColor,
                                         ),
                                       ),
                                       Text(
@@ -249,7 +250,7 @@ class JobDetailScreen extends ConsumerWidget {
                                         style: GoogleFonts.lexend(
                                           fontSize: 11,
                                           fontWeight: FontWeight.w400,
-                                          color: blackColor,
+                                          color: AppColors.blackColor,
                                         ),
                                       ),
                                     ],
@@ -257,14 +258,14 @@ class JobDetailScreen extends ConsumerWidget {
                                 ],
                               ),
                             ),
-                      const Divider(height: 3, color: hintLightColor),
+                      const Divider(height: 3, color: AppColors.lighterGreyColor),
                       const SizedBox(height: 15),
                     ],
                   ),
                 )
                 .toList(),
           ),
-          const Divider(height: 3, color: hintLightColor),
+          const Divider(height: 3, color: AppColors.lighterGreyColor),
           const SizedBox(height: 15),
           getQuestionsWidget("Specific Requirements", false, "", false),
           Container(
@@ -275,11 +276,12 @@ class JobDetailScreen extends ConsumerWidget {
                 Text(
                   jobDetailController.requirementsText,
                   maxLines: jobDetailController.maxLines,
-                  overflow: jobDetailController.isReadMore ? TextOverflow.visible : TextOverflow.ellipsis,
+                  overflow:
+                      jobDetailController.isReadMore ? TextOverflow.visible : TextOverflow.ellipsis,
                   style: GoogleFonts.lexend(
                     fontSize: 15,
                     fontWeight: FontWeight.w400,
-                    color: underlineColor,
+                    color: AppColors.mediumGreyColor,
                   ),
                 ),
                 InkWell(
@@ -291,7 +293,7 @@ class JobDetailScreen extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontSize: 15,
                         fontWeight: FontWeight.w500,
-                        color: blackColor,
+                        color: AppColors.blackColor,
                         decoration: TextDecoration.underline,
                       ),
                     ),
@@ -312,8 +314,8 @@ class JobDetailScreen extends ConsumerWidget {
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-                    disabledBackgroundColor: primaryColor.withOpacity(.5),
-                    backgroundColor: primaryColor,
+                    disabledBackgroundColor: AppColors.darkPurpleColor.withOpacity(.5),
+                    backgroundColor: AppColors.darkPurpleColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -329,7 +331,7 @@ class JobDetailScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 18,
-                                color: whiteColor,
+                                color: AppColors.whiteColor,
                               ),
                             ),
                           ),
@@ -342,7 +344,7 @@ class JobDetailScreen extends ConsumerWidget {
                 ElevatedButton(
                   onPressed: () => navigatorKey.currentState?.pushNamed(AppRouter.invoice),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: primaryColor,
+                    backgroundColor: AppColors.darkPurpleColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -358,7 +360,7 @@ class JobDetailScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 18,
-                                color: whiteColor,
+                                color: AppColors.whiteColor,
                               ),
                             ),
                           ),
@@ -371,7 +373,7 @@ class JobDetailScreen extends ConsumerWidget {
                 ElevatedButton(
                   onPressed: () => jobDetailController.onJobCompleted(),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: primaryColor,
+                    backgroundColor: AppColors.darkPurpleColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -387,7 +389,7 @@ class JobDetailScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 18,
-                                color: whiteColor,
+                                color: AppColors.whiteColor,
                               ),
                             ),
                           ),

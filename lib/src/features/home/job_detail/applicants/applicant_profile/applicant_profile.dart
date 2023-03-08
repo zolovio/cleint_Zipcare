@@ -1,6 +1,6 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/job_detail/applicants/applicant_profile/applicant_profile_controller.dart';
 import 'package:flick_video_player/flick_video_player.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +23,8 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
     super.initState();
 
     flickManager = FlickManager(
-      videoPlayerController: VideoPlayerController.network("https://www.youtube.com/watch?v=C0DPdy98e4c"),
+      videoPlayerController:
+          VideoPlayerController.network("https://www.youtube.com/watch?v=C0DPdy98e4c"),
     );
   }
 
@@ -51,7 +52,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                 style: GoogleFonts.lexend(
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
-                  color: blackColor,
+                  color: AppColors.blackColor,
                 ),
               ),
               Padding(
@@ -68,7 +69,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                             child: Container(
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(7.0),
-                                color: avatarColor.withOpacity(0.45),
+                                color: AppColors.avatarColor.withOpacity(0.45),
                               ),
                               width: double.infinity,
                               child: Padding(
@@ -81,7 +82,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                                       style: GoogleFonts.lexend(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w700,
-                                        color: primaryColor,
+                                        color: AppColors.darkPurpleColor,
                                       ),
                                     ),
                                     const SizedBox(height: 5.0),
@@ -90,7 +91,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                                       style: GoogleFonts.lexend(
                                         fontSize: 13,
                                         fontWeight: FontWeight.w400,
-                                        color: hintColor,
+                                        color: AppColors.mediumSlateColor,
                                       ),
                                     ),
                                     const SizedBox(height: 10.0),
@@ -112,7 +113,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                                                           style: GoogleFonts.lexend(
                                                             fontSize: 15,
                                                             fontWeight: FontWeight.w500,
-                                                            color: blackColor,
+                                                            color: AppColors.blackColor,
                                                           ),
                                                         ),
                                                         Text(
@@ -120,7 +121,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                                                           style: GoogleFonts.lexend(
                                                             fontSize: 13,
                                                             fontWeight: FontWeight.w400,
-                                                            color: hintColor,
+                                                            color: AppColors.mediumSlateColor,
                                                           ),
                                                         ),
                                                       ],
@@ -133,7 +134,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                                                           style: GoogleFonts.lexend(
                                                             fontSize: 13,
                                                             fontWeight: FontWeight.w400,
-                                                            color: hintColor,
+                                                            color: AppColors.mediumSlateColor,
                                                           ),
                                                         ),
                                                       ],
@@ -154,7 +155,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                             padding: const EdgeInsets.all(3.0),
                             decoration: const BoxDecoration(
                               shape: BoxShape.circle,
-                              color: whiteColor,
+                              color: AppColors.whiteColor,
                             ),
                             child: SizedBox(
                               width: circularBorder,
@@ -178,7 +179,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                 style: GoogleFonts.lexend(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
-                  color: descGreyColor,
+                  color: AppColors.darkGreyColor,
                 ),
               ),
               const SizedBox(height: 10),
@@ -196,7 +197,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                                 style: GoogleFonts.lexend(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w400,
-                                  color: lightGreyColor,
+                                  color: AppColors.greyColor,
                                 ),
                               ),
                             ),
@@ -214,7 +215,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                                             style: GoogleFonts.lexend(
                                               fontSize: 12,
                                               fontWeight: FontWeight.w400,
-                                              color: blackColor,
+                                              color: AppColors.blackColor,
                                             ),
                                           ),
                                           if (rates["title"] != "whole") ...[
@@ -223,7 +224,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                                               style: GoogleFonts.lexend(
                                                 fontSize: 10,
                                                 fontWeight: FontWeight.w400,
-                                                color: lightGreyColor,
+                                                color: AppColors.greyColor,
                                               ),
                                             ),
                                           ],
@@ -240,16 +241,17 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                     .toList(),
               ),
               const SizedBox(height: 10),
-              const Divider(height: 3, color: hintLightColor),
+              const Divider(height: 3, color: AppColors.lighterGreyColor),
               const SizedBox(height: 15),
               Text(
                 profileController.applicantProfile["about"]["title"],
                 maxLines: profileController.maxLines,
-                overflow: profileController.isReadMore ? TextOverflow.visible : TextOverflow.ellipsis,
+                overflow:
+                    profileController.isReadMore ? TextOverflow.visible : TextOverflow.ellipsis,
                 style: GoogleFonts.lexend(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
-                  color: hintColor,
+                  color: AppColors.mediumSlateColor,
                 ),
               ),
               Container(
@@ -260,11 +262,13 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                     Text(
                       profileController.applicantProfile["about"]["text"],
                       maxLines: profileController.maxLines,
-                      overflow: profileController.isReadMore ? TextOverflow.visible : TextOverflow.ellipsis,
+                      overflow: profileController.isReadMore
+                          ? TextOverflow.visible
+                          : TextOverflow.ellipsis,
                       style: GoogleFonts.lexend(
                         fontSize: 13,
                         fontWeight: FontWeight.w400,
-                        color: hintColor,
+                        color: AppColors.mediumSlateColor,
                       ),
                     ),
                     InkWell(
@@ -276,7 +280,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                           style: GoogleFonts.lexend(
                             fontSize: 13,
                             fontWeight: FontWeight.w500,
-                            color: primaryColor,
+                            color: AppColors.darkPurpleColor,
                             decoration: TextDecoration.underline,
                           ),
                         ),
@@ -286,16 +290,17 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                 ),
               ),
               const SizedBox(height: 10),
-              const Divider(height: 3, color: hintLightColor),
+              const Divider(height: 3, color: AppColors.lighterGreyColor),
               const SizedBox(height: 15),
               Text(
                 profileController.applicantProfile["video"]["title"],
                 maxLines: profileController.maxLines,
-                overflow: profileController.isReadMore ? TextOverflow.visible : TextOverflow.ellipsis,
+                overflow:
+                    profileController.isReadMore ? TextOverflow.visible : TextOverflow.ellipsis,
                 style: GoogleFonts.lexend(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
-                  color: hintColor,
+                  color: AppColors.mediumSlateColor,
                 ),
               ),
               Padding(
@@ -306,7 +311,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                 ),
               ),
               const SizedBox(height: 10),
-              const Divider(height: 3, color: hintLightColor),
+              const Divider(height: 3, color: AppColors.lighterGreyColor),
               const SizedBox(height: 10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -322,7 +327,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                                 style: GoogleFonts.lexend(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w500,
-                                  color: hintColor,
+                                  color: AppColors.mediumSlateColor,
                                 ),
                               ),
                             ),
@@ -331,7 +336,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                               style: GoogleFonts.lexend(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w500,
-                                color: blackColor,
+                                color: AppColors.blackColor,
                               ),
                             ),
                           ],
@@ -341,14 +346,14 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                     .toList(),
               ),
               const SizedBox(height: 10),
-              const Divider(height: 3, color: hintLightColor),
+              const Divider(height: 3, color: AppColors.lighterGreyColor),
               const SizedBox(height: 10),
               Text(
                 profileController.applicantProfile["services"]["title"],
                 style: GoogleFonts.lexend(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
-                  color: hintColor,
+                  color: AppColors.mediumSlateColor,
                 ),
               ),
               const SizedBox(height: 10),
@@ -367,21 +372,22 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                                 style: GoogleFonts.lexend(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
-                                  color: blackColor,
+                                  color: AppColors.blackColor,
                                 ),
                               ),
                             ),
                             Expanded(
                               child: Container(
                                 padding: const EdgeInsets.all(5),
-                                decoration: const BoxDecoration(shape: BoxShape.circle, color: primaryColor),
+                                decoration: const BoxDecoration(
+                                    shape: BoxShape.circle, color: AppColors.darkPurpleColor),
                                 child: Text(
                                   service["value"],
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.lexend(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w400,
-                                    color: whiteColor,
+                                    color: AppColors.whiteColor,
                                   ),
                                 ),
                               ),
@@ -393,14 +399,14 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                     .toList(),
               ),
               const SizedBox(height: 10),
-              const Divider(height: 3, color: hintLightColor),
+              const Divider(height: 3, color: AppColors.lighterGreyColor),
               const SizedBox(height: 10),
               Text(
                 profileController.applicantProfile["training"]["title"],
                 style: GoogleFonts.lexend(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
-                  color: hintColor,
+                  color: AppColors.mediumSlateColor,
                 ),
               ),
               const SizedBox(height: 10),
@@ -413,7 +419,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                         decoration: const BoxDecoration(
                           shape: BoxShape.rectangle,
-                          color: shadowColor,
+                          color: AppColors.shadowColor,
                           borderRadius: BorderRadius.all(
                             Radius.circular(20),
                           ),
@@ -423,7 +429,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                           style: GoogleFonts.lexend(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
-                            color: descGreyColor,
+                            color: AppColors.darkGreyColor,
                           ),
                         ),
                       ),
@@ -431,14 +437,14 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                     .toList(),
               ),
               const SizedBox(height: 10),
-              const Divider(height: 3, color: hintLightColor),
+              const Divider(height: 3, color: AppColors.lighterGreyColor),
               const SizedBox(height: 10),
               Text(
                 profileController.applicantProfile["health_condition"]["title"],
                 style: GoogleFonts.lexend(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
-                  color: hintColor,
+                  color: AppColors.mediumSlateColor,
                 ),
               ),
               const SizedBox(height: 10),
@@ -457,21 +463,22 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                                 style: GoogleFonts.lexend(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
-                                  color: blackColor,
+                                  color: AppColors.blackColor,
                                 ),
                               ),
                             ),
                             Expanded(
                               child: Container(
                                 padding: const EdgeInsets.all(5),
-                                decoration: const BoxDecoration(shape: BoxShape.circle, color: primaryColor),
+                                decoration: const BoxDecoration(
+                                    shape: BoxShape.circle, color: AppColors.darkPurpleColor),
                                 child: Text(
                                   service["value"],
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.lexend(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w400,
-                                    color: whiteColor,
+                                    color: AppColors.whiteColor,
                                   ),
                                 ),
                               ),
@@ -483,14 +490,14 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                     .toList(),
               ),
               const SizedBox(height: 10),
-              const Divider(height: 3, color: hintLightColor),
+              const Divider(height: 3, color: AppColors.lighterGreyColor),
               const SizedBox(height: 10),
               Text(
                 profileController.applicantProfile["enjoy"]["title"],
                 style: GoogleFonts.lexend(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
-                  color: hintColor,
+                  color: AppColors.mediumSlateColor,
                 ),
               ),
               const SizedBox(height: 10),
@@ -503,7 +510,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                         decoration: const BoxDecoration(
                           shape: BoxShape.rectangle,
-                          color: shadowColor,
+                          color: AppColors.shadowColor,
                           borderRadius: BorderRadius.all(
                             Radius.circular(20),
                           ),
@@ -513,7 +520,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                           style: GoogleFonts.lexend(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
-                            color: descGreyColor,
+                            color: AppColors.darkGreyColor,
                           ),
                         ),
                       ),
@@ -521,14 +528,14 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                     .toList(),
               ),
               const SizedBox(height: 10),
-              const Divider(height: 3, color: hintLightColor),
+              const Divider(height: 3, color: AppColors.lighterGreyColor),
               const SizedBox(height: 10),
               Text(
                 profileController.applicantProfile["soft_skill"]["title"],
                 style: GoogleFonts.lexend(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
-                  color: hintColor,
+                  color: AppColors.mediumSlateColor,
                 ),
               ),
               const SizedBox(height: 10),
@@ -541,7 +548,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                         decoration: const BoxDecoration(
                           shape: BoxShape.rectangle,
-                          color: shadowColor,
+                          color: AppColors.shadowColor,
                           borderRadius: BorderRadius.all(
                             Radius.circular(20),
                           ),
@@ -551,7 +558,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                           style: GoogleFonts.lexend(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
-                            color: descGreyColor,
+                            color: AppColors.darkGreyColor,
                           ),
                         ),
                       ),
@@ -559,14 +566,14 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                     .toList(),
               ),
               const SizedBox(height: 10),
-              const Divider(height: 3, color: hintLightColor),
+              const Divider(height: 3, color: AppColors.lighterGreyColor),
               const SizedBox(height: 10),
               Text(
                 profileController.applicantProfile["qualification"]["title"],
                 style: GoogleFonts.lexend(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
-                  color: hintColor,
+                  color: AppColors.mediumSlateColor,
                 ),
               ),
               const SizedBox(height: 10),
@@ -579,7 +586,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                         decoration: const BoxDecoration(
                           shape: BoxShape.rectangle,
-                          color: shadowColor,
+                          color: AppColors.shadowColor,
                           borderRadius: BorderRadius.all(
                             Radius.circular(20),
                           ),
@@ -589,7 +596,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                           style: GoogleFonts.lexend(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
-                            color: descGreyColor,
+                            color: AppColors.darkGreyColor,
                           ),
                         ),
                       ),
@@ -597,7 +604,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                     .toList(),
               ),
               const SizedBox(height: 10),
-              const Divider(height: 3, color: hintLightColor),
+              const Divider(height: 3, color: AppColors.lighterGreyColor),
               const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.only(top: 10.0, bottom: 5.0),
@@ -609,7 +616,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                         style: GoogleFonts.lexend(
                           fontSize: 15,
                           fontWeight: FontWeight.w500,
-                          color: hintColor,
+                          color: AppColors.mediumSlateColor,
                         ),
                       ),
                     ),
@@ -618,7 +625,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                       style: GoogleFonts.lexend(
                         fontSize: 15,
                         fontWeight: FontWeight.w500,
-                        color: blackColor,
+                        color: AppColors.blackColor,
                       ),
                     ),
                   ],
@@ -632,7 +639,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                     ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: primaryColor,
+                        backgroundColor: AppColors.darkPurpleColor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -648,7 +655,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w600,
                                     fontSize: 18,
-                                    color: whiteColor,
+                                    color: AppColors.whiteColor,
                                   ),
                                 ),
                               ),
@@ -662,7 +669,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                     ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: primaryColor,
+                        backgroundColor: AppColors.darkPurpleColor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -678,7 +685,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w600,
                                     fontSize: 18,
-                                    color: whiteColor,
+                                    color: AppColors.whiteColor,
                                   ),
                                 ),
                               ),
@@ -692,7 +699,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                     ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: primaryColor,
+                        backgroundColor: AppColors.darkPurpleColor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -708,7 +715,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w600,
                                     fontSize: 18,
-                                    color: whiteColor,
+                                    color: AppColors.whiteColor,
                                   ),
                                 ),
                               ),

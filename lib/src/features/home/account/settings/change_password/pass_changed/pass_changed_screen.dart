@@ -1,7 +1,7 @@
 import 'package:client_zipcare/main.dart';
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -20,7 +20,7 @@ class PassChangedScreen extends StatelessWidget {
               style: GoogleFonts.lexend(
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
-                color: blackColor,
+                color: AppColors.blackColor,
               ),
             ),
           ),
@@ -38,7 +38,7 @@ class PassChangedScreen extends StatelessWidget {
               style: GoogleFonts.lexend(
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
-                color: blackColor,
+                color: AppColors.blackColor,
               ),
             ),
           ),
@@ -50,7 +50,7 @@ class PassChangedScreen extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () => navigatorKey.currentState?.pop(),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: primaryColor,
+                  backgroundColor: AppColors.darkPurpleColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -63,7 +63,7 @@ class PassChangedScreen extends StatelessWidget {
                       style: GoogleFonts.lexend(
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
-                        color: whiteColor,
+                        color: AppColors.whiteColor,
                       ),
                     ),
                   ),

@@ -1,6 +1,6 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/account/reviews/reviews_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -29,7 +29,7 @@ class ReviewsScreen extends ConsumerWidget {
                   style: GoogleFonts.lexend(
                     fontWeight: FontWeight.w600,
                     fontSize: 40,
-                    color: blackColor,
+                    color: AppColors.blackColor,
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -42,7 +42,7 @@ class ReviewsScreen extends ConsumerWidget {
                     itemCount: 5,
                     itemPadding: const EdgeInsets.symmetric(horizontal: 4),
                     itemSize: 20,
-                    unratedColor: hintLightColor,
+                    unratedColor: AppColors.lighterGreyColor,
                     itemBuilder: (context, _) => Image.asset(rating, width: 10, height: 10),
                     onRatingUpdate: (double value) {},
                   ),
@@ -53,7 +53,7 @@ class ReviewsScreen extends ConsumerWidget {
                   style: GoogleFonts.lexend(
                     fontWeight: FontWeight.w400,
                     fontSize: 16,
-                    color: hintColor,
+                    color: AppColors.mediumSlateColor,
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -73,7 +73,7 @@ class ReviewsScreen extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w500,
                                     fontSize: 15,
-                                    color: blackColor,
+                                    color: AppColors.blackColor,
                                   ),
                                 ),
                               ),
@@ -88,7 +88,7 @@ class ReviewsScreen extends ConsumerWidget {
                                     itemCount: 5,
                                     itemPadding: const EdgeInsets.symmetric(horizontal: 2),
                                     itemSize: 15,
-                                    unratedColor: hintLightColor,
+                                    unratedColor: AppColors.lighterGreyColor,
                                     itemBuilder: (context, _) =>
                                         Image.asset(rating, width: 10, height: 10),
                                     onRatingUpdate: (double value) {},
@@ -99,7 +99,7 @@ class ReviewsScreen extends ConsumerWidget {
                                     style: GoogleFonts.lexend(
                                       fontWeight: FontWeight.w500,
                                       fontSize: 15,
-                                      color: blackColor,
+                                      color: AppColors.blackColor,
                                     ),
                                   ),
                                 ],
@@ -111,7 +111,7 @@ class ReviewsScreen extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w400,
                                     fontSize: 12,
-                                    color: hintColor,
+                                    color: AppColors.mediumSlateColor,
                                   ),
                                 ),
                               ),
@@ -124,7 +124,7 @@ class ReviewsScreen extends ConsumerWidget {
                                 style: GoogleFonts.lexend(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 12,
-                                  color: hintColor,
+                                  color: AppColors.mediumSlateColor,
                                   height: 1.6,
                                 ),
                               ),
@@ -135,85 +135,6 @@ class ReviewsScreen extends ConsumerWidget {
                       )
                       .toList(),
                 ),
-                // Column(
-                //   children: reviewController.reviews["reviews"]
-                //       .map<Widget>(
-                //         (review) => Column(
-                //           children: [
-                //             Row(
-                //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //               children: [
-                //                 Row(
-                //                   children: [
-                //                     Image.asset(
-                //                       logo,
-                //                       height: 60,
-                //                     ),
-                //                     SizedBox(width: 10),
-                //                     Column(
-                //                       crossAxisAlignment: CrossAxisAlignment.start,
-                //                       children: [
-                //                         Text(
-                //                           review["name"],
-                //                           style: GoogleFonts.lexend(
-                //                             fontWeight: FontWeight.w500,
-                //                             fontSize: 15,
-                //                             color: blackColor,
-                //                           ),
-                //                         ),
-                //                         Row(
-                //                           children: [
-                //                             RatingBar.builder(
-                //                               initialRating: review["rating"],
-                //                               minRating: 1,
-                //                               direction: Axis.horizontal,
-                //                               allowHalfRating: true,
-                //                               itemCount: 5,
-                //                               itemPadding:
-                //                                   const EdgeInsets.symmetric(horizontal: 2),
-                //                               itemSize: 20,
-                //                               unratedColor: hintLightColor,
-                //                               itemBuilder: (context, _) =>
-                //                                   Image.asset(rating, width: 10, height: 10),
-                //                               onRatingUpdate: (double value) {},
-                //                             ),
-                //                             Text(
-                //                               review["rating"].toString(),
-                //                               style: GoogleFonts.lexend(
-                //                                 fontWeight: FontWeight.w400,
-                //                                 fontSize: 16,
-                //                                 color: hintColor,
-                //                               ),
-                //                             ),
-                //                           ],
-                //                         ),
-                //                       ],
-                //                     ),
-                //                   ],
-                //                 ),
-                //                 Text(
-                //                   review["time"],
-                //                   style: GoogleFonts.lexend(
-                //                     fontWeight: FontWeight.w400,
-                //                     fontSize: 12,
-                //                     color: hintColor,
-                //                   ),
-                //                 ),
-                //               ],
-                //             ),
-                //             Text(
-                //               review["review"],
-                //               style: GoogleFonts.lexend(
-                //                 fontWeight: FontWeight.w400,
-                //                 fontSize: 16,
-                //                 color: hintColor,
-                //               ),
-                //             ),
-                //           ],
-                //         ),
-                //       )
-                //       .toList(),
-                // ),
               ],
             ),
           ),

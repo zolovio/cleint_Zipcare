@@ -1,6 +1,6 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/service_agreement/service_ageement_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -30,8 +30,8 @@ class ServiceAgreement extends ConsumerWidget {
                     ElevatedButton(
                       onPressed: null,
                       style: ElevatedButton.styleFrom(
-                        disabledBackgroundColor: primaryColor.withOpacity(.2),
-                        backgroundColor: primaryColor,
+                        disabledBackgroundColor: AppColors.darkPurpleColor.withOpacity(.2),
+                        backgroundColor: AppColors.darkPurpleColor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -51,7 +51,9 @@ class ServiceAgreement extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w400,
                                     fontSize: 15,
-                                    color: serviceController.isApproved ? greenColor : primaryColor,
+                                    color: serviceController.isApproved
+                                        ? AppColors.greenColor
+                                        : AppColors.darkPurpleColor,
                                   ),
                                 ),
                               ),
@@ -78,7 +80,7 @@ class ServiceAgreement extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w400,
                             fontSize: 13,
-                            color: underlineColor,
+                            color: AppColors.mediumGreyColor,
                           ),
                         ),
                       ),
@@ -99,7 +101,7 @@ class ServiceAgreement extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w400,
                             fontSize: 13,
-                            color: underlineColor,
+                            color: AppColors.mediumGreyColor,
                           ),
                         ),
                       ),
@@ -124,7 +126,7 @@ class ServiceAgreement extends ConsumerWidget {
                   ),
                   alignLabelWithHint: true,
                   border: const OutlineInputBorder(
-                    borderSide: BorderSide(width: 1, color: hintLightColor),
+                    borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                     borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                   ),
                 ),
@@ -133,7 +135,7 @@ class ServiceAgreement extends ConsumerWidget {
                 textInputAction: TextInputAction.next,
               ),
             ],
-            const Divider(height: 3, color: hintLightColor),
+            const Divider(height: 3, color: AppColors.lighterGreyColor),
             const SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.all(15.0),
@@ -141,11 +143,12 @@ class ServiceAgreement extends ConsumerWidget {
                 children: [
                   if (serviceController.isApproved) ...[
                     ElevatedButton(
-                      onPressed: () =>
-                          serviceController.isEdit ? serviceController.onView(serviceController.contractController.text) : serviceController.onEdit(),
+                      onPressed: () => serviceController.isEdit
+                          ? serviceController.onView(serviceController.contractController.text)
+                          : serviceController.onEdit(),
                       style: ElevatedButton.styleFrom(
-                        disabledBackgroundColor: primaryColor.withOpacity(.5),
-                        backgroundColor: primaryColor,
+                        disabledBackgroundColor: AppColors.darkPurpleColor.withOpacity(.5),
+                        backgroundColor: AppColors.darkPurpleColor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -161,7 +164,7 @@ class ServiceAgreement extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w600,
                                     fontSize: 18,
-                                    color: whiteColor,
+                                    color: AppColors.whiteColor,
                                   ),
                                 ),
                               ),
@@ -173,11 +176,12 @@ class ServiceAgreement extends ConsumerWidget {
                     ),
                   ] else ...[
                     ElevatedButton(
-                      onPressed: () =>
-                          serviceController.isEdit ? serviceController.onView(serviceController.contractController.text) : serviceController.onEdit(),
+                      onPressed: () => serviceController.isEdit
+                          ? serviceController.onView(serviceController.contractController.text)
+                          : serviceController.onEdit(),
                       style: ElevatedButton.styleFrom(
-                        disabledBackgroundColor: primaryColor.withOpacity(.5),
-                        backgroundColor: primaryColor,
+                        disabledBackgroundColor: AppColors.darkPurpleColor.withOpacity(.5),
+                        backgroundColor: AppColors.darkPurpleColor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -197,7 +201,7 @@ class ServiceAgreement extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w600,
                                     fontSize: 18,
-                                    color: whiteColor,
+                                    color: AppColors.whiteColor,
                                   ),
                                 ),
                               ),
@@ -224,7 +228,7 @@ class ServiceAgreement extends ConsumerWidget {
                                   ? serviceController.onSend()
                                   : serviceController.onApprove(),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: primaryColor,
+                        backgroundColor: AppColors.darkPurpleColor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -246,7 +250,7 @@ class ServiceAgreement extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w600,
                                     fontSize: 18,
-                                    color: whiteColor,
+                                    color: AppColors.whiteColor,
                                   ),
                                 ),
                               ),

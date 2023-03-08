@@ -1,6 +1,6 @@
 import 'package:client_zipcare/main.dart';
 import 'package:client_zipcare/src/core/configs/app_router.dart';
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/home/jobs/posted_jobs/posted_job_controller.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +25,7 @@ class PostedJobScreen extends ConsumerWidget {
             onTap: () => navigatorKey.currentState?.pushNamed(AppRouter.jobDetailTab),
             child: Card(
               elevation: 5,
-              shadowColor: shadowColor,
+              shadowColor: AppColors.shadowColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -40,7 +40,7 @@ class PostedJobScreen extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontWeight: FontWeight.w400,
                         fontSize: 15,
-                        color: blackColor,
+                        color: AppColors.blackColor,
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -60,7 +60,7 @@ class PostedJobScreen extends ConsumerWidget {
                                       style: GoogleFonts.lexend(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 13,
-                                        color: locationColor,
+                                        color: AppColors.lightGreyColor,
                                       ),
                                     ),
                                   ),
@@ -77,7 +77,7 @@ class PostedJobScreen extends ConsumerWidget {
                                       style: GoogleFonts.lexend(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 13,
-                                        color: locationColor,
+                                        color: AppColors.lightGreyColor,
                                       ),
                                     ),
                                   ),
@@ -99,7 +99,7 @@ class PostedJobScreen extends ConsumerWidget {
                                       style: GoogleFonts.lexend(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 13,
-                                        color: locationColor,
+                                        color: AppColors.lightGreyColor,
                                       ),
                                     ),
                                   ),
@@ -116,7 +116,7 @@ class PostedJobScreen extends ConsumerWidget {
                                       style: GoogleFonts.lexend(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 13,
-                                        color: locationColor,
+                                        color: AppColors.lightGreyColor,
                                       ),
                                     ),
                                   ),
@@ -136,7 +136,7 @@ class PostedJobScreen extends ConsumerWidget {
                                 margin: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
                                 padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 5),
                                 decoration: const BoxDecoration(
-                                  color: shadowColor,
+                                  color: AppColors.shadowColor,
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(25),
                                   ),
@@ -147,7 +147,7 @@ class PostedJobScreen extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w400,
                                     fontSize: 13,
-                                    color: blackColor,
+                                    color: AppColors.blackColor,
                                   ),
                                 ),
                               ),
@@ -168,7 +168,7 @@ class PostedJobScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 13,
-                                color: locationColor,
+                                color: AppColors.lightGreyColor,
                               ),
                             ),
                           ),
@@ -179,11 +179,13 @@ class PostedJobScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 13,
-                                color: (postedJobController.postedJobsList[index]["status"][0] == ApplicationStatus.accepting)
-                                    ? greenColor
-                                    : (postedJobController.postedJobsList[index]["status"][0] == ApplicationStatus.notAccepting)
-                                        ? redColor
-                                        : cyanColor,
+                                color: (postedJobController.postedJobsList[index]["status"][0] ==
+                                        ApplicationStatus.accepting)
+                                    ? AppColors.greenColor
+                                    : (postedJobController.postedJobsList[index]["status"][0] ==
+                                            ApplicationStatus.notAccepting)
+                                        ? AppColors.redColor
+                                        : AppColors.cyanColor,
                               ),
                             ),
                           ),

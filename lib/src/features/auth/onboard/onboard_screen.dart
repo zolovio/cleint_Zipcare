@@ -1,222 +1,205 @@
 // ignore_for_file: camel_case_types, must_be_immutable
 
-import 'package:client_zipcare/main.dart';
-import 'package:client_zipcare/src/core/configs/app_router.dart';
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
+import 'package:client_zipcare/src/core/constants/dimensions.dart';
 import 'package:client_zipcare/src/features/auth/onboard/onboard_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OnBoardScreen extends ConsumerWidget {
   OnBoardScreen({Key? key}) : super(key: key);
 
-  final PageController controller = PageController(initialPage: 0);
-
   int pageCount = 4;
-
-  List<String> titles = [
-    "Find carers in Minutes",
-    "In-depth insights to carer profiles",
-    "Find jobs that fit your lifestyle",
-    "Get paid more and quickly",
-  ];
-
-  List<String> description = [
-    "Jointly is an innovative mobile and online app that is designed by carers for carers. Jointly makes caring easier.",
-    "Jointly is an innovative mobile and online app that is designed by carers for carers. Jointly makes caring easier.",
-    "Jointly is an innovative mobile and online app that is designed by carers for carers. Jointly makes caring easier.",
-    "Jointly is an innovative mobile and online app that is designed by carers for carers. Jointly makes caring easier.",
-  ];
-
-  List<String> images = [
-    "assets/images/intro/onboard1.png",
-    "assets/images/intro/onboard2.png",
-    "assets/images/intro/onboard3.png",
-    "assets/images/intro/onboard4.png",
-  ];
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final onboardCon = ref.watch(onBoardProvider);
+    var size = MediaQuery.of(context).size;
+
+    final onboardController = ref.watch(onBoardProvider);
 
     return Scaffold(
-      body: Consumer(builder: (context, ref, _) {
-        return Stack(
+      body: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle.light.copyWith(
+          statusBarColor: AppColors.lightPurpleColor,
+          statusBarIconBrightness: Brightness.dark,
+          systemNavigationBarColor: AppColors.lightPurpleColor,
+          systemNavigationBarDividerColor: Colors.transparent,
+          systemNavigationBarIconBrightness: Brightness.light,
+        ),
+        child: Stack(
           children: [
-            PageView.builder(
-              controller: controller,
-              onPageChanged: (index) => onboardCon.currentPageIndex(index),
-              itemCount: pageCount,
-              itemBuilder: (BuildContext context, int index) {
-                return Stack(
-                  children: [
-                    Container(
-                      color: purpleColor,
-                      width: double.infinity,
-                      height: double.infinity,
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height / 1.2,
-                      decoration: const BoxDecoration(
-                        color: lightWhiteColor,
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(60),
-                        ),
+            Container(
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  AppColors.lightPurpleColor,
+                  AppColors.darkPurpleColor,
+                  AppColors.lightPurpleColor,
+                  AppColors.darkPurpleColor,
+                  AppColors.lightPurpleColor,
+                  AppColors.darkPurpleColor,
+                ],
+              )),
+              child: Column(
+                children: [
+                  Card(
+                    margin: EdgeInsets.zero,
+                    elevation: elvation_5,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(margin_40))),
+                    child: Container(
+                      height: size.height * 0.8,
+                      width: size.width,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(height_40)),
                       ),
-                      child: ListView(
-                        children: <Widget>[
-                          const SizedBox(height: 70),
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 70),
-                            alignment: Alignment.center,
-                            child: Text(
-                              titles[index],
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.lexend(
-                                color: blackColor,
-                                fontSize: 26,
-                                fontWeight: FontWeight.w500,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: Center(
+                              child: PageView.builder(
+                                controller: onboardController.pageController,
+                                scrollDirection: Axis.horizontal,
+                                physics: const BouncingScrollPhysics(),
+                                itemCount: onboardController.selectData.length,
+                                onPageChanged: (page) {
+                                  onboardController.onPageChanged(page);
+                                },
+                                itemBuilder: (context, index) {
+                                  return _pagesContainer(
+                                      index, MediaQuery.of(context).size, onboardController);
+                                },
                               ),
                             ),
                           ),
-                          const SizedBox(height: 20),
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 70),
-                            alignment: Alignment.center,
-                            child: Text(
-                              description[index],
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.lexend(
-                                color: descGreyColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
+                          SizedBox(
+                            height: margin_14,
+                            child: ListView.builder(
+                                itemCount: onboardController.selectData.length,
+                                shrinkWrap: true,
+                                scrollDirection: Axis.horizontal,
+                                physics: const ScrollPhysics(),
+                                itemBuilder: (BuildContext context, int index) {
+                                  return Container(
+                                      padding: const EdgeInsets.all(20),
+                                      margin: const EdgeInsets.all(2),
+                                      height: margin_10,
+                                      width: margin_10,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        color: onboardController.selectedIndex == index
+                                            ? AppColors.darkPurpleColor
+                                            : AppColors.lighterGreyColor,
+                                      ));
+                                }),
                           ),
-                          const SizedBox(height: 20),
-                          Container(
-                            height: 250,
-                            width: 250,
-                            alignment: Alignment.center,
-                            child: Image.asset(
-                              images[index],
-                              width: 250.0,
-                              height: 250.0,
-                            ),
-                          ),
-                          const SizedBox(height: 80),
-                          Align(
-                            alignment: Alignment.bottomCenter,
-                            child: SizedBox(
-                              height: 50,
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: <Widget>[
-                                  ListView.builder(
-                                      shrinkWrap: true,
-                                      itemCount: 4,
-                                      scrollDirection: Axis.horizontal,
-                                      itemBuilder: (context, index) {
-                                        return InkWell(
-                                          onTap: () {
-                                            controller.animateToPage(
-                                              index,
-                                              duration: const Duration(microseconds: 300),
-                                              curve: Curves.easeIn,
-                                            );
-                                          },
-                                          child: SizedBox(
-                                            height: 20,
-                                            width: 20,
-                                            child: Center(
-                                              child: AnimatedContainer(
-                                                width: 10,
-                                                height: 10,
-                                                decoration: BoxDecoration(
-                                                  color: onboardCon.currentPage == index ? colorPrimarySwatch : colorGreySwatch,
-                                                  borderRadius: const BorderRadius.all(
-                                                    Radius.circular(20),
-                                                  ),
-                                                ),
-                                                duration: const Duration(milliseconds: 00),
-                                              ),
-                                            ),
-                                          ),
-                                        );
-                                      })
-                                ],
-                              ),
-                            ),
-                          )
+                          SizedBox(height: height_30)
                         ],
                       ),
                     ),
-                  ],
-                );
-              },
+                  ),
+                ],
+              ),
             ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: _skipButton(onboardController.selectedIndex, context, onboardController),
+            )
           ],
-        );
-      }),
-      bottomNavigationBar: Material(
-        elevation: 0,
-        color: purpleColor,
-        child: Container(
-          padding: const EdgeInsets.only(bottom: 25),
-          height: MediaQuery.of(context).size.height * 0.1,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              (onboardCon.currentPage == pageCount - 1)
-                  ? ElevatedButton(
-                      onPressed: () => navigatorKey.currentState?.pushNamed(AppRouter.phoneVerification),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: whiteColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
-                        child: Text(
-                          getStartedText,
-                          style: GoogleFonts.lexend(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 18,
-                            color: blackColor,
-                          ),
-                        ),
-                      ),
-                    )
-                  : ElevatedButton(
-                      onPressed: () {
-                        controller.jumpToPage(pageCount - 1);
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: whiteColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                        child: Text(
-                          skipText,
-                          style: GoogleFonts.lexend(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 18,
-                            color: blackColor,
-                          ),
-                        ),
-                      ),
-                    ),
-            ],
-          ),
         ),
       ),
     );
   }
+}
+
+_pagesContainer(index, Size size, OnBoardController vm) {
+  return Container(
+    width: size.width,
+    margin: EdgeInsets.only(top: height_15, bottom: height_30, left: height_20, right: height_20),
+    padding: EdgeInsets.only(top: height_50, bottom: height_30),
+    color: AppColors.whiteColor,
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        SizedBox(height: height_20),
+        _title(index, vm),
+        SizedBox(height: height_20),
+        _description(index, vm),
+        Expanded(child: _image(index, vm))
+      ],
+    ),
+  );
+}
+
+_title(index, OnBoardController vm) {
+  return Text(
+    vm.selectData[index].title,
+    style: GoogleFonts.lexend(
+      color: Colors.black,
+      fontSize: font_25,
+    ),
+    textAlign: TextAlign.center,
+  );
+}
+
+_description(index, OnBoardController vm) {
+  return Text(
+    '${vm.selectData[index].desc}',
+    style: GoogleFonts.lexend(color: AppColors.deepGreyColor, fontSize: font_15),
+    textAlign: TextAlign.center,
+  );
+}
+
+_image(index, OnBoardController vm) {
+  return Image.asset(
+    '${vm.selectData[index].image}',
+    height: height_80,
+  );
+}
+
+_skipButton(int index, context, OnBoardController vm) {
+  return Container(
+    alignment: Alignment.center,
+    height: height_45,
+    width: width_130,
+    decoration:
+        BoxDecoration(color: AppColors.whiteColor, borderRadius: BorderRadius.circular(height_10)),
+    margin: EdgeInsets.symmetric(vertical: margin_20),
+    child: ElevatedButton(
+      onPressed: () {
+        if (index == 3) {
+          vm.onGetStarted();
+        } else {
+          vm.pageController.jumpToPage(index + 1);
+        }
+      },
+      style: ElevatedButton.styleFrom(
+        elevation: elvation_4,
+        backgroundColor: AppColors.whiteColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.r),
+        ),
+      ),
+      child: Center(
+        child: Text(
+          index == 3 ? getStartedText : skipText,
+          style: GoogleFonts.lexend(
+            fontWeight: FontWeight.w600,
+            color: AppColors.blackColor,
+            fontSize: font_14,
+          ),
+        ),
+      ),
+    ),
+  );
 }

@@ -1,6 +1,6 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/job_detail/timesheet/timesheet_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -26,7 +26,7 @@ class TimesheetScreen extends ConsumerWidget {
               style: GoogleFonts.lexend(
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
-                color: hintColor,
+                color: AppColors.mediumSlateColor,
               ),
             ),
             FormBuilderRadioGroup<String>(
@@ -66,16 +66,17 @@ class TimesheetScreen extends ConsumerWidget {
                   appBar: PreferredSize(
                     preferredSize: const Size.fromHeight(80),
                     child: AppBar(
-                      backgroundColor: lightWhiteColor,
+                      backgroundColor: AppColors.lightWhiteColor,
                       elevation: 0,
                       bottom: TabBar(
-                        unselectedLabelColor: lightGreyColor,
+                        unselectedLabelColor: AppColors.greyColor,
                         indicatorSize: TabBarIndicatorSize.label,
                         padding: EdgeInsets.zero,
                         indicatorPadding: EdgeInsets.zero,
                         labelPadding: const EdgeInsets.symmetric(horizontal: 5),
                         indicator: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5.0), color: primaryColor),
+                            borderRadius: BorderRadius.circular(5.0),
+                            color: AppColors.darkPurpleColor),
                         onTap: (int index) => timesheetController.onSelectedIndex(index),
                         tabs: [
                           Tab(
@@ -84,8 +85,8 @@ class TimesheetScreen extends ConsumerWidget {
                                   borderRadius: BorderRadius.circular(5.0),
                                   border: Border.all(
                                       color: timesheetController.selectedIndex == 0
-                                          ? primaryColor
-                                          : lightGreyColor,
+                                          ? AppColors.darkPurpleColor
+                                          : AppColors.greyColor,
                                       width: 1)),
                               child: Align(
                                 alignment: Alignment.center,
@@ -103,8 +104,8 @@ class TimesheetScreen extends ConsumerWidget {
                                   borderRadius: BorderRadius.circular(5.0),
                                   border: Border.all(
                                       color: timesheetController.selectedIndex == 1
-                                          ? primaryColor
-                                          : lightGreyColor,
+                                          ? AppColors.darkPurpleColor
+                                          : AppColors.greyColor,
                                       width: 1)),
                               child: Align(
                                 alignment: Alignment.center,
@@ -122,8 +123,8 @@ class TimesheetScreen extends ConsumerWidget {
                                   borderRadius: BorderRadius.circular(5.0),
                                   border: Border.all(
                                       color: timesheetController.selectedIndex == 2
-                                          ? primaryColor
-                                          : lightGreyColor,
+                                          ? AppColors.darkPurpleColor
+                                          : AppColors.greyColor,
                                       width: 1)),
                               child: Align(
                                 alignment: Alignment.center,

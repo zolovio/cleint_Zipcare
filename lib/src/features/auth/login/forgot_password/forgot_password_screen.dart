@@ -1,8 +1,8 @@
 import 'package:client_zipcare/main.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
 import 'package:client_zipcare/src/core/configs/app_router.dart';
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
@@ -28,7 +28,7 @@ class ForgotPasswordScreen extends StatelessWidget {
               style: GoogleFonts.lexend(
                 fontSize: 15,
                 fontWeight: FontWeight.w400,
-                color: blackColor,
+                color: AppColors.blackColor,
               ),
             ),
           ),
@@ -51,7 +51,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                     ),
                     border: const OutlineInputBorder(
-                      borderSide: BorderSide(width: 1, color: hintLightColor),
+                      borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                   ),
@@ -76,7 +76,7 @@ class ForgotPasswordScreen extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () => navigatorKey.currentState?.pushNamed(AppRouter.homeScreen),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: primaryColor,
+                  backgroundColor: AppColors.darkPurpleColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -89,7 +89,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                       style: GoogleFonts.lexend(
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
-                        color: whiteColor,
+                        color: AppColors.whiteColor,
                       ),
                     ),
                   ),

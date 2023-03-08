@@ -1,105 +1,9 @@
 import 'package:client_zipcare/main.dart';
-import 'package:client_zipcare/src/core/configs/app_router.dart';
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-AppBar getAppBar(String title, bool showAction, BuildContext context) {
-  return AppBar(
-    elevation: 0,
-    centerTitle: true,
-    automaticallyImplyLeading: true,
-    backgroundColor: lightWhiteColor,
-    iconTheme: const IconThemeData(color: blackColor),
-    leading:
-        IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Icons.arrow_back)),
-    title: Text(
-      title,
-      style: GoogleFonts.lexend(
-        fontSize: 20,
-        fontWeight: FontWeight.w500,
-        color: blackColor,
-      ),
-    ),
-    actions: [
-      if (showAction)
-        InkWell(
-          onTap: () => navigatorKey.currentState?.pushNamed(AppRouter.notification),
-          child: Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: InkWell(child: Image.asset(notification)),
-          ),
-        ),
-    ],
-  );
-}
-
-AppBar getSimpleAppBar(BuildContext context) {
-  return AppBar(
-    automaticallyImplyLeading: true,
-    backgroundColor: lightWhiteColor,
-    elevation: 0,
-    leading: IconButton(
-      icon: const Icon(Icons.keyboard_backspace),
-      color: blackColor,
-      onPressed: () => Navigator.pop(context),
-    ),
-  );
-}
-
-PreferredSize homeAppBar(BuildContext context) {
-  return PreferredSize(
-    preferredSize: Size.fromHeight(MediaQuery.of(context).size.height * 0.1),
-    child: Container(
-      padding: const EdgeInsets.only(top: 15.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          AppBar(
-            elevation: 0,
-            centerTitle: true,
-            backgroundColor: lightWhiteColor,
-            leading: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Image.asset(
-                logo,
-                fit: BoxFit.cover,
-              ),
-            ),
-            title: ElevatedButton(
-              onPressed: () => navigatorKey.currentState?.pushNamed(AppRouter.jobPostScreen),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: primaryColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5),
-                ),
-              ),
-              child: Text(
-                postAJobText,
-                style: GoogleFonts.lexend(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 15,
-                  color: whiteColor,
-                ),
-              ),
-            ),
-            actions: [
-              InkWell(
-                onTap: () => navigatorKey.currentState?.pushNamed(AppRouter.notification),
-                child: Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: InkWell(child: Image.asset(notification)),
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    ),
-  );
-}
 
 Widget getStepperWidget(String currentIndex, String totalIndices, bool showStepper) {
   return Column(
@@ -110,7 +14,7 @@ Widget getStepperWidget(String currentIndex, String totalIndices, bool showStepp
         style: GoogleFonts.lexend(
           fontSize: 20,
           fontWeight: FontWeight.w500,
-          color: blackColor,
+          color: AppColors.blackColor,
         ),
       ),
       if (showStepper) ...[
@@ -122,7 +26,7 @@ Widget getStepperWidget(String currentIndex, String totalIndices, bool showStepp
               style: GoogleFonts.lexend(
                 fontSize: 25,
                 fontWeight: FontWeight.w500,
-                color: primaryColor,
+                color: AppColors.darkPurpleColor,
               ),
             ),
             Text(
@@ -130,7 +34,7 @@ Widget getStepperWidget(String currentIndex, String totalIndices, bool showStepp
               style: GoogleFonts.lexend(
                 fontSize: 25,
                 fontWeight: FontWeight.w500,
-                color: blackColor,
+                color: AppColors.blackColor,
               ),
             ),
           ],
@@ -155,7 +59,7 @@ Widget getQuestionsWidget(String ques, bool isDetail, String detail, bool isIcon
               style: GoogleFonts.lexend(
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
-                color: darkGreyColor,
+                color: AppColors.deepGreyColor,
               ),
             ),
           ),
@@ -177,7 +81,7 @@ Widget getQuestionsWidget(String ques, bool isDetail, String detail, bool isIcon
           style: GoogleFonts.lexend(
             fontSize: 12,
             fontWeight: FontWeight.w400,
-            color: underlineColor,
+            color: AppColors.mediumGreyColor,
           ),
         ),
       ],
@@ -223,7 +127,7 @@ Future<void> showDialogAlert(
                 style: GoogleFonts.lexend(
                   fontWeight: FontWeight.w600,
                   fontSize: 20,
-                  color: blackColor,
+                  color: AppColors.blackColor,
                 ),
               ),
             ),
@@ -247,7 +151,7 @@ Future<void> showDialogAlert(
                         ),
                         alignLabelWithHint: true,
                         border: const OutlineInputBorder(
-                          borderSide: BorderSide(width: 1, color: hintLightColor),
+                          borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                           borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                         ),
                       ),
@@ -266,8 +170,8 @@ Future<void> showDialogAlert(
               ElevatedButton(
                 onPressed: () => navigatorKey.currentState?.pop(),
                 style: ElevatedButton.styleFrom(
-                  disabledBackgroundColor: primaryColor.withOpacity(.5),
-                  backgroundColor: primaryColor,
+                  disabledBackgroundColor: AppColors.darkPurpleColor.withOpacity(.5),
+                  backgroundColor: AppColors.darkPurpleColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -280,7 +184,7 @@ Future<void> showDialogAlert(
                       style: GoogleFonts.lexend(
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
-                        color: whiteColor,
+                        color: AppColors.whiteColor,
                       ),
                     ),
                   ),
@@ -323,7 +227,7 @@ Future<void> showRatingDialog(
                 Padding(
                   padding: const EdgeInsets.only(bottom: 8.0),
                   child: Container(
-                    color: primaryColor,
+                    color: AppColors.darkPurpleColor,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10.0),
                       child: Column(
@@ -337,7 +241,7 @@ Future<void> showRatingDialog(
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w500,
                                     fontSize: 18,
-                                    color: whiteColor,
+                                    color: AppColors.whiteColor,
                                   ),
                                 ),
                               ),
@@ -349,7 +253,7 @@ Future<void> showRatingDialog(
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w400,
                               fontSize: 14,
-                              color: whiteColor,
+                              color: AppColors.whiteColor,
                             ),
                           ),
                         ],
@@ -371,7 +275,7 @@ Future<void> showRatingDialog(
                     ),
                     alignLabelWithHint: true,
                     border: const OutlineInputBorder(
-                      borderSide: BorderSide(width: 1, color: hintLightColor),
+                      borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                       borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                     ),
                   ),
@@ -390,7 +294,7 @@ Future<void> showRatingDialog(
               ElevatedButton(
                 onPressed: () => navigatorKey.currentState?.pop(),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: primaryColor,
+                  backgroundColor: AppColors.darkPurpleColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -403,7 +307,7 @@ Future<void> showRatingDialog(
                       style: GoogleFonts.lexend(
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
-                        color: whiteColor,
+                        color: AppColors.whiteColor,
                       ),
                     ),
                   ),

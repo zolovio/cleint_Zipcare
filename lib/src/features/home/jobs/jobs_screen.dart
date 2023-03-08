@@ -1,4 +1,4 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/home/jobs/jobs_controller.dart';
 import 'package:flutter/material.dart';
@@ -18,19 +18,24 @@ class JobsScreen extends ConsumerWidget {
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(80),
           child: AppBar(
-            backgroundColor: lightWhiteColor,
+            backgroundColor: AppColors.lightWhiteColor,
             elevation: 0,
             bottom: TabBar(
-              unselectedLabelColor: lightGreyColor,
+              unselectedLabelColor: AppColors.greyColor,
               indicatorSize: TabBarIndicatorSize.label,
-              indicator: BoxDecoration(borderRadius: BorderRadius.circular(5.0), color: primaryColor),
+              indicator: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5.0), color: AppColors.darkPurpleColor),
               onTap: (int index) => jobsController.onSelectedIndex(index),
               tabs: [
                 Tab(
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.0),
-                        border: Border.all(color: jobsController.selectedIndex == 0 ? primaryColor : lightGreyColor, width: 1)),
+                        border: Border.all(
+                            color: jobsController.selectedIndex == 0
+                                ? AppColors.darkPurpleColor
+                                : AppColors.greyColor,
+                            width: 1)),
                     child: Align(
                       alignment: Alignment.center,
                       child: Text(
@@ -44,7 +49,11 @@ class JobsScreen extends ConsumerWidget {
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.0),
-                        border: Border.all(color: jobsController.selectedIndex == 1 ? primaryColor : lightGreyColor, width: 1)),
+                        border: Border.all(
+                            color: jobsController.selectedIndex == 1
+                                ? AppColors.darkPurpleColor
+                                : AppColors.greyColor,
+                            width: 1)),
                     child: Align(
                       alignment: Alignment.center,
                       child: Text(

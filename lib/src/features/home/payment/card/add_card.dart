@@ -1,6 +1,6 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/payment/card/card_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/credit_card_brand.dart';
@@ -33,7 +33,7 @@ class AddNewCard extends ConsumerWidget {
             obscureCardNumber: true,
             obscureCardCvv: true,
             isHolderNameVisible: true,
-            cardBgColor: primaryColor,
+            cardBgColor: AppColors.darkPurpleColor,
             isSwipeGestureEnabled: true,
             bankName: " ",
             // backgroundImage: card,
@@ -57,27 +57,34 @@ class AddNewCard extends ConsumerWidget {
                 isExpiryDateVisible: true,
                 cardHolderName: cardController.cardHolderName,
                 expiryDate: cardController.expiryDate,
-                themeColor: primaryColor,
-                textColor: blackColor,
+                themeColor: AppColors.darkPurpleColor,
+                textColor: AppColors.blackColor,
                 cardNumberDecoration: InputDecoration(
                   labelText: 'Card Number',
                   hintText: 'XXXX XXXX XXXX XXXX',
-                  hintStyle: GoogleFonts.lexend(color: darkGreyColor, fontWeight: FontWeight.w400, fontSize: 14),
-                  labelStyle: GoogleFonts.lexend(color: darkGreyColor, fontWeight: FontWeight.w400, fontSize: 14),
+                  hintStyle: GoogleFonts.lexend(
+                      color: AppColors.deepGreyColor, fontWeight: FontWeight.w400, fontSize: 14),
+                  labelStyle: GoogleFonts.lexend(
+                      color: AppColors.deepGreyColor, fontWeight: FontWeight.w400, fontSize: 14),
                   focusedBorder: cardController.border,
                   enabledBorder: cardController.border,
                 ),
                 expiryDateDecoration: InputDecoration(
-                  hintStyle: GoogleFonts.lexend(color: darkGreyColor, fontWeight: FontWeight.w400, fontSize: 14),
-                  labelStyle: GoogleFonts.lexend(color: darkGreyColor, fontWeight: FontWeight.w400, fontSize: 14),
+                  hintStyle: GoogleFonts.lexend(
+                      color: AppColors.deepGreyColor, fontWeight: FontWeight.w400, fontSize: 14),
+                  labelStyle: GoogleFonts.lexend(
+                      color: AppColors.deepGreyColor, fontWeight: FontWeight.w400, fontSize: 14),
                   focusedBorder: cardController.border,
                   enabledBorder: cardController.border,
                   labelText: 'Expire Date',
                   hintText: cardController.expiryDate,
                   suffixIcon: InkWell(
                       onTap: () async {
-                        DateTime? pickedDate =
-                            await showDatePicker(context: context, initialDate: DateTime.now(), firstDate: DateTime(2000), lastDate: DateTime(3000));
+                        DateTime? pickedDate = await showDatePicker(
+                            context: context,
+                            initialDate: DateTime.now(),
+                            firstDate: DateTime(2000),
+                            lastDate: DateTime(3000));
 
                         if (pickedDate != null) {
                           String formattedDate = DateFormat('MM/dd').format(pickedDate);
@@ -88,16 +95,20 @@ class AddNewCard extends ConsumerWidget {
                       child: Image.asset(expiryDate)),
                 ),
                 cvvCodeDecoration: InputDecoration(
-                  hintStyle: GoogleFonts.lexend(color: darkGreyColor, fontWeight: FontWeight.w400, fontSize: 14),
-                  labelStyle: GoogleFonts.lexend(color: darkGreyColor, fontWeight: FontWeight.w400, fontSize: 14),
+                  hintStyle: GoogleFonts.lexend(
+                      color: AppColors.deepGreyColor, fontWeight: FontWeight.w400, fontSize: 14),
+                  labelStyle: GoogleFonts.lexend(
+                      color: AppColors.deepGreyColor, fontWeight: FontWeight.w400, fontSize: 14),
                   focusedBorder: cardController.border,
                   enabledBorder: cardController.border,
                   labelText: 'CVV',
                   hintText: 'XXX',
                 ),
                 cardHolderDecoration: InputDecoration(
-                  hintStyle: GoogleFonts.lexend(color: darkGreyColor, fontWeight: FontWeight.w400, fontSize: 14),
-                  labelStyle: GoogleFonts.lexend(color: darkGreyColor, fontWeight: FontWeight.w400, fontSize: 14),
+                  hintStyle: GoogleFonts.lexend(
+                      color: AppColors.deepGreyColor, fontWeight: FontWeight.w400, fontSize: 14),
+                  labelStyle: GoogleFonts.lexend(
+                      color: AppColors.deepGreyColor, fontWeight: FontWeight.w400, fontSize: 14),
                   focusedBorder: cardController.border,
                   enabledBorder: cardController.border,
                   labelText: 'Card Holder',
@@ -112,7 +123,7 @@ class AddNewCard extends ConsumerWidget {
                   child: ElevatedButton(
                     onPressed: _onValidate,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: primaryColor,
+                      backgroundColor: AppColors.darkPurpleColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
@@ -128,7 +139,7 @@ class AddNewCard extends ConsumerWidget {
                                 style: GoogleFonts.lexend(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 20,
-                                  color: whiteColor,
+                                  color: AppColors.whiteColor,
                                 ),
                               ),
                             ),

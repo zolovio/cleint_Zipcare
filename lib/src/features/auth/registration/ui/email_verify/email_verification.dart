@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:client_zipcare/main.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
 import 'package:client_zipcare/src/core/configs/app_router.dart';
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:otp_text_field/otp_field.dart';
@@ -62,7 +62,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
       body: Container(
         height: MediaQuery.of(context).size.height / 1.2,
         decoration: const BoxDecoration(
-          color: lightWhiteColor,
+          color: AppColors.lightWhiteColor,
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(60),
           ),
@@ -76,7 +76,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                 emailVerifyText,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.lexend(
-                  color: blackColor,
+                  color: AppColors.blackColor,
                   fontSize: 26,
                   fontWeight: FontWeight.w500,
                 ),
@@ -101,7 +101,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                 enterOtpText,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.lexend(
-                  color: descGreyColor,
+                  color: AppColors.darkGreyColor,
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
                 ),
@@ -110,7 +110,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
             const SizedBox(height: 40),
             OTPTextField(
               length: 4,
-              otpFieldStyle: OtpFieldStyle(borderColor: fieldBorderColor),
+              otpFieldStyle: OtpFieldStyle(borderColor: AppColors.lightSlateColor),
               width: MediaQuery.of(context).size.width,
               style: GoogleFonts.lexend(fontSize: 32, fontWeight: FontWeight.w500),
               spaceBetween: 20,
@@ -118,10 +118,10 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
               fieldWidth: 50,
               fieldStyle: FieldStyle.box,
               onCompleted: (pin) {
-                print("Completed: " + pin);
+                print("Completed: $pin");
               },
               onChanged: (pin) {
-                print("Changed: " + pin);
+                print("Changed: $pin");
               },
             ),
             const SizedBox(height: 40),
@@ -135,7 +135,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                     resendCodeText,
                     textAlign: TextAlign.center,
                     style: GoogleFonts.lexend(
-                      color: descGreyColor,
+                      color: AppColors.darkGreyColor,
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
                     ),
@@ -144,7 +144,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                     ' $minutes:$seconds',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.lexend(
-                      color: primaryColor,
+                      color: AppColors.darkPurpleColor,
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
                     ),
@@ -163,7 +163,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
             child: ElevatedButton(
               onPressed: () => navigatorKey.currentState?.pushNamed(AppRouter.signUpScreen),
               style: ElevatedButton.styleFrom(
-                backgroundColor: primaryColor,
+                backgroundColor: AppColors.darkPurpleColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -175,7 +175,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                   style: GoogleFonts.lexend(
                     fontWeight: FontWeight.w600,
                     fontSize: 18,
-                    color: whiteColor,
+                    color: AppColors.whiteColor,
                   ),
                 ),
               ),

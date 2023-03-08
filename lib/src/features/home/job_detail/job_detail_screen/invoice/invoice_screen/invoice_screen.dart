@@ -1,8 +1,9 @@
 import 'package:client_zipcare/main.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/components/custom_widgets.dart';
 import 'package:client_zipcare/src/core/configs/app_router.dart';
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/invoice/invoice_screen/invoice_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -10,7 +11,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class InvoiceScreen extends ConsumerWidget {
-  const InvoiceScreen({Key? key, required this.jobCompleted, required this.isContract}) : super(key: key);
+  const InvoiceScreen({Key? key, required this.jobCompleted, required this.isContract})
+      : super(key: key);
 
   final bool jobCompleted;
   final bool isContract;
@@ -39,7 +41,7 @@ class InvoiceScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w500,
                               fontSize: 14,
-                              color: blackColor,
+                              color: AppColors.blackColor,
                             ),
                           ),
                           Text(
@@ -47,7 +49,7 @@ class InvoiceScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w500,
                               fontSize: 14,
-                              color: blackColor,
+                              color: AppColors.blackColor,
                             ),
                           ),
                           Text(
@@ -55,7 +57,7 @@ class InvoiceScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w500,
                               fontSize: 14,
-                              color: blackColor,
+                              color: AppColors.blackColor,
                             ),
                           ),
                         ],
@@ -69,7 +71,7 @@ class InvoiceScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w400,
                               fontSize: 13,
-                              color: hintColor,
+                              color: AppColors.mediumSlateColor,
                             ),
                           ),
                         ],
@@ -87,7 +89,7 @@ class InvoiceScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w500,
                               fontSize: 14,
-                              color: blackColor,
+                              color: AppColors.blackColor,
                             ),
                           ),
                           Text(
@@ -95,7 +97,7 @@ class InvoiceScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w500,
                               fontSize: 14,
-                              color: blackColor,
+                              color: AppColors.blackColor,
                             ),
                           ),
                           Text(
@@ -103,7 +105,7 @@ class InvoiceScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w500,
                               fontSize: 14,
-                              color: blackColor,
+                              color: AppColors.blackColor,
                             ),
                           ),
                         ],
@@ -117,7 +119,7 @@ class InvoiceScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w400,
                               fontSize: 13,
-                              color: hintColor,
+                              color: AppColors.mediumSlateColor,
                             ),
                           ),
                         ],
@@ -127,7 +129,7 @@ class InvoiceScreen extends ConsumerWidget {
                 ],
               ),
               const SizedBox(height: 15),
-              const Divider(height: 3, color: hintLightColor),
+              const Divider(height: 3, color: AppColors.lighterGreyColor),
               const SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -137,7 +139,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                   Text(
@@ -145,7 +147,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                 ],
@@ -159,7 +161,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                   Text(
@@ -167,7 +169,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                 ],
@@ -181,7 +183,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                   Text(
@@ -189,7 +191,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                 ],
@@ -203,7 +205,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                   Text(
@@ -211,13 +213,13 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                 ],
               ),
               const SizedBox(height: 15),
-              const Divider(height: 3, color: hintLightColor),
+              const Divider(height: 3, color: AppColors.lighterGreyColor),
               const SizedBox(height: 15),
               Row(
                 children: [
@@ -226,7 +228,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 15,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                   Text(
@@ -234,7 +236,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 15,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                 ],
@@ -245,7 +247,7 @@ class InvoiceScreen extends ConsumerWidget {
                 style: GoogleFonts.lexend(
                   fontWeight: FontWeight.w400,
                   fontSize: 13,
-                  color: hintColor,
+                  color: AppColors.mediumSlateColor,
                 ),
               ),
               const SizedBox(height: 20),
@@ -260,7 +262,7 @@ class InvoiceScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w400,
                             fontSize: 15,
-                            color: blackColor,
+                            color: AppColors.blackColor,
                           ),
                         ),
                         const SizedBox(height: 4),
@@ -269,7 +271,7 @@ class InvoiceScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w300,
                             fontSize: 12,
-                            color: hintColor,
+                            color: AppColors.mediumSlateColor,
                           ),
                         ),
                       ],
@@ -284,7 +286,7 @@ class InvoiceScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w400,
                             fontSize: 15,
-                            color: blackColor,
+                            color: AppColors.blackColor,
                           ),
                         ),
                         const SizedBox(height: 4),
@@ -293,7 +295,7 @@ class InvoiceScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w300,
                             fontSize: 12,
-                            color: hintColor,
+                            color: AppColors.mediumSlateColor,
                           ),
                         ),
                       ],
@@ -310,7 +312,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 15,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                   const SizedBox(height: 4),
@@ -319,7 +321,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w300,
                       fontSize: 12,
-                      color: hintColor,
+                      color: AppColors.mediumSlateColor,
                     ),
                   ),
                 ],
@@ -333,7 +335,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 15,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -349,7 +351,7 @@ class InvoiceScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w500,
                             fontSize: 14,
-                            color: cyanColor,
+                            color: AppColors.cyanColor,
                             decoration: TextDecoration.underline,
                           ),
                         ),
@@ -369,7 +371,7 @@ class InvoiceScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w500,
                             fontSize: 14,
-                            color: cyanColor,
+                            color: AppColors.cyanColor,
                             decoration: TextDecoration.underline,
                           ),
                         ),
@@ -379,7 +381,7 @@ class InvoiceScreen extends ConsumerWidget {
                 ],
               ),
               const SizedBox(height: 15),
-              const Divider(height: 3, color: hintLightColor),
+              const Divider(height: 3, color: AppColors.lighterGreyColor),
               const SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -390,7 +392,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 15,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                   Text(
@@ -398,13 +400,13 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w500,
                       fontSize: 15,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                 ],
               ),
               const SizedBox(height: 15),
-              const Divider(height: 3, color: hintLightColor),
+              const Divider(height: 3, color: AppColors.lighterGreyColor),
               const SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -415,7 +417,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 15,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                   Text(
@@ -423,7 +425,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w500,
                       fontSize: 15,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                 ],
@@ -434,8 +436,8 @@ class InvoiceScreen extends ConsumerWidget {
                 child: ElevatedButton(
                   onPressed: () => navigatorKey.currentState?.pushNamed(AppRouter.paymentScreen),
                   style: ElevatedButton.styleFrom(
-                    disabledBackgroundColor: primaryColor.withOpacity(.5),
-                    backgroundColor: primaryColor,
+                    disabledBackgroundColor: AppColors.darkPurpleColor.withOpacity(.5),
+                    backgroundColor: AppColors.darkPurpleColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -451,7 +453,7 @@ class InvoiceScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 18,
-                                color: whiteColor,
+                                color: AppColors.whiteColor,
                               ),
                             ),
                           ),
@@ -467,11 +469,11 @@ class InvoiceScreen extends ConsumerWidget {
                   onPressed: null,
                   style: ElevatedButton.styleFrom(
                     disabledBackgroundColor: invoiceController.isCancelled
-                        ? redColor.withOpacity(.2)
+                        ? AppColors.redColor.withOpacity(.2)
                         : invoiceController.isCompleted
-                            ? greenColor.withOpacity(.1)
-                            : primaryColor.withOpacity(.2),
-                    backgroundColor: primaryColor,
+                            ? AppColors.greenColor.withOpacity(.1)
+                            : AppColors.darkPurpleColor.withOpacity(.2),
+                    backgroundColor: AppColors.darkPurpleColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -492,10 +494,10 @@ class InvoiceScreen extends ConsumerWidget {
                                 fontWeight: FontWeight.w400,
                                 fontSize: 15,
                                 color: invoiceController.isCancelled
-                                    ? redColor
+                                    ? AppColors.redColor
                                     : invoiceController.isCompleted
-                                        ? greenColor
-                                        : primaryColor,
+                                        ? AppColors.greenColor
+                                        : AppColors.darkPurpleColor,
                               ),
                             ),
                           ),
@@ -518,7 +520,7 @@ class InvoiceScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w500,
                               fontSize: 14,
-                              color: blackColor,
+                              color: AppColors.blackColor,
                             ),
                           ),
                           Text(
@@ -526,7 +528,7 @@ class InvoiceScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w500,
                               fontSize: 14,
-                              color: blackColor,
+                              color: AppColors.blackColor,
                             ),
                           ),
                           Text(
@@ -534,7 +536,7 @@ class InvoiceScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w500,
                               fontSize: 14,
-                              color: blackColor,
+                              color: AppColors.blackColor,
                             ),
                           ),
                         ],
@@ -548,7 +550,7 @@ class InvoiceScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w400,
                               fontSize: 13,
-                              color: hintColor,
+                              color: AppColors.mediumSlateColor,
                             ),
                           ),
                         ],
@@ -566,7 +568,7 @@ class InvoiceScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w500,
                               fontSize: 14,
-                              color: blackColor,
+                              color: AppColors.blackColor,
                             ),
                           ),
                           Text(
@@ -574,7 +576,7 @@ class InvoiceScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w500,
                               fontSize: 14,
-                              color: blackColor,
+                              color: AppColors.blackColor,
                             ),
                           ),
                           Text(
@@ -582,7 +584,7 @@ class InvoiceScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w500,
                               fontSize: 14,
-                              color: blackColor,
+                              color: AppColors.blackColor,
                             ),
                           ),
                         ],
@@ -596,7 +598,7 @@ class InvoiceScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w400,
                               fontSize: 13,
-                              color: hintColor,
+                              color: AppColors.mediumSlateColor,
                             ),
                           ),
                         ],
@@ -606,7 +608,7 @@ class InvoiceScreen extends ConsumerWidget {
                 ],
               ),
               const SizedBox(height: 15),
-              const Divider(height: 3, color: hintLightColor),
+              const Divider(height: 3, color: AppColors.lighterGreyColor),
               const SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -616,7 +618,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                   Text(
@@ -624,7 +626,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                 ],
@@ -638,7 +640,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                   Text(
@@ -646,7 +648,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                 ],
@@ -660,7 +662,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                   Text(
@@ -668,7 +670,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                 ],
@@ -682,7 +684,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                   Text(
@@ -690,13 +692,13 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                 ],
               ),
               const SizedBox(height: 15),
-              const Divider(height: 3, color: hintLightColor),
+              const Divider(height: 3, color: AppColors.lighterGreyColor),
               const SizedBox(height: 15),
               Row(
                 children: [
@@ -705,7 +707,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 15,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                   Text(
@@ -713,7 +715,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 15,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                 ],
@@ -724,25 +726,25 @@ class InvoiceScreen extends ConsumerWidget {
                 style: GoogleFonts.lexend(
                   fontWeight: FontWeight.w400,
                   fontSize: 13,
-                  color: hintColor,
+                  color: AppColors.mediumSlateColor,
                 ),
               ),
               const SizedBox(height: 20),
               Container(
                 padding: const EdgeInsets.all(5),
-                color: shadowColor,
+                color: AppColors.shadowColor,
                 child: Table(
                   border: const TableBorder(
                     verticalInside: BorderSide(
                       width: 1,
-                      color: lightGreyColor,
+                      color: AppColors.greyColor,
                       style: BorderStyle.solid,
                     ),
                   ),
                   columnWidths: const {0: FixedColumnWidth(30), 3: FixedColumnWidth(70)},
                   children: [
                     TableRow(
-                      decoration: const BoxDecoration(color: shadowColor),
+                      decoration: const BoxDecoration(color: AppColors.shadowColor),
                       children: invoiceController.invoiceDetails["invoice"]
                           .map<Widget>(
                             (invoice) => TableCell(
@@ -755,7 +757,7 @@ class InvoiceScreen extends ConsumerWidget {
                                     style: GoogleFonts.lexend(
                                       fontWeight: FontWeight.w400,
                                       fontSize: 13,
-                                      color: descGreyColor,
+                                      color: AppColors.darkGreyColor,
                                     ),
                                   ),
                                 )),
@@ -790,7 +792,7 @@ class InvoiceScreen extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w400,
                                     fontSize: 13,
-                                    color: blackColor,
+                                    color: AppColors.blackColor,
                                   ),
                                 ),
                               ),
@@ -804,7 +806,7 @@ class InvoiceScreen extends ConsumerWidget {
               const SizedBox(height: 3),
               Container(
                 padding: const EdgeInsets.all(5),
-                color: shadowColor,
+                color: AppColors.shadowColor,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -815,7 +817,7 @@ class InvoiceScreen extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontWeight: FontWeight.w400,
                           fontSize: 15,
-                          color: blackColor,
+                          color: AppColors.blackColor,
                         ),
                       ),
                     ),
@@ -826,7 +828,7 @@ class InvoiceScreen extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontWeight: FontWeight.w500,
                           fontSize: 15,
-                          color: blackColor,
+                          color: AppColors.blackColor,
                         ),
                       ),
                     ),
@@ -839,7 +841,7 @@ class InvoiceScreen extends ConsumerWidget {
                   height: 50,
                   padding: const EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
-                    color: primaryColor.withOpacity(.2),
+                    color: AppColors.darkPurpleColor.withOpacity(.2),
                     borderRadius: const BorderRadius.all(
                       Radius.circular(10),
                     ),
@@ -851,7 +853,7 @@ class InvoiceScreen extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontWeight: FontWeight.w400,
                           fontSize: 13,
-                          color: descGreyColor,
+                          color: AppColors.darkGreyColor,
                         ),
                       ),
                       Text(
@@ -859,7 +861,7 @@ class InvoiceScreen extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontWeight: FontWeight.w400,
                           fontSize: 13,
-                          color: descGreyColor,
+                          color: AppColors.darkGreyColor,
                         ),
                       ),
                     ],
@@ -868,7 +870,7 @@ class InvoiceScreen extends ConsumerWidget {
                 const SizedBox(height: 20),
               ],
               if (invoiceController.isCompleted) ...[
-                const Divider(height: 3, color: hintLightColor),
+                const Divider(height: 3, color: AppColors.lighterGreyColor),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10.0),
                   child: Text(
@@ -876,11 +878,11 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
-                      color: descGreyColor,
+                      color: AppColors.darkGreyColor,
                     ),
                   ),
                 ),
-                const Divider(height: 3, color: hintLightColor),
+                const Divider(height: 3, color: AppColors.lighterGreyColor),
                 const SizedBox(height: 20),
               ],
               Padding(
@@ -924,7 +926,7 @@ class InvoiceScreen extends ConsumerWidget {
                                                     style: GoogleFonts.lexend(
                                                       fontWeight: FontWeight.w600,
                                                       fontSize: 20,
-                                                      color: blackColor,
+                                                      color: AppColors.blackColor,
                                                     ),
                                                   ),
                                                 ),
@@ -941,20 +943,21 @@ class InvoiceScreen extends ConsumerWidget {
                                                       navigatorKey.currentState?.pop();
                                                     },
                                                     style: ElevatedButton.styleFrom(
-                                                      backgroundColor: primaryColor,
+                                                      backgroundColor: AppColors.darkPurpleColor,
                                                       shape: RoundedRectangleBorder(
                                                         borderRadius: BorderRadius.circular(10),
                                                       ),
                                                     ),
                                                     child: Padding(
-                                                      padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
+                                                      padding: const EdgeInsets.symmetric(
+                                                          vertical: 10.0, horizontal: 15.0),
                                                       child: Center(
                                                         child: Text(
                                                           yesText,
                                                           style: GoogleFonts.lexend(
                                                             fontWeight: FontWeight.w600,
                                                             fontSize: 18,
-                                                            color: whiteColor,
+                                                            color: AppColors.whiteColor,
                                                           ),
                                                         ),
                                                       ),
@@ -975,20 +978,21 @@ class InvoiceScreen extends ConsumerWidget {
                                                       invoiceController.onConfirm();
                                                     },
                                                     style: ElevatedButton.styleFrom(
-                                                      backgroundColor: redColor,
+                                                      backgroundColor: AppColors.redColor,
                                                       shape: RoundedRectangleBorder(
                                                         borderRadius: BorderRadius.circular(10),
                                                       ),
                                                     ),
                                                     child: Padding(
-                                                      padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
+                                                      padding: const EdgeInsets.symmetric(
+                                                          vertical: 10.0, horizontal: 15.0),
                                                       child: Center(
                                                         child: Text(
                                                           noText,
                                                           style: GoogleFonts.lexend(
                                                             fontWeight: FontWeight.w600,
                                                             fontSize: 18,
-                                                            color: whiteColor,
+                                                            color: AppColors.whiteColor,
                                                           ),
                                                         ),
                                                       ),
@@ -1006,8 +1010,8 @@ class InvoiceScreen extends ConsumerWidget {
                                       invoiceController.onCompleted();
                                     },
                   style: ElevatedButton.styleFrom(
-                    disabledBackgroundColor: primaryColor.withOpacity(.5),
-                    backgroundColor: primaryColor,
+                    disabledBackgroundColor: AppColors.darkPurpleColor.withOpacity(.5),
+                    backgroundColor: AppColors.darkPurpleColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -1027,7 +1031,7 @@ class InvoiceScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 18,
-                                color: whiteColor,
+                                color: AppColors.whiteColor,
                               ),
                             ),
                           ),
@@ -1038,7 +1042,8 @@ class InvoiceScreen extends ConsumerWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              if (!isContract && (!invoiceController.isCancelled && !invoiceController.isCompleted)) ...[
+              if (!isContract &&
+                  (!invoiceController.isCancelled && !invoiceController.isCompleted)) ...[
                 Row(
                   children: <Widget>[
                     const Expanded(child: Divider()),
@@ -1047,7 +1052,7 @@ class InvoiceScreen extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontWeight: FontWeight.w400,
                         fontSize: 15,
-                        color: hintColor,
+                        color: AppColors.mediumSlateColor,
                       ),
                     ),
                     const Expanded(child: Divider()),
@@ -1069,7 +1074,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: ButtonStyle(
                       side: MaterialStateProperty.all(
                         const BorderSide(
-                          color: redColor,
+                          color: AppColors.redColor,
                           width: 1,
                           style: BorderStyle.solid,
                         ),
@@ -1080,14 +1085,14 @@ class InvoiceScreen extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontWeight: FontWeight.w400,
                         fontSize: 15,
-                        color: redColor,
+                        color: AppColors.redColor,
                       ),
                     ),
                   ),
                 ),
               ],
               if (invoiceController.isApproved) ...[
-                const Divider(height: 3, color: hintLightColor),
+                const Divider(height: 3, color: AppColors.lighterGreyColor),
                 const SizedBox(height: 20),
                 Center(
                   child: Text(
@@ -1095,7 +1100,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                 ),
@@ -1105,7 +1110,7 @@ class InvoiceScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontWeight: FontWeight.w400,
                       fontSize: 18,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                 ),
@@ -1147,14 +1152,14 @@ class InvoiceScreen extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontWeight: FontWeight.w400,
                         fontSize: 14,
-                        color: blackColor,
+                        color: AppColors.blackColor,
                         decoration: TextDecoration.underline,
                       ),
                     ),
                   ),
                 ),
                 const SizedBox(height: 10),
-                const Divider(height: 3, color: hintLightColor),
+                const Divider(height: 3, color: AppColors.lighterGreyColor),
                 const SizedBox(height: 10),
               ],
               if (!invoiceController.isConfirm) ...[
@@ -1164,7 +1169,7 @@ class InvoiceScreen extends ConsumerWidget {
                   style: GoogleFonts.lexend(
                     fontWeight: FontWeight.w400,
                     fontSize: 12,
-                    color: redColor,
+                    color: AppColors.redColor,
                   ),
                 ),
               ],

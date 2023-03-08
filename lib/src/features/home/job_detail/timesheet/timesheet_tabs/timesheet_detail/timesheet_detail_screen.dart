@@ -1,8 +1,6 @@
-import 'package:client_zipcare/main.dart';
-import 'package:client_zipcare/src/core/configs/app_router.dart';
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/job_detail/timesheet/timesheet_tabs/timesheet_detail/timesheet_detail_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -26,8 +24,8 @@ class TimesheetDetailScreen extends ConsumerWidget {
             ElevatedButton(
               onPressed: null,
               style: ElevatedButton.styleFrom(
-                disabledBackgroundColor: primaryColor.withOpacity(.2),
-                backgroundColor: primaryColor,
+                disabledBackgroundColor: AppColors.darkPurpleColor.withOpacity(.2),
+                backgroundColor: AppColors.darkPurpleColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -44,7 +42,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w300,
                             fontSize: 12,
-                            color: hintColor,
+                            color: AppColors.mediumSlateColor,
                           ),
                         ),
                         const SizedBox(height: 10),
@@ -53,7 +51,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w400,
                             fontSize: 12,
-                            color: blackColor,
+                            color: AppColors.blackColor,
                           ),
                         ),
                       ],
@@ -65,7 +63,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w300,
                             fontSize: 12,
-                            color: hintColor,
+                            color: AppColors.mediumSlateColor,
                           ),
                         ),
                         const SizedBox(height: 10),
@@ -74,7 +72,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w400,
                             fontSize: 12,
-                            color: blackColor,
+                            color: AppColors.blackColor,
                           ),
                         ),
                       ],
@@ -86,7 +84,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w300,
                             fontSize: 12,
-                            color: hintColor,
+                            color: AppColors.mediumSlateColor,
                           ),
                         ),
                         const SizedBox(height: 10),
@@ -95,7 +93,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w400,
                             fontSize: 12,
-                            color: blackColor,
+                            color: AppColors.blackColor,
                           ),
                         ),
                       ],
@@ -107,7 +105,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w300,
                             fontSize: 12,
-                            color: hintColor,
+                            color: AppColors.mediumSlateColor,
                           ),
                         ),
                         const SizedBox(height: 10),
@@ -116,7 +114,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w400,
                             fontSize: 12,
-                            color: blackColor,
+                            color: AppColors.blackColor,
                           ),
                         ),
                       ],
@@ -137,7 +135,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontWeight: FontWeight.w400,
                           fontSize: 15,
-                          color: blackColor,
+                          color: AppColors.blackColor,
                         ),
                       ),
                       const SizedBox(height: 4),
@@ -146,7 +144,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontWeight: FontWeight.w300,
                           fontSize: 12,
-                          color: hintColor,
+                          color: AppColors.mediumSlateColor,
                         ),
                       ),
                     ],
@@ -161,7 +159,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontWeight: FontWeight.w400,
                           fontSize: 15,
-                          color: blackColor,
+                          color: AppColors.blackColor,
                         ),
                       ),
                       const SizedBox(height: 4),
@@ -170,7 +168,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontWeight: FontWeight.w300,
                           fontSize: 12,
-                          color: hintColor,
+                          color: AppColors.mediumSlateColor,
                         ),
                       ),
                     ],
@@ -187,7 +185,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                   style: GoogleFonts.lexend(
                     fontWeight: FontWeight.w400,
                     fontSize: 15,
-                    color: blackColor,
+                    color: AppColors.blackColor,
                   ),
                 ),
                 const SizedBox(height: 4),
@@ -196,7 +194,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                   style: GoogleFonts.lexend(
                     fontWeight: FontWeight.w300,
                     fontSize: 12,
-                    color: hintColor,
+                    color: AppColors.mediumSlateColor,
                   ),
                 ),
               ],
@@ -210,7 +208,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                   style: GoogleFonts.lexend(
                     fontWeight: FontWeight.w400,
                     fontSize: 15,
-                    color: blackColor,
+                    color: AppColors.blackColor,
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -226,7 +224,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontWeight: FontWeight.w500,
                           fontSize: 14,
-                          color: cyanColor,
+                          color: AppColors.cyanColor,
                           decoration: TextDecoration.underline,
                         ),
                       ),
@@ -246,7 +244,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontWeight: FontWeight.w500,
                           fontSize: 14,
-                          color: cyanColor,
+                          color: AppColors.cyanColor,
                           decoration: TextDecoration.underline,
                         ),
                       ),
@@ -256,7 +254,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
               ],
             ),
             const SizedBox(height: 15),
-            const Divider(height: 3, color: hintLightColor),
+            const Divider(height: 3, color: AppColors.lighterGreyColor),
             const SizedBox(height: 15),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -267,7 +265,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                   style: GoogleFonts.lexend(
                     fontWeight: FontWeight.w400,
                     fontSize: 15,
-                    color: blackColor,
+                    color: AppColors.blackColor,
                   ),
                 ),
                 Text(
@@ -275,7 +273,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                   style: GoogleFonts.lexend(
                     fontWeight: FontWeight.w500,
                     fontSize: 15,
-                    color: blackColor,
+                    color: AppColors.blackColor,
                   ),
                 ),
               ],
@@ -290,7 +288,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                   style: GoogleFonts.lexend(
                     fontWeight: FontWeight.w400,
                     fontSize: 15,
-                    color: blackColor,
+                    color: AppColors.blackColor,
                   ),
                 ),
                 Text(
@@ -298,13 +296,13 @@ class TimesheetDetailScreen extends ConsumerWidget {
                   style: GoogleFonts.lexend(
                     fontWeight: FontWeight.w500,
                     fontSize: 15,
-                    color: blackColor,
+                    color: AppColors.blackColor,
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 15),
-            const Divider(height: 3, color: hintLightColor),
+            const Divider(height: 3, color: AppColors.lighterGreyColor),
             const SizedBox(height: 15),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -315,7 +313,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                   style: GoogleFonts.lexend(
                     fontWeight: FontWeight.w400,
                     fontSize: 15,
-                    color: blackColor,
+                    color: AppColors.blackColor,
                   ),
                 ),
                 Text(
@@ -323,7 +321,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                   style: GoogleFonts.lexend(
                     fontWeight: FontWeight.w500,
                     fontSize: 15,
-                    color: blackColor,
+                    color: AppColors.blackColor,
                   ),
                 ),
               ],
@@ -334,8 +332,8 @@ class TimesheetDetailScreen extends ConsumerWidget {
               child: ElevatedButton(
                 onPressed: () => timesheetController.onApproved(),
                 style: ElevatedButton.styleFrom(
-                  disabledBackgroundColor: primaryColor.withOpacity(.5),
-                  backgroundColor: primaryColor,
+                  disabledBackgroundColor: AppColors.darkPurpleColor.withOpacity(.5),
+                  backgroundColor: AppColors.darkPurpleColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -351,7 +349,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w600,
                               fontSize: 18,
-                              color: whiteColor,
+                              color: AppColors.whiteColor,
                             ),
                           ),
                         ),
@@ -366,8 +364,8 @@ class TimesheetDetailScreen extends ConsumerWidget {
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  disabledBackgroundColor: primaryColor.withOpacity(.5),
-                  backgroundColor: primaryColor,
+                  disabledBackgroundColor: AppColors.darkPurpleColor.withOpacity(.5),
+                  backgroundColor: AppColors.darkPurpleColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -383,7 +381,7 @@ class TimesheetDetailScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w600,
                               fontSize: 18,
-                              color: whiteColor,
+                              color: AppColors.whiteColor,
                             ),
                           ),
                         ),

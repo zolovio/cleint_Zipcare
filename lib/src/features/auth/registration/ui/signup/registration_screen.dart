@@ -1,11 +1,9 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:client_zipcare/main.dart';
-import 'package:client_zipcare/src/core/configs/app_router.dart';
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/auth/registration/ui/signup/registration_controller.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -34,7 +32,7 @@ class RegistrationScreen extends ConsumerWidget {
             style: GoogleFonts.lexend(
               fontSize: 15,
               fontWeight: FontWeight.w500,
-              color: blackColor,
+              color: AppColors.blackColor,
             ),
           ),
           FormBuilder(
@@ -84,7 +82,7 @@ class RegistrationScreen extends ConsumerWidget {
                         fontWeight: FontWeight.w400,
                       ),
                       border: const OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: hintLightColor),
+                        borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                         borderRadius: BorderRadius.all(Radius.circular(15)),
                       ),
                     ),
@@ -108,7 +106,7 @@ class RegistrationScreen extends ConsumerWidget {
                         fontWeight: FontWeight.w400,
                       ),
                       border: const OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: hintLightColor),
+                        borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                         borderRadius: BorderRadius.all(Radius.circular(15)),
                       ),
                     ),
@@ -132,7 +130,7 @@ class RegistrationScreen extends ConsumerWidget {
                         fontWeight: FontWeight.w400,
                       ),
                       border: const OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: hintLightColor),
+                        borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                         borderRadius: BorderRadius.all(Radius.circular(15)),
                       ),
                     ),
@@ -157,7 +155,7 @@ class RegistrationScreen extends ConsumerWidget {
                       fontWeight: FontWeight.w400,
                     ),
                     border: const OutlineInputBorder(
-                      borderSide: BorderSide(width: 1, color: hintLightColor),
+                      borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                   ),
@@ -182,7 +180,7 @@ class RegistrationScreen extends ConsumerWidget {
                       fontWeight: FontWeight.w400,
                     ),
                     border: const OutlineInputBorder(
-                      borderSide: BorderSide(width: 1, color: hintLightColor),
+                      borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                   ),
@@ -207,7 +205,7 @@ class RegistrationScreen extends ConsumerWidget {
                       fontWeight: FontWeight.w400,
                     ),
                     border: const OutlineInputBorder(
-                      borderSide: BorderSide(width: 1, color: hintLightColor),
+                      borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                   ),
@@ -232,7 +230,7 @@ class RegistrationScreen extends ConsumerWidget {
                       fontWeight: FontWeight.w400,
                     ),
                     border: const OutlineInputBorder(
-                      borderSide: BorderSide(width: 1, color: hintLightColor),
+                      borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                   ),
@@ -262,7 +260,7 @@ class RegistrationScreen extends ConsumerWidget {
                       child: Icon(controller.isHide ? Icons.visibility_off : Icons.visibility),
                     ),
                     border: const OutlineInputBorder(
-                      borderSide: BorderSide(width: 1, color: hintLightColor),
+                      borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                   ),
@@ -320,7 +318,7 @@ class RegistrationScreen extends ConsumerWidget {
                       child: const Icon(Icons.keyboard_arrow_down_outlined),
                     ),
                     border: const OutlineInputBorder(
-                      borderSide: BorderSide(width: 1, color: hintLightColor),
+                      borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                   ),
@@ -345,7 +343,7 @@ class RegistrationScreen extends ConsumerWidget {
                       fontWeight: FontWeight.w400,
                     ),
                     border: const OutlineInputBorder(
-                      borderSide: BorderSide(width: 1, color: hintLightColor),
+                      borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                   ),
@@ -369,7 +367,7 @@ class RegistrationScreen extends ConsumerWidget {
                       fontWeight: FontWeight.w400,
                     ),
                     border: const OutlineInputBorder(
-                      borderSide: BorderSide(width: 1, color: hintLightColor),
+                      borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                   ),
@@ -393,7 +391,7 @@ class RegistrationScreen extends ConsumerWidget {
                       fontWeight: FontWeight.w400,
                     ),
                     border: const OutlineInputBorder(
-                      borderSide: BorderSide(width: 1, color: hintLightColor),
+                      borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                   ),
@@ -419,7 +417,7 @@ class RegistrationScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
-                            color: blackColor,
+                            color: AppColors.blackColor,
                           ),
                         ),
                         TextSpan(
@@ -427,9 +425,9 @@ class RegistrationScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
-                            color: primaryColor,
+                            color: AppColors.darkPurpleColor,
                             decoration: TextDecoration.underline,
-                            decorationColor: underlineColor,
+                            decorationColor: AppColors.mediumGreyColor,
                           ),
                           /*
                               recognizer: TapGestureRecognizer()
@@ -456,7 +454,7 @@ class RegistrationScreen extends ConsumerWidget {
               child: ElevatedButton(
                 onPressed: () => controller.onLogin(),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: primaryColor,
+                  backgroundColor: AppColors.darkPurpleColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -472,7 +470,7 @@ class RegistrationScreen extends ConsumerWidget {
                             style: GoogleFonts.lexend(
                               fontWeight: FontWeight.w600,
                               fontSize: 18,
-                              color: whiteColor,
+                              color: AppColors.whiteColor,
                             ),
                           ),
                         ),
@@ -504,7 +502,7 @@ class RegistrationScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
-                      color: primaryColor,
+                      color: AppColors.darkPurpleColor,
                     ),
                   ),
                 ),

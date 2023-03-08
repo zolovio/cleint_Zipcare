@@ -1,7 +1,7 @@
 import 'package:client_zipcare/main.dart';
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/invoice/invoice_list_controller.dart';
 import 'package:client_zipcare/src/features/home/job_detail/job_detail_screen/invoice/invoice_screen/invoice_screen.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +34,7 @@ class InvoicesList extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
-                          color: blackColor,
+                          color: AppColors.blackColor,
                         ),
                       ),
                       Text(
@@ -42,7 +42,7 @@ class InvoicesList extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
-                          color: blackColor,
+                          color: AppColors.blackColor,
                         ),
                       ),
                     ],
@@ -57,7 +57,7 @@ class InvoicesList extends ConsumerWidget {
                   ),
                   child: Card(
                     elevation: 5,
-                    shadowColor: shadowColor,
+                    shadowColor: AppColors.shadowColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
                     ),
@@ -75,7 +75,7 @@ class InvoicesList extends ConsumerWidget {
                                   padding: const EdgeInsets.all(10),
                                   decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
-                                    color: avatarColor,
+                                    color: AppColors.avatarColor,
                                   ),
                                   child: Text(
                                     (index + 1).toString(),
@@ -83,7 +83,7 @@ class InvoicesList extends ConsumerWidget {
                                     style: GoogleFonts.lexend(
                                       fontWeight: FontWeight.w500,
                                       fontSize: 14,
-                                      color: blackColor,
+                                      color: AppColors.blackColor,
                                     ),
                                   ),
                                 ),
@@ -100,7 +100,7 @@ class InvoicesList extends ConsumerWidget {
                                         style: GoogleFonts.lexend(
                                           fontWeight: FontWeight.w500,
                                           fontSize: 14,
-                                          color: blackColor,
+                                          color: AppColors.blackColor,
                                         ),
                                       ),
                                     ),
@@ -112,7 +112,7 @@ class InvoicesList extends ConsumerWidget {
                                         style: GoogleFonts.lexend(
                                           fontWeight: FontWeight.w400,
                                           fontSize: 10,
-                                          color: lightGreyColor,
+                                          color: AppColors.greyColor,
                                         ),
                                       ),
                                     ),
@@ -130,7 +130,7 @@ class InvoicesList extends ConsumerWidget {
                                         style: GoogleFonts.lexend(
                                           fontWeight: FontWeight.w600,
                                           fontSize: 15,
-                                          color: deepGreenColor,
+                                          color: AppColors.deepGreenColor,
                                         ),
                                       ),
                                       Padding(
@@ -143,11 +143,11 @@ class InvoicesList extends ConsumerWidget {
                                             fontSize: 11,
                                             color: invoiceController.invoices[index]["status"] ==
                                                     "Completed"
-                                                ? deepGreenColor
+                                                ? AppColors.deepGreenColor
                                                 : invoiceController.invoices[index]["status"] ==
                                                         "Pending"
-                                                    ? ratingColor
-                                                    : redColor,
+                                                    ? AppColors.yellowColor
+                                                    : AppColors.redColor,
                                           ),
                                         ),
                                       ),

@@ -1,6 +1,6 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/account/my_profile/my_profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -32,7 +32,7 @@ class MyProfileScreen extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontSize: 15,
                           fontWeight: FontWeight.w600,
-                          color: primaryColor,
+                          color: AppColors.darkPurpleColor,
                         ),
                       ),
                     ),
@@ -50,7 +50,7 @@ class MyProfileScreen extends ConsumerWidget {
                             child: Container(
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(7.0),
-                                color: avatarColor.withOpacity(0.45),
+                                color: AppColors.avatarColor.withOpacity(0.45),
                               ),
                               width: double.infinity,
                               child: Padding(
@@ -63,7 +63,7 @@ class MyProfileScreen extends ConsumerWidget {
                                       style: GoogleFonts.lexend(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w700,
-                                        color: primaryColor,
+                                        color: AppColors.darkPurpleColor,
                                       ),
                                     ),
                                     Text(
@@ -71,7 +71,7 @@ class MyProfileScreen extends ConsumerWidget {
                                       style: GoogleFonts.lexend(
                                         fontSize: 13,
                                         fontWeight: FontWeight.w400,
-                                        color: hintColor,
+                                        color: AppColors.mediumSlateColor,
                                       ),
                                     ),
                                   ],
@@ -83,14 +83,14 @@ class MyProfileScreen extends ConsumerWidget {
                             padding: const EdgeInsets.all(3.0),
                             decoration: const BoxDecoration(
                               shape: BoxShape.circle,
-                              color: lightWhiteColor,
+                              color: AppColors.lightWhiteColor,
                             ),
                             child: Container(
                               width: circularBorder,
                               height: circularBorder,
                               decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: avatarColor,
+                                color: AppColors.avatarColor,
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.all(4.0),
@@ -100,7 +100,7 @@ class MyProfileScreen extends ConsumerWidget {
                                     style: GoogleFonts.lexend(
                                       fontSize: 30,
                                       fontWeight: FontWeight.w400,
-                                      color: blackColor,
+                                      color: AppColors.blackColor,
                                     ),
                                   ),
                                 ),
@@ -130,7 +130,7 @@ class MyProfileScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w400,
-                                color: hintColor,
+                                color: AppColors.mediumSlateColor,
                               ),
                             ),
                             Text(
@@ -138,7 +138,7 @@ class MyProfileScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w500,
-                                color: blackColor,
+                                color: AppColors.blackColor,
                               ),
                             ),
                           ],

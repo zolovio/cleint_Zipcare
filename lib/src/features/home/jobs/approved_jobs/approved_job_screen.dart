@@ -1,4 +1,4 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/home/jobs/approved_jobs/approved_job_controller.dart';
 import 'package:flutter/material.dart';
@@ -20,10 +20,12 @@ class ApprovedJobScreen extends ConsumerWidget {
               ? const EdgeInsets.only(top: 10, left: 12.0, right: 12.0, bottom: 5.0)
               : const EdgeInsets.only(left: 12.0, right: 12.0, bottom: 5.0),
           child: InkWell(
-            onTap: approvedJobController.approvedJobsList[index]["status"][1] == "Active Job" ? () => approvedJobController.onActiveJob() : null,
+            onTap: approvedJobController.approvedJobsList[index]["status"][1] == "Active Job"
+                ? () => approvedJobController.onActiveJob()
+                : null,
             child: Card(
               elevation: 5,
-              shadowColor: shadowColor,
+              shadowColor: AppColors.shadowColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -38,7 +40,7 @@ class ApprovedJobScreen extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontWeight: FontWeight.w400,
                         fontSize: 15,
-                        color: blackColor,
+                        color: AppColors.blackColor,
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -58,7 +60,7 @@ class ApprovedJobScreen extends ConsumerWidget {
                                       style: GoogleFonts.lexend(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 13,
-                                        color: locationColor,
+                                        color: AppColors.lightGreyColor,
                                       ),
                                     ),
                                   ),
@@ -75,7 +77,7 @@ class ApprovedJobScreen extends ConsumerWidget {
                                       style: GoogleFonts.lexend(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 13,
-                                        color: locationColor,
+                                        color: AppColors.lightGreyColor,
                                       ),
                                     ),
                                   ),
@@ -97,7 +99,7 @@ class ApprovedJobScreen extends ConsumerWidget {
                                       style: GoogleFonts.lexend(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 13,
-                                        color: locationColor,
+                                        color: AppColors.lightGreyColor,
                                       ),
                                     ),
                                   ),
@@ -114,7 +116,7 @@ class ApprovedJobScreen extends ConsumerWidget {
                                       style: GoogleFonts.lexend(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 13,
-                                        color: locationColor,
+                                        color: AppColors.lightGreyColor,
                                       ),
                                     ),
                                   ),
@@ -134,7 +136,7 @@ class ApprovedJobScreen extends ConsumerWidget {
                                 margin: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
                                 padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 5),
                                 decoration: const BoxDecoration(
-                                  color: shadowColor,
+                                  color: AppColors.shadowColor,
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(25),
                                   ),
@@ -145,7 +147,7 @@ class ApprovedJobScreen extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w400,
                                     fontSize: 13,
-                                    color: blackColor,
+                                    color: AppColors.blackColor,
                                   ),
                                 ),
                               ),
@@ -166,7 +168,7 @@ class ApprovedJobScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 13,
-                                color: locationColor,
+                                color: AppColors.lightGreyColor,
                               ),
                             ),
                           ),
@@ -177,11 +179,14 @@ class ApprovedJobScreen extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 13,
-                                color: (approvedJobController.approvedJobsList[index]["status"][0] == JobStatus.active)
-                                    ? greenColor
-                                    : (approvedJobController.approvedJobsList[index]["status"][0] == JobStatus.completed)
-                                        ? lightGreyColor
-                                        : locationColor,
+                                color: (approvedJobController.approvedJobsList[index]["status"]
+                                            [0] ==
+                                        JobStatus.active)
+                                    ? AppColors.greenColor
+                                    : (approvedJobController.approvedJobsList[index]["status"][0] ==
+                                            JobStatus.completed)
+                                        ? AppColors.greyColor
+                                        : AppColors.lightGreyColor,
                               ),
                             ),
                           ),

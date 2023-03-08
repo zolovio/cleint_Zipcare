@@ -1,4 +1,4 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/credit_card_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -17,7 +17,7 @@ class CardController extends ChangeNotifier {
 
   OutlineInputBorder? border = const OutlineInputBorder(
     borderSide: BorderSide(
-      color: hintLightColor,
+      color: AppColors.lighterGreyColor,
       width: 1.0,
     ),
     borderRadius: BorderRadius.all(Radius.circular(10)),

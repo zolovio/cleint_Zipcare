@@ -1,6 +1,6 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/account/profiles/profiles_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -24,7 +24,7 @@ class ProfilesScreen extends ConsumerWidget {
               padding: const EdgeInsets.only(left: 12.0, right: 12.0, bottom: 5.0),
               child: Card(
                 elevation: 1,
-                shadowColor: shadowColor,
+                shadowColor: AppColors.shadowColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
@@ -59,7 +59,7 @@ class ProfilesScreen extends ConsumerWidget {
                                     style: GoogleFonts.lexend(
                                       fontWeight: FontWeight.w500,
                                       fontSize: 17,
-                                      color: blackColor,
+                                      color: AppColors.blackColor,
                                     ),
                                   ),
                                 ),
@@ -68,13 +68,13 @@ class ProfilesScreen extends ConsumerWidget {
                           ),
                           Expanded(
                             child: CircleAvatar(
-                              backgroundColor: shadowColor,
+                              backgroundColor: AppColors.shadowColor,
                               child: Image.asset(profileList),
                             ),
                           ),
                           Expanded(
                             child: CircleAvatar(
-                              backgroundColor: shadowColor,
+                              backgroundColor: AppColors.shadowColor,
                               child: Image.asset(delete),
                             ),
                           ),
@@ -90,7 +90,7 @@ class ProfilesScreen extends ConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => profileController.onAddProfile(),
-        backgroundColor: whiteColor,
+        backgroundColor: AppColors.whiteColor,
         child: Image.asset(addButton),
       ),
     );

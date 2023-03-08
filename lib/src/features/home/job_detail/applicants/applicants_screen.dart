@@ -1,4 +1,4 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/features/home/job_detail/applicants/applicants_controller.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +23,7 @@ class ApplicantsScreen extends ConsumerWidget {
                 : const EdgeInsets.only(left: 12.0, right: 12.0, bottom: 15.0),
             child: Card(
               elevation: 5,
-              shadowColor: shadowColor,
+              shadowColor: AppColors.shadowColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
               ),
@@ -57,7 +57,7 @@ class ApplicantsScreen extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w500,
                                     fontSize: 17,
-                                    color: blackColor,
+                                    color: AppColors.blackColor,
                                   ),
                                 ),
                               ),
@@ -69,7 +69,7 @@ class ApplicantsScreen extends ConsumerWidget {
                                   style: GoogleFonts.lexend(
                                     fontWeight: FontWeight.w300,
                                     fontSize: 14,
-                                    color: lightGreyColor,
+                                    color: AppColors.greyColor,
                                   ),
                                 ),
                               ),
@@ -78,7 +78,7 @@ class ApplicantsScreen extends ConsumerWidget {
                         ),
                         Expanded(
                           child: CircleAvatar(
-                            backgroundColor: shadowColor,
+                            backgroundColor: AppColors.shadowColor,
                             child: Image.asset(message),
                           ),
                         ),
@@ -93,7 +93,7 @@ class ApplicantsScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w500,
                             fontSize: 15,
-                            color: greenColor,
+                            color: AppColors.greenColor,
                           ),
                         ),
                       ],

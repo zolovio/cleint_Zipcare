@@ -1,6 +1,6 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/account/help/help_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -28,12 +28,12 @@ class HelpScreen extends ConsumerWidget {
                 tilePadding: EdgeInsets.zero,
                 childrenPadding: EdgeInsets.zero,
                 initiallyExpanded: helpController.isExpanded,
-                textColor: blackColor,
+                textColor: AppColors.blackColor,
                 onExpansionChanged: (bool value) => helpController.onExpand(value),
                 title: ListTile(
                   leading: const Icon(
                     Icons.circle_sharp,
-                    color: primaryColor,
+                    color: AppColors.darkPurpleColor,
                     size: 18,
                   ),
                   title: Text(
@@ -41,7 +41,7 @@ class HelpScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontSize: 15,
                       fontWeight: FontWeight.w400,
-                      color: blackColor,
+                      color: AppColors.blackColor,
                     ),
                   ),
                 ),
@@ -49,7 +49,7 @@ class HelpScreen extends ConsumerWidget {
                   padding: EdgeInsets.only(right: 8.0),
                   child: Icon(
                     Icons.keyboard_arrow_down,
-                    color: primaryColor,
+                    color: AppColors.darkPurpleColor,
                   ),
                 ),
                 children: [
@@ -62,7 +62,7 @@ class HelpScreen extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
-                        color: hintColor,
+                        color: AppColors.mediumSlateColor,
                         height: 1.6,
                       ),
                     ),
@@ -82,12 +82,12 @@ class HelpScreen extends ConsumerWidget {
                 tilePadding: EdgeInsets.zero,
                 childrenPadding: EdgeInsets.zero,
                 initiallyExpanded: helpController.isExpanded,
-                textColor: blackColor,
+                textColor: AppColors.blackColor,
                 onExpansionChanged: (bool value) => helpController.onExpand(value),
                 title: ListTile(
                   leading: const Icon(
                     Icons.circle_sharp,
-                    color: shadowColor,
+                    color: AppColors.shadowColor,
                     size: 18,
                   ),
                   title: Text(
@@ -96,7 +96,7 @@ class HelpScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontSize: 15,
                       fontWeight: FontWeight.w400,
-                      color: hintColor,
+                      color: AppColors.mediumSlateColor,
                       height: 1.6,
                     ),
                   ),
@@ -105,7 +105,7 @@ class HelpScreen extends ConsumerWidget {
                   padding: EdgeInsets.only(right: 8.0),
                   child: Icon(
                     Icons.keyboard_arrow_right_rounded,
-                    color: primaryColor,
+                    color: AppColors.darkPurpleColor,
                   ),
                 ),
               ),
@@ -117,7 +117,7 @@ class HelpScreen extends ConsumerWidget {
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                backgroundColor: primaryColor,
+                backgroundColor: AppColors.darkPurpleColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -133,7 +133,7 @@ class HelpScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontWeight: FontWeight.w600,
                             fontSize: 18,
-                            color: whiteColor,
+                            color: AppColors.whiteColor,
                           ),
                         ),
                       ),

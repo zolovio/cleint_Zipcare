@@ -1,6 +1,7 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/components/custom_widgets.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/job_detail/contract/generate_contract_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -35,10 +36,15 @@ class GenerateContract extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   const SizedBox(height: 15),
-                  getQuestionsWidget("Do you already employ this carer with an employment contract?", false, "", false),
+                  getQuestionsWidget(
+                      "Do you already employ this carer with an employment contract?",
+                      false,
+                      "",
+                      false),
                   FormBuilderRadioGroup<String>(
                     autovalidateMode: AutovalidateMode.onUserInteraction,
-                    initialValue: contractController.yesNo[contractController.isEmployContract ? 0 : 1],
+                    initialValue:
+                        contractController.yesNo[contractController.isEmployContract ? 0 : 1],
                     name: 'employ_contract',
                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     wrapSpacing: MediaQuery.of(context).size.width * 0.3,
@@ -84,15 +90,18 @@ class GenerateContract extends ConsumerWidget {
                         child: Image.asset(calender, width: 20, height: 10),
                       ),
                       border: const OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: hintLightColor),
+                        borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                         borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                       ),
                     ),
                     validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
                     readOnly: true,
                     onTap: () async {
-                      DateTime? pickedDate =
-                          await showDatePicker(context: context, initialDate: DateTime.now(), firstDate: DateTime(2000), lastDate: DateTime(3000));
+                      DateTime? pickedDate = await showDatePicker(
+                          context: context,
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime(2000),
+                          lastDate: DateTime(3000));
 
                       if (pickedDate != null) {
                         String formattedDate = DateFormat('dd-MMM-yyyy').format(pickedDate);
@@ -121,15 +130,18 @@ class GenerateContract extends ConsumerWidget {
                         child: Image.asset(calender, width: 20, height: 10),
                       ),
                       border: const OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: hintLightColor),
+                        borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                         borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                       ),
                     ),
                     validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
                     readOnly: true,
                     onTap: () async {
-                      DateTime? pickedDate =
-                          await showDatePicker(context: context, initialDate: DateTime.now(), firstDate: DateTime(2000), lastDate: DateTime(3000));
+                      DateTime? pickedDate = await showDatePicker(
+                          context: context,
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime(2000),
+                          lastDate: DateTime(3000));
 
                       if (pickedDate != null) {
                         String formattedDate = DateFormat('dd-MMM-yyyy').format(pickedDate);
@@ -154,7 +166,7 @@ class GenerateContract extends ConsumerWidget {
                         fontWeight: FontWeight.w400,
                       ),
                       border: const OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: hintLightColor),
+                        borderSide: BorderSide(width: 1, color: AppColors.lighterGreyColor),
                         borderRadius: BorderRadius.all(Radius.circular(textFieldBorderRadius)),
                       ),
                     ),
@@ -174,7 +186,7 @@ class GenerateContract extends ConsumerWidget {
                 child: ElevatedButton(
                   onPressed: () => contractController.onGenerateContract(),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: primaryColor,
+                    backgroundColor: AppColors.darkPurpleColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -190,7 +202,7 @@ class GenerateContract extends ConsumerWidget {
                               style: GoogleFonts.lexend(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 20,
-                                color: whiteColor,
+                                color: AppColors.whiteColor,
                               ),
                             ),
                           ),

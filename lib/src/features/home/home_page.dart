@@ -1,8 +1,9 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
+import 'package:client_zipcare/src/core/constants/dimensions.dart';
 import 'package:client_zipcare/src/features/home/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -25,51 +26,88 @@ class HomePage extends ConsumerWidget {
             ),
       body: homeController.pages[homeController.currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: primaryColor,
-        unselectedItemColor: blackColor,
+        selectedItemColor: AppColors.darkPurpleColor,
+        unselectedItemColor: AppColors.blackColor,
         showUnselectedLabels: true,
         currentIndex: homeController.currentIndex,
         onTap: homeController.onTapped,
         selectedLabelStyle: GoogleFonts.lexend(
           fontWeight: FontWeight.w500,
-          fontSize: 13,
-          color: primaryColor,
+          fontSize: 12,
+          color: AppColors.darkPurpleColor,
         ),
         unselectedLabelStyle: GoogleFonts.lexend(
           fontWeight: FontWeight.w500,
-          fontSize: 13,
-          color: blackColor,
+          fontSize: 12,
+          color: AppColors.blackColor,
         ),
+        type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
-            icon: Image.asset(home, width: 25),
+            icon: CircleAvatar(
+              backgroundColor: AppColors.lightWhiteColor,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset(home, height: height_25),
+              ),
+            ),
             activeIcon: CircleAvatar(
-              backgroundColor: shadowColor,
-              child: Image.asset(home, width: 25),
+              backgroundColor: AppColors.shadowColor,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset(home, height: height_25),
+              ),
             ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset(jobs, width: 25),
+            icon: CircleAvatar(
+              backgroundColor: AppColors.lightWhiteColor,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset(jobs, height: height_25),
+              ),
+            ),
             activeIcon: CircleAvatar(
-              backgroundColor: shadowColor,
-              child: Image.asset(jobs, width: 25),
+              backgroundColor: AppColors.shadowColor,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset(jobs, height: height_25),
+              ),
             ),
             label: 'Jobs',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset(chat, width: 40),
+            icon: CircleAvatar(
+              backgroundColor: AppColors.lightWhiteColor,
+              child: Padding(
+                padding: const EdgeInsets.all(3.0),
+                child: Image.asset(chat, height: height_45),
+              ),
+            ),
             activeIcon: CircleAvatar(
-              backgroundColor: shadowColor,
-              child: Image.asset(chat, width: 40),
+              backgroundColor: AppColors.shadowColor,
+              child: Padding(
+                padding: const EdgeInsets.all(3.0),
+                child: Image.asset(chat, height: height_45),
+              ),
             ),
             label: 'Chat',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset(account, width: 30),
+            icon: CircleAvatar(
+              backgroundColor: AppColors.lightWhiteColor,
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Image.asset(account, height: height_25),
+              ),
+            ),
             activeIcon: CircleAvatar(
-              backgroundColor: shadowColor,
-              child: Image.asset(account, width: 30),
+              backgroundColor: AppColors.shadowColor,
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Image.asset(account, height: height_25),
+              ),
             ),
             label: 'Account',
           ),

@@ -1,6 +1,6 @@
-import 'package:client_zipcare/src/core/constants/app_theme.dart';
+import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
+import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/components/custom_widgets.dart';
 import 'package:client_zipcare/src/features/home/payment/payment_status/payment_status_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -26,7 +26,7 @@ class PaymentStatusScreen extends ConsumerWidget {
                   height: 60,
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
-                    color: primaryColor,
+                    color: AppColors.darkPurpleColor,
                   ),
                   child: Center(
                     child: Text(
@@ -34,7 +34,7 @@ class PaymentStatusScreen extends ConsumerWidget {
                       style: GoogleFonts.lexend(
                         fontSize: 30,
                         fontWeight: FontWeight.w400,
-                        color: whiteColor,
+                        color: AppColors.whiteColor,
                       ),
                     ),
                   ),
@@ -49,7 +49,7 @@ class PaymentStatusScreen extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
-                          color: blackColor,
+                          color: AppColors.blackColor,
                         ),
                       ),
                       Text(
@@ -57,7 +57,7 @@ class PaymentStatusScreen extends ConsumerWidget {
                         style: GoogleFonts.lexend(
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
-                          color: hintColor,
+                          color: AppColors.mediumSlateColor,
                         ),
                       ),
                     ],
@@ -74,8 +74,8 @@ class PaymentStatusScreen extends ConsumerWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    primaryColor,
-                    gradientShade.withOpacity(0.6),
+                    AppColors.darkPurpleColor,
+                    AppColors.lightPurpleColor.withOpacity(0.6),
                   ],
                 ),
               ),
@@ -86,7 +86,7 @@ class PaymentStatusScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
-                      color: whiteColor,
+                      color: AppColors.whiteColor,
                     ),
                   ),
                   const SizedBox(height: 5),
@@ -95,14 +95,14 @@ class PaymentStatusScreen extends ConsumerWidget {
                     style: GoogleFonts.lexend(
                       fontSize: 40,
                       fontWeight: FontWeight.w600,
-                      color: whiteColor,
+                      color: AppColors.whiteColor,
                     ),
                   ),
                 ],
               ),
             ),
             const SizedBox(height: 20),
-            const Divider(height: 3, color: hintLightColor),
+            const Divider(height: 3, color: AppColors.lighterGreyColor),
             const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -118,7 +118,7 @@ class PaymentStatusScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
-                            color: lightGreyColor,
+                            color: AppColors.greyColor,
                           ),
                         ),
                         const SizedBox(height: 5),
@@ -127,7 +127,7 @@ class PaymentStatusScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
-                            color: descGreyColor,
+                            color: AppColors.darkGreyColor,
                           ),
                         ),
                       ],
@@ -141,7 +141,7 @@ class PaymentStatusScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
-                            color: lightGreyColor,
+                            color: AppColors.greyColor,
                           ),
                         ),
                         const SizedBox(height: 5),
@@ -150,7 +150,7 @@ class PaymentStatusScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
-                            color: descGreyColor,
+                            color: AppColors.darkGreyColor,
                           ),
                         ),
                       ],
@@ -164,7 +164,7 @@ class PaymentStatusScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
-                            color: lightGreyColor,
+                            color: AppColors.greyColor,
                           ),
                         ),
                         const SizedBox(height: 5),
@@ -173,7 +173,7 @@ class PaymentStatusScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
-                            color: descGreyColor,
+                            color: AppColors.darkGreyColor,
                           ),
                         ),
                       ],
@@ -191,7 +191,7 @@ class PaymentStatusScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
-                            color: lightGreyColor,
+                            color: AppColors.greyColor,
                           ),
                         ),
                         const SizedBox(height: 5),
@@ -200,7 +200,7 @@ class PaymentStatusScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
-                            color: descGreyColor,
+                            color: AppColors.darkGreyColor,
                           ),
                         ),
                       ],
@@ -214,7 +214,7 @@ class PaymentStatusScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
-                            color: lightGreyColor,
+                            color: AppColors.greyColor,
                           ),
                         ),
                         const SizedBox(height: 5),
@@ -223,7 +223,7 @@ class PaymentStatusScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
-                            color: descGreyColor,
+                            color: AppColors.darkGreyColor,
                           ),
                         ),
                       ],
@@ -237,7 +237,7 @@ class PaymentStatusScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
-                            color: lightGreyColor,
+                            color: AppColors.greyColor,
                           ),
                         ),
                         const SizedBox(height: 5),
@@ -246,7 +246,7 @@ class PaymentStatusScreen extends ConsumerWidget {
                           style: GoogleFonts.lexend(
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
-                            color: descGreyColor,
+                            color: AppColors.darkGreyColor,
                           ),
                         ),
                       ],
