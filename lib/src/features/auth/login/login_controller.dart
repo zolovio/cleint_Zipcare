@@ -22,4 +22,8 @@ class LoginController extends ChangeNotifier {
   onLogin() {
     navigatorKey.currentState?.pushNamed(AppRouter.homeScreen);
   }
+
+  onSignUp() {
+    navigatorKey.currentState?.pushNamed(AppRouter.signUpScreen);
+  }
 }

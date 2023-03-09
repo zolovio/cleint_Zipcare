@@ -91,6 +91,7 @@ const String acceptText = 'Accept';
 const String changePasswordText = 'Change Password';
 const String passChangedText = 'Password Changed';
 const String goBackText = 'Go Back';
+const String newProfileText = 'New Profile';
 
 const String logo = "assets/images/logo.png";
 const String onboard1 = "assets/images/intro/onboard1.png";

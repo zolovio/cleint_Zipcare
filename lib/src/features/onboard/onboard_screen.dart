@@ -1,9 +1,11 @@
 // ignore_for_file: camel_case_types, must_be_immutable
 
+import 'package:client_zipcare/src/core/components/custom_button.dart';
 import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
 import 'package:client_zipcare/src/core/constants/dimensions.dart';
-import 'package:client_zipcare/src/features/auth/onboard/onboard_controller.dart';
+import 'package:client_zipcare/src/core/constants/font_styles.dart';
+import 'package:client_zipcare/src/features/onboard/onboard_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -84,23 +86,25 @@ class OnBoardScreen extends ConsumerWidget {
                           SizedBox(
                             height: margin_14,
                             child: ListView.builder(
-                                itemCount: onboardController.selectData.length,
-                                shrinkWrap: true,
-                                scrollDirection: Axis.horizontal,
-                                physics: const ScrollPhysics(),
-                                itemBuilder: (BuildContext context, int index) {
-                                  return Container(
-                                      padding: const EdgeInsets.all(20),
-                                      margin: const EdgeInsets.all(2),
-                                      height: margin_10,
-                                      width: margin_10,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
-                                        color: onboardController.selectedIndex == index
-                                            ? AppColors.darkPurpleColor
-                                            : AppColors.lighterGreyColor,
-                                      ));
-                                }),
+                              itemCount: onboardController.selectData.length,
+                              shrinkWrap: true,
+                              scrollDirection: Axis.horizontal,
+                              physics: const ScrollPhysics(),
+                              itemBuilder: (BuildContext context, int index) {
+                                return Container(
+                                  padding: const EdgeInsets.all(20),
+                                  margin: const EdgeInsets.all(2),
+                                  height: margin_10,
+                                  width: margin_10,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: onboardController.selectedIndex == index
+                                        ? AppColors.darkPurpleColor
+                                        : AppColors.lighterGreyColor,
+                                  ),
+                                );
+                              },
+                            ),
                           ),
                           SizedBox(height: height_30)
                         ],
@@ -175,7 +179,7 @@ _skipButton(int index, context, OnBoardController vm) {
     decoration:
         BoxDecoration(color: AppColors.whiteColor, borderRadius: BorderRadius.circular(height_10)),
     margin: EdgeInsets.symmetric(vertical: margin_20),
-    child: ElevatedButton(
+    child: CustomButton(
       onPressed: () {
         if (index == 3) {
           vm.onGetStarted();
@@ -183,23 +187,14 @@ _skipButton(int index, context, OnBoardController vm) {
           vm.pageController.jumpToPage(index + 1);
         }
       },
-      style: ElevatedButton.styleFrom(
-        elevation: elvation_4,
-        backgroundColor: AppColors.whiteColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.r),
-        ),
-      ),
-      child: Center(
-        child: Text(
-          index == 3 ? getStartedText : skipText,
-          style: GoogleFonts.lexend(
-            fontWeight: FontWeight.w600,
-            color: AppColors.blackColor,
-            fontSize: font_14,
-          ),
-        ),
-      ),
+      title: index == 3 ? getStartedText : skipText,
+      buttonColors: AppColors.whiteColor,
+      textColors: AppColors.blackColor,
+      buttonHeight: height_45,
+      buttonWidth: width_130,
+      radius: 12.r,
+      fontSize: font_14,
+      fontWeight: fontWeight600,
     ),
   );
 }

@@ -40,7 +40,7 @@ class _ApplicantsProfileState extends ConsumerState<ApplicantProfile> {
       final profileController = ref.watch(applicantProfileProvider);
 
       return Scaffold(
-        appBar: getAppBar(applicantsText, true, context),
+        appBar: getAppBar(context, applicantsText, true, true),
         body: Padding(
           padding: const EdgeInsets.all(18.0),
           child: ListView(

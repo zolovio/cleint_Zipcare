@@ -16,7 +16,7 @@ class InvoicesList extends ConsumerWidget {
     final invoiceController = ref.watch(invoiceListProvider);
 
     return Scaffold(
-      appBar: getAppBar(invoicesText, true, context),
+      appBar: getAppBar(context, invoicesText, true, true),
       body: Padding(
         padding: const EdgeInsets.all(18.0),
         child: ListView.builder(

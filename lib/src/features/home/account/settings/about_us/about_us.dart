@@ -10,7 +10,7 @@ class AboutUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: getAppBar(aboutUsText, true, context),
+      appBar: getAppBar(context, aboutUsText, true, true),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: ListView(

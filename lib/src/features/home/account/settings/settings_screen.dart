@@ -15,7 +15,7 @@ class SettingsScreen extends ConsumerWidget {
     final settingsController = ref.watch(settingsProvider);
 
     return Scaffold(
-      appBar: getAppBar(settingsText, true, context),
+      appBar: getAppBar(context, settingsText, true, true),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: ListView.builder(

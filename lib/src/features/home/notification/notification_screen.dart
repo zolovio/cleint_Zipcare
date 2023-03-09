@@ -15,7 +15,7 @@ class NotificationScreen extends ConsumerWidget {
     final notificationController = ref.watch(notificationProvider);
 
     return Scaffold(
-      appBar: getAppBar(notificationText, false, context),
+      appBar: getAppBar(context, notificationText, false, true),
       body: ListView(
         padding: const EdgeInsets.all(15.0),
         children: [

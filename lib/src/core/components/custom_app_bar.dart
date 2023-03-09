@@ -1,20 +1,27 @@
 import 'package:client_zipcare/main.dart';
+import 'package:client_zipcare/src/core/components/custom_button.dart';
 import 'package:client_zipcare/src/core/configs/app_router.dart';
 import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
+import 'package:client_zipcare/src/core/constants/dimensions.dart';
+import 'package:client_zipcare/src/core/constants/font_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-AppBar getAppBar(String title, bool showAction, BuildContext context) {
+AppBar getAppBar(
+  BuildContext context,
+  String title,
+  bool implyLeading,
+  bool showAction,
+) {
   return AppBar(
     elevation: 0,
     centerTitle: true,
-    automaticallyImplyLeading: true,
+    automaticallyImplyLeading: implyLeading,
     backgroundColor: AppColors.lightWhiteColor,
     iconTheme: const IconThemeData(color: AppColors.blackColor),
-    leading:
-        IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Icons.arrow_back)),
+    // leading:
+    //     IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Icons.arrow_back)),
     title: Text(
       title,
       style: GoogleFonts.lexend(
@@ -68,22 +75,17 @@ PreferredSize homeAppBar(BuildContext context) {
                 fit: BoxFit.cover,
               ),
             ),
-            title: ElevatedButton(
+            title: CustomButton(
               onPressed: () => navigatorKey.currentState?.pushNamed(AppRouter.jobPostScreen),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.darkPurpleColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5),
-                ),
-              ),
-              child: Text(
-                postAJobText,
-                style: GoogleFonts.lexend(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 15,
-                  color: AppColors.whiteColor,
-                ),
-              ),
+              title: postAJobText,
+              fontWeight: fontWeight400,
+              fontSize: font_15,
+              textColors: AppColors.whiteColor,
+              radius: radius_5,
+              buttonColors: AppColors.darkPurpleColor,
+              buttonHeight: height_35,
+              buttonWidth: width_120,
+              icon: null,
             ),
             actions: [
               InkWell(

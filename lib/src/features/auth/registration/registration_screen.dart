@@ -3,7 +3,7 @@
 import 'package:client_zipcare/src/core/components/custom_app_bar.dart';
 import 'package:client_zipcare/src/core/constants/colors.dart';
 import 'package:client_zipcare/src/core/constants/constants.dart';
-import 'package:client_zipcare/src/features/auth/registration/ui/signup/registration_controller.dart';
+import 'package:client_zipcare/src/features/auth/registration/registration_controller.dart';
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -23,7 +23,7 @@ class RegistrationScreen extends ConsumerWidget {
     final controller = ref.watch(registrationProvider);
 
     return Scaffold(
-      appBar: getAppBar(signUpText, false, context),
+      appBar: getAppBar(context, signUpText, false, true),
       body: ListView(
         padding: const EdgeInsets.all(25),
         children: [

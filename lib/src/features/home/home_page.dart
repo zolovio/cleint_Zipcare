@@ -20,9 +20,10 @@ class HomePage extends ConsumerWidget {
       appBar: homeController.currentIndex < 2
           ? homeAppBar(context)
           : getAppBar(
+              context,
               homeController.currentIndex == 3 ? accountText : chatText,
               true,
-              context,
+              true,
             ),
       body: homeController.pages[homeController.currentIndex],
       bottomNavigationBar: BottomNavigationBar(

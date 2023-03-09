@@ -14,7 +14,7 @@ class HelpScreen extends ConsumerWidget {
     final helpController = ref.watch(helpProvider);
 
     return Scaffold(
-      appBar: getAppBar(helpText, true, context),
+      appBar: getAppBar(context, helpText, true, true),
       body: ListView(
         children: [
           const SizedBox(height: 15),

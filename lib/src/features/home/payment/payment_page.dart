@@ -16,7 +16,7 @@ class PaymentScreen extends ConsumerWidget {
     final paymentController = ref.watch(paymentProvider);
 
     return Scaffold(
-      appBar: getAppBar(paymentText, true, context),
+      appBar: getAppBar(context, paymentText, true, true),
       body: Padding(
         padding: const EdgeInsets.all(18.0),
         child: ListView(

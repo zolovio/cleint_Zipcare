@@ -14,7 +14,7 @@ class ProfilesScreen extends ConsumerWidget {
     final profileController = ref.watch(profilesProvider);
 
     return Scaffold(
-      appBar: getAppBar(profileListText, true, context),
+      appBar: getAppBar(context, profileListText, true, true),
       body: Padding(
         padding: const EdgeInsets.only(top: 18.0),
         child: ListView.builder(

@@ -20,7 +20,7 @@ class GenerateContract extends ConsumerWidget {
     final contractController = ref.watch(generateContractProvider);
 
     return Scaffold(
-      appBar: getAppBar(contractText, true, context),
+      appBar: getAppBar(context, contractText, true, true),
       body: Padding(
         padding: const EdgeInsets.all(18.0),
         child: ListView(

@@ -22,7 +22,7 @@ class InvoiceScreen extends ConsumerWidget {
     final invoiceController = ref.watch(invoiceScreenProvider);
 
     return Scaffold(
-      appBar: getAppBar(isContract ? depositText : invoiceText, true, context),
+      appBar: getAppBar(context, isContract ? depositText : invoiceText, true, true),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: ListView(

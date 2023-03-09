@@ -19,7 +19,7 @@ class AddNewProfile extends ConsumerWidget {
     final newProfileController = ref.watch(newProfileProvider);
 
     return Scaffold(
-      appBar: getAppBar("New Profile", true, context),
+      appBar: getAppBar(context, newProfileText, true, true),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListView(

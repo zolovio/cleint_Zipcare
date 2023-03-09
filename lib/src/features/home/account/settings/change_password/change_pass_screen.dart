@@ -18,7 +18,7 @@ class ChangePassword extends ConsumerWidget {
     final changePassController = ref.watch(changePassProvider);
 
     return Scaffold(
-      appBar: getAppBar("", true, context),
+      appBar: getAppBar(context, "", true, true),
       body: ListView(
         children: [
           Center(

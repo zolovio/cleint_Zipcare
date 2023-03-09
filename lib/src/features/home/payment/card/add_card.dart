@@ -21,7 +21,7 @@ class AddNewCard extends ConsumerWidget {
     final cardController = ref.watch(cardProvider);
 
     return Scaffold(
-      appBar: getAppBar(newCardText, true, context),
+      appBar: getAppBar(context, newCardText, true, true),
       body: ListView(
         children: [
           CreditCardWidget(

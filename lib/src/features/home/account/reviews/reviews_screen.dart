@@ -15,7 +15,7 @@ class ReviewsScreen extends ConsumerWidget {
     final reviewController = ref.watch(reviewProvider);
 
     return Scaffold(
-      appBar: getAppBar(myReviewText, true, context),
+      appBar: getAppBar(context, myReviewText, true, true),
       body: SingleChildScrollView(
         child: Align(
           alignment: Alignment.center,

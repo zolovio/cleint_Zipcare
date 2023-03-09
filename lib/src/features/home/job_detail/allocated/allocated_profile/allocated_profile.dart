@@ -21,7 +21,7 @@ class AllocatedProfile extends ConsumerWidget {
     final profileController = ref.watch(allocatedProfileProvider);
 
     return Scaffold(
-      appBar: getAppBar(isApproved ? jobDetail : allocatedText, true, context),
+      appBar: getAppBar(context, isApproved ? jobDetail : allocatedText, true, true),
       body: Padding(
         padding: const EdgeInsets.all(18.0),
         child: ListView(

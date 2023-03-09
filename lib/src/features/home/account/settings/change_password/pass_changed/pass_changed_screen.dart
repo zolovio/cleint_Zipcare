@@ -11,7 +11,7 @@ class PassChangedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: getAppBar("", true, context),
+      appBar: getAppBar(context, "", true, true),
       body: ListView(
         children: [
           Center(

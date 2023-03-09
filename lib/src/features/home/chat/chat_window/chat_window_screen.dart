@@ -31,7 +31,7 @@ class ChatWindow extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            getAppBar(userName, true, context),
+            getAppBar(context, userName, true, true),
             Padding(
               padding: const EdgeInsets.only(right: 8.0),
               child: ElevatedButton(

@@ -10,7 +10,7 @@ class TermsNCondition extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: getAppBar(termConditionText, true, context),
+      appBar: getAppBar(context, termConditionText, true, true),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: ListView(

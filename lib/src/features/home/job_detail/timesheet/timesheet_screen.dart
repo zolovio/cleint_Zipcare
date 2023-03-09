@@ -15,7 +15,7 @@ class TimesheetScreen extends ConsumerWidget {
     final timesheetController = ref.watch(timesheetProvider);
 
     return Scaffold(
-      appBar: getAppBar(listTimesheetText, true, context),
+      appBar: getAppBar(context, listTimesheetText, true, true),
       body: Padding(
         padding: const EdgeInsets.all(18.0),
         child: ListView(

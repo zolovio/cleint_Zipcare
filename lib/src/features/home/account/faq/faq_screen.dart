@@ -14,7 +14,7 @@ class FAQScreen extends ConsumerWidget {
     final faqController = ref.watch(faqProvider);
 
     return Scaffold(
-      appBar: getAppBar(faqText, true, context),
+      appBar: getAppBar(context, faqText, true, true),
       body: ListView(
         children: [
           const SizedBox(height: 15),

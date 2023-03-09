@@ -15,13 +15,15 @@ class JobDetailTabs extends ConsumerWidget {
 
     return Scaffold(
       appBar: getAppBar(
-          jobsTabController.selectedIndex == 1
-              ? applicantsText
-              : jobsTabController.selectedIndex == 2
-                  ? allocatedText
-                  : jobDetail,
-          true,
-          context),
+        context,
+        jobsTabController.selectedIndex == 1
+            ? applicantsText
+            : jobsTabController.selectedIndex == 2
+                ? allocatedText
+                : jobDetail,
+        true,
+        true,
+      ),
       body: DefaultTabController(
         length: 3,
         child: Scaffold(

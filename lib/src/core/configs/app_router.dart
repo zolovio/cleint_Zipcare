@@ -1,9 +1,8 @@
-import 'package:client_zipcare/src/features/auth/login/forgot_password/forgot_password_screen.dart';
-import 'package:client_zipcare/src/features/auth/login/login/login_screen.dart';
-import 'package:client_zipcare/src/features/auth/onboard/onboard_screen.dart';
-import 'package:client_zipcare/src/features/auth/registration/ui/email_verify/email_verification.dart';
-import 'package:client_zipcare/src/features/auth/registration/ui/phone_verify/phone_verification.dart';
-import 'package:client_zipcare/src/features/auth/registration/ui/signup/registration_screen.dart';
+import 'package:client_zipcare/src/features/auth/email_verify/email_verification.dart';
+import 'package:client_zipcare/src/features/auth/forgot_password/forgot_password_screen.dart';
+import 'package:client_zipcare/src/features/auth/login/login_screen.dart';
+import 'package:client_zipcare/src/features/auth/phone_verify/phone_verification.dart';
+import 'package:client_zipcare/src/features/auth/registration/registration_screen.dart';
 import 'package:client_zipcare/src/features/home/account/faq/faq_screen.dart';
 import 'package:client_zipcare/src/features/home/account/help/help_screen.dart';
 import 'package:client_zipcare/src/features/home/account/my_profile/my_profile_screen.dart';
@@ -27,13 +26,14 @@ import 'package:client_zipcare/src/features/home/payment/card/add_card.dart';
 import 'package:client_zipcare/src/features/home/payment/payment_page.dart';
 import 'package:client_zipcare/src/features/home/payment/payment_status/payment_status_screen.dart';
 import 'package:client_zipcare/src/features/home/profile/add_new_profile.dart';
+import 'package:client_zipcare/src/features/onboard/onboard_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
   static const String onBoardScreen = '/onboard';
   static const String phoneVerification = '/phone';
   static const String emailVerification = '/email';
-  static const String signUpScreen = '/signup';
+  static const String signUpScreen = '/registration';
   static const String loginScreen = '/login';
   static const String forgotPassScreen = '/forgot_pass';
   static const String homeScreen = '/home';

@@ -17,7 +17,7 @@ class ServiceAgreement extends ConsumerWidget {
     final serviceController = ref.watch(serviceAgreementProvider);
 
     return Scaffold(
-      appBar: getAppBar(serviceAgreementText, true, context),
+      appBar: getAppBar(context, serviceAgreementText, true, true),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: ListView(

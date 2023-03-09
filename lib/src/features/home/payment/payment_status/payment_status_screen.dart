@@ -14,7 +14,7 @@ class PaymentStatusScreen extends ConsumerWidget {
     final statusController = ref.watch(paymentStatusProvider);
 
     return Scaffold(
-      appBar: getAppBar(paymentStatusText, true, context),
+      appBar: getAppBar(context, paymentStatusText, true, true),
       body: Padding(
         padding: const EdgeInsets.all(25.0),
         child: ListView(
